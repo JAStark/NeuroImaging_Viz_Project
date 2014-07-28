@@ -2,32 +2,33 @@
 
 div {
 	border-radius: 5px;
-	}
+}
 	
 #header {
+	z-index:1;
 	position: fixed;
 	width: 97.5%;
 	margin-top: -20px;
-	background-color: #5A2032;
+	background-color: rgb(91, 37, 54);
 	margin-bottom: 10px;
-	border-radius: 5px;
-	}
+}
 	
 img {
 	width: 10%;
 	height: 10%;
 	float: left;
 	border-radius: 5px;
-	}
+	margin-top: 5px;
+}
 	
 #name {
-	color: #B8ABA1;
-	font-family: Verdana, sans serif;
 	float: left;
 	margin-left: 1%;
-	font-size: 16px;
 	padding-top: 5px;
-	}
+	font-size: 16px;
+	font-family: Verdana, sans serif;
+	color: #B8ABA1;
+}
 	
 #email {
 	float: right;
@@ -36,37 +37,45 @@ img {
 	font-size: 16px;
 	font-family: Verdana, sans serif;
 	color: #B8ABA1;
-	}
+}
 	
 h1 {
 	float: right;
 	font-family: Verdana;
 	color: #B8ABA1;
 	margin-right: 25%;
-	}
+}
+	
+h4 {
+	font-family: Verdana;
+	color: #1B1321;
+	margin-left: 5px;
+}
 
 .left {
 	position: relative;
-	width: 10%;
-	height: 80%;
 	float: left;
-	border-radius: 5px;
-	}
-		
+	margin-top: 140px;
+	width: 10%;
+	height: 400px;
+	background-color: #B9D7D9;
+	margin-bottom: 10px;
+}
+
 .right {
 	position: relative;
-	background-color: #B8ABA1;
-	border-radius: 5px;
 	float: right;
 	margin-top: 140px;
-	width: 80%
-	height: 80%;
-	}
-	
+	width: 88%;
+	height: 400px;
+	background-color: rgb(194, 184, 174);
+	margin-bottom: 10px;
+}
+
 p {
 	color: #1B1321;
 	font-size: 14px;
 	font-family: Verdana, sans serif;
-	margin-left:10%;
-	}
+	margin-left: 5px;
+}
 	
