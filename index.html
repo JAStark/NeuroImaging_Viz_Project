@@ -1,34 +1,52 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="custom.css"/>
+        <script src="js/Respond.min.js"></script>
 		<title>Neuroimaging visualization</title>
 	</head>
 	<body>
-		<div id="header">
-			<img src = "photo.jpg"/>
-			<p id="name"><strong>Jennifer Ann Stark, Ph.D.</strong></p>
-			<a href="mailto:you@yourdomain.com"><p id="email">jastark1@gmail.com</p></a>
-			<h1>Visualizing Human Neuroimaging Data</h1>
-		</div>
-		<div class="left"></div>
-		<div class="right">
-			<h4>Project Objective</h4>
-			<p>This project marks the beginning of my thesis. Although the details of my
-		project are yet to be decided upon and fleshed out (I have several ideas that I
-		am toying with), the overall theme is visualizing aspects of human neuroimaging
-		data in ways that facilitate exploration or provide insights.
-			</p>
-			
-			<p>I'm not set on these colors...will likely go super-neutral once I start
-			getting actual data on this page. 
-			</p>
-			
-		</div>
-		
-		
-		<div id="footer">
-			<p></p>
-		</div>
-	</body>
+    	<div class="container">
+        <!-- row 1 -->
+            <header class="row">
+                <div class="col-md-12">
+                    <img src = "photo.jpg" class="img-responsive"/>
+                    <p id="name"><strong>Jennifer Ann Stark, Ph.D.</strong></p>
+                    <a href="mailto:you@yourdomain.com"><p id="email">jastark1@gmail.com</p></a>
+                    <h1>Visualizing Human Neuroimaging Data</h1>
+                </div>               
+            </header>
+            
+        <!-- row 2 -->      
+            <div class="row">
+                <div class="col-lg-2 col-sm-1"></div>
+                <div class="col-lg-9 col-lg-offset-1 col-sm-10 col-sm-offset-1">	
+                    <h4>Project Objective</h4>
+                    <p>This project marks the beginning of my thesis. Although the details of my
+                project are yet to be decided upon and fleshed out (I have several ideas that I
+                am toying with), the overall theme is visualizing aspects of human neuroimaging
+                data in ways that facilitate exploration or provide insights.
+                    </p>
+                    
+                    <p>I'm not set on these colors...will likely go super-neutral once I start
+                    getting actual data on this page. 
+                    </p>
+                </div>
+            </div>
+            
+		<!-- row 3 -->            
+            <footer class="row">
+                <div class="col-lg-12">
+                    <p>Maryland Institute and College of Art (MICA): Information Visualization</p>
+                </div>
+            </footer>
+   	</div><!-- Close container -->
+ 
+        <!-- Javascript -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
 </html>	
