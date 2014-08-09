@@ -3,6 +3,7 @@
 
 div {
 	border-radius: 5px;
+	margin-right: 2px;
 }
 	
 header > div {
@@ -14,14 +15,14 @@ header > div {
 }
 	
 img {
-	width: 10%;
-	height: 10%;
+	width: 12%;
+	height: 12%;
 	float: left;
 	border-radius: 5px;
 	margin-top: 5px;
 }
 	
-#name {
+#name {	
 	float: left;
 	margin-left: 1%;
 	padding-top: 5px;
@@ -38,12 +39,21 @@ img {
 	font-family: Verdana, sans serif;
 	color: #B8ABA1;
 }
+
+#twitter {
+	float: right;
+	margin-right: 5px;
+	padding-top: 5px;
+	font-size: 16px;
+	font-family: Verdana, sans serif;
+	color: #B8ABA1;
+}
 	
 h1 {
 	float: right;
 	font-family: Verdana;
 	color: #B8ABA1;
-	margin-right: 25%;
+	margin-right: 10%;
 }
 	
 h4 {
@@ -58,7 +68,7 @@ p {
 	font-family: Verdana, sans serif;
 	margin-left: 15px;
 }
-	
+
 footer {
 	position: relative;
 	height: 50px;
@@ -73,4 +83,23 @@ footer p {
 	position: relative;
 	padding-top: 15px;
 	color: #B8ABA1;
+}
+
+div.bar {
+	display: inline-block;
+	width: 20px;
+	height: 75px;
+	background-color: teal;
+}
+
+.axis path,
+.axis line {
+	fill: none;
+	stroke: black;
+	shape-rendering: crispEdges;
+}
+
+.axis text {
+	font-family: sans-serif;
+	font-size: 11px;
 }
