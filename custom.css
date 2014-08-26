@@ -48,6 +48,15 @@ img {
 	font-family: Verdana, sans serif;
 	color: #B8ABA1;
 }
+
+#home {
+	float: right;
+	margin-right: 5px;
+	padding-top: 5px;
+	font-size: 16px;
+	font-family: Verdana, sans serif;
+	color: #B8ABA1;
+}
 	
 h1 {
 	float: right;
