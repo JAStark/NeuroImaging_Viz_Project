@@ -1,0 +1,43 @@
+//36 24 -6 1 //rAI
+//0 22 46 2 //dACC
+//44 18 16 3 //rIFG
+//0 -38 28 4 //PCCs
+//51 -38 28 5 //rTPJ
+//-45 -37 28 6 //lTPJ
+
+//3dUndump -master rest_proc.cleanEPI+tlrc. -prefix rois -orient LPI -srad 7 -xyz coords.1D
+
+
+
+//DMN 3 bilateral regions
+-10 54 14 1 //rPCCx Y
+10 54 14 2 //lPCCx Y
+45 64 33 3 //lAngular gyrys_PCx Y
+-45 64 33 4 //rAngular gyrus_PCx Y
+25 25 -12 5 //lParaHC Y
+-25 25 -12 6 //rParaHC Y
+ 
+//ECN 3 regions
+0 -32 7 7 //cACCx Y
+16 40 57 8 //l dorsalPosteriorParietalCortex Y
+-16 40 57 9 //r dPPCx Y 
+32 -33 30 10 //l.dlPFCx Y
+-32 -33 30 11 //r.dlPFCx Y
+
+
+//SN 3 bilateral regions
+23 5 -15 12 //lAmygdala Y
+-23 5 -15 13 //rAmygdala Y
+0 3 -9 14 //cHypothalamus 
+56 39 -13 15 //lInferotemporal cortex Y
+-56 39 -14 16 //rInferotemporal cortex Y
+36 -24 6 17 //lAI Y
+-36 -24 6 18 //rAI Y
+51 38 28 19 //lTPJ Y
+-51 38 28 20 //rTPJ Y
+
+
+//Motor - need putamen & basal ganglia??
+11 -7 9 21 //lCaudate Y
+-11 -7 9 22 //rCaudate Y
+
