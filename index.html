@@ -10,47 +10,136 @@
 		<title>Neuroimaging visualization</title>
 	</head>
 	<body>
-    	<div class="container">
-        <!-- row 1 -->
+    	<div class="container-fluid">
+        <!-- row 1 HEADER LOGO AND PAGE TITLE SUBTITLE -->
             <header class="row">
-                <div class="col-md-10 col-md-offset-2">
-              <!--      <img src = "photo.JPG" class="img-responsive"/> -->
-                    <img src = "Logo.SVG" class="img-responsive"/>
-                    <p id="name"><strong>Jennifer Ann Stark, Ph.D.</strong></p>
-                    <a href="mailto:jastark1@gmail.com"><p id="email">jastark1@gmail.com</p></a>
-                    <a href="https://twitter.com/Drgloo"><p id="twitter">@drgloo</p></a>
+                <div class="col-lg-12" class="intro">
+                    <a href="About2.html"><img src = "images/Kitsune_LogoAB3-03.SVG" class="img-responsive"/></a>
                     <h1>Visualizing Human Neuroimaging Data</h1>
+                    <h4><strong>Exploring transient networks in the brain using novel neuroimaging techniques</strong></h4>
                 </div>               
             </header>
+        </div> <!-- Close container -->
             
-        <!-- row 2 -->      
-            <div class="row">
-                <div class="col-lg-2 col-xsm-1"></div>
-                <div class="col-lg-9 col-lg-offset-1 col-xsm-10 col-xsm-offset-1">	
-                    <h4></h4>
-                    <p>My interests lie in brains, data and visualization! I have a Ph.D. in Neuroscience, and recently enrolled in a Masters in order to help me to combine my interests more effectively. Firstly, working with myriad investigators at University of Maryland allows me to continue building on my knowledge and experience in MRI and data analysis. Second, my Masters at MICA in Information Visualization will enable me to apply more sophisticated analysis to MR and other data (i.e EEG, MEG, verbal report), while also providing me with the skills to visualize the data in informative and engaging ways. </p>
+        <!-- row 2 LANDING PAGE: PROJECT, DATA, ANALYSIS AND VISUALIZATIONS BRIEF INTRO INFO -->      
+        <div class="container" style="margin-left:10em">
+      <!-- Row of columns -->
+            <div class="row" style="background-color:#D0DADD;" id="jumbo">
+                <div class="col-sm-3" style="margin-left: 4em">
+                    <h3>Project Goals</h3>
+                    <p>1: Can we detect transient networks in resting state data?</p>
+                    <p>"Resting state" referfs ro MRI scans where the participant is asked to lie still and awake, and think of nothing in particular.</p>
+                    <p>2: Which data-collection method is best? See "Data" for more information on the data collection methods</p>
+                    <p><a class="btn btn-default" href="#" role="button">View Results &raquo;</a></p>
+                </div>
+                <div class="col-sm-3" style="margin-left: 6em">
+                    <h3>Data</h3>
+                    <p>Multiband EPI is a new method used to collect whole brain volumes in a significantly shorter time frame, and/or finer spatial detail.</p>
+                    <p>Here, we collected one high-temporal resolution (1 second, voxel size 2.2<sup>3</sup>mm squared) and one high-spatial resolution (2 seconds,voxel size 1.5<sup>3</sup>mm squared) dataset from each participant.</p>
                     <br>
-                    <p>These pages are where you can observe the developement of my Thesis project, and some of my assignments for an Applications class where we were following a book on D3.js.
-                    
-                    <br>
-                    <br>
-                    
-                    <a href="Thesis.html"><h4 id "data">Visualizing Human Neuroimaging Data Thesis Project</h4></a>
-                    <a href="D3_exercises.html"><h4 id="data">Exercises from "Interactive Data Visualization for the Web"</h4></a>
-                    
-                    <br>
-                    
-                    <a href="Thesis_test.html"><h4 id="data">testing stuff</h4></a>
-                    
-             
+                    <p><a class="btn btn-default" href="#" role="button">View Details &raquo;</a></p>
+                </div>
+                <div class="col-sm-3" style="margin-left: 6em">
+                    <h3>Analysis and Visualizations</h3>
+                    <p>Several types of analysis was performed on this data, including network analysis focussing on the default mode, executive control, and salience networks; cluster analysis, and temporal ordering</p>
+                    <p>Visualization approaches include network graphs, matrices/heat maps, and time courses (line graphs).</p>
+                    <p><a class="btn btn-default" href="#" role="button">View Results &raquo;</a></p>
                 </div>
             </div>
-        
-		<!-- row 3 -->            
-            <footer class="row">
-                <div class="col-lg-12">
-                    <p>Maryland Institute and College of Art (MICA): Information Visualization</p>
+        </div><!-- Close Container-->
+
+        <!-- row 3 ANALYSIS AND VISUALIZATIONS -->  
+        <div class="container" style="margin-left:10em">
+            <header class="row">
+                <h2 >Analysis and Visualizations</h2>                
+            </header>
+        </div> <!-- close Header containing -->
+
+        <div class="container" style="margin-left:3em; margin-right:-3em">
+            <div class="row">
+                <div class="col-md-5">
+                    <h3 style="text-align:center; color: #B8ABA1;">Individual data</h3>
+                    
+                    <button class="btn btn-info btn-lg" onclick="$('#mean-z').toggle();"><strong>Mean Network Z-Scores</strong></button>
+                        <div id="mean-z" style="display: none">
+                        <!-- enter d3 bit here -->
+                            <div class="row" style="background-color:#fff" id="legend">
+                            </div>
+                        </div>
+
+                    <button class="btn btn-info btn-lg" onclick="$('#network').toggle();"><strong>Network Graphs</strong></button>
+                        <div id="network" style="display: none; float:left">
+                            <!-- enter d3 bit here -->
+                        </div>
+
+                    <button class="btn btn-info btn-lg" onclick="$('#corrmat').toggle();"><strong>Correlation Matrices</strong></button>
+                        <div id="corrmat" style="display: none">
+                            <!-- enter d3 bit here -->
+                        </div>
+
+                    <button class="btn btn-info btn-lg" onclick="$('#tc').toggle();"><strong>Time Courses</strong></button>
+                        <div id="tc" style="display: none">
+                            <!-- enter d3 bit here -->
+                        </div>
+
+                </div> <!-- end of Individual Data -->
+
+                <!-- Group Data: -->
+
+                <div class="col-md-5" style="margin-left: 3em"> 
+                    <h3 style="text-align:center; color: #B8ABA1;">Group data</h3> 
+
+                    <button class="btn btn-info btn-lg" onclick="$('#mean-zGr').toggle();"><strong>Mean Network Z-Scores</strong></button>
+                        <div id="mean-zGr" style="margin-left: -38em; margin-right:0em; display: none">
+                        <!-- enter d3 bit here -->
+                        </div>
+
+                    <button class="btn btn-info btn-lg" onclick="$('#networkGr').toggle();"><strong>Network Graphs</strong></button>
+                        <div id="networkGr" style="margin-left: -38em; margin-right:0em; display: none">
+                        <!-- enter d3 bit here -->
+                        </div>                  
+
+                    <button class="btn btn-info btn-lg" onclick="$('#corrmatGr').toggle();"><strong>Correlation Matrices</strong></button>
+                        <div id="corrmatGr" style="margin-left: -38em; margin-right:0em; display: none">
+                        <!-- enter d3 bit here -->
+                        </div>
+
+                    <!-- Cluster Analysis -->
+                <div class="col-md-5" style="margin-left: 3em"> 
+                    <h4 id="clust-head"><strong>Cluster Analysis:</h4>
+
+
+                    <button class="btn btn-info btn-lg" onclick="$('#networkClust').toggle();"><strong>Network Graphs</strong></button>
+                        <div id="networkClust" style="margin-left: -38em; margin-right:0em; display: none">
+                        <!-- enter d3 bit here -->
+                        </div>
+
+                    <button class="btn btn-info btn-lg" onclick="$('#corrmatClust').toggle();"><strong>Correlation Matrices</strong></button>
+                        <div id="corrmatClust" style="margin-left: -38em; margin-right:0em; display: none">
+                        <!-- enter d3 bit here -->
+                        </div>   
+
+                    <button class="btn btn-info btn-lg" onclick="$('#tempOrd').toggle();"><strong>Temporal Ordering</strong></button>
+                        <div id="tempOrd" style="margin-left: -38em; margin-right:0em; display: none">
+                        <!-- enter d3 bit here -->
+                        </div>
+
+                    <button class="btn btn-info btn-lg" onclick="$('#tempDur').toggle();"><strong>Temporal Duration</strong></button>
+                        <div id="tempDur" style="margin-left: -38em; margin-right:0em; display: none">
+                        <!-- enter d3 bit here -->
+                        </div>   
+                </div>                        
+                  
+
+
                 </div>
+            </div>
+        </div>   <!-- Close Container -->
+
+		<!-- row # FOOTER --> 
+            <hr>           
+            <footer class="row">
+                    <p><small>Maryland Institute and College of Art (MICA): Information Visualization MPS</small></p>
             </footer>
    	</div><!-- Close container -->
  
