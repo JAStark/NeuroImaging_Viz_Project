@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="custom.css"/>
+        <script type="text/javascript" src="js/Respond.min.js"></script>
+        <script type="text/javascript" src="d3/d3.js"></script>
+		<title>Neuroimaging visualization</title>
+	</head>
+	<body>
+    	<div class="container">
+        <!-- row 1 -->
+            <header class="row">
+                <div class="col-md-10 col-md-offset-2">
+                   <!-- <img src = "photo.JPG" class="img-responsive"/> -->
+                    <p id="name"><strong>Jennifer Ann Stark, Ph.D.</strong></p>
+                    <a href="mailto:jastark1@gmail.com"><p id="email">jastark1@gmail.com</p></a>
+                    <a href="https://twitter.com/Drgloo"><p id="twitter">@drgloo</p></a>
+                    <a href="index.html"><p id="home">Home</p></a>
+                    
+                    <h1>Visualizing Human Neuroimaging Data</h1>
+                </div>               
+            </header>
+				<p id="here"> Here it goes...testing....</p>
+     <style>
+     /* CSS page setup */
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: .6;
+}
+
+</style>           
+   <script type="text/javascript">
+
+// begin D3 setup for NWmeans panel
+
+//  var width = 960,
+//      height = 200;
+
+//  var color = d3.scale.category10();
+//  var data;
+
+//  var svg = d3.select("#here").append("svg")
+//      .attr("width", width)
+//      .attr("height", height);
+
+// NWmeans = {
+//   "EPI1":[
+//     {"BG": 0.4908625457247732, "ECN": 0.3563290304474968, "SN": 0.4529834279787421, "DMN": 0.36165471594167165}
+//     ],
+//   "EPI2":[
+//     {"BG": 0.35537634295207815, "ECN": 0.477495297467854, "SN": 0.347675716400892, "DMN": 0.3318937790276353}
+//     ]
+//   }
+
+// var circles = svg.selectAll("circle")
+//                   .data(NWmeans)
+//                   .enter()
+//                   .append("circle");
+
+
+// circles.attr("cx", [40, 80, 120])
+//         .attr("cy", function(d, i)) {return d.EPI1}
+// d3.json("js/EPI_NWmeans", function(error, json)) {
+//   if (error) return console.warn(error);
+//   data = json;
+//   visualizeit();
+// });
+  
+//   circles.attr("cx", function(d, i) {
+//     return (i * 50) + 25;
+//   })
+//   .attr("cy", h/2)
+//   .attr("r", function(d) {
+//     return d;
+//   })
+//   .attr("fill", "yellow")
+//   .attr("stroke", "orange")
+//   .attr("stroke-width", function(d) {
+//     return d/2;
+//   });
+// };
+  
+
+// begin d3 set up for force layout network graph panel
+var width = 960,
+    height = 500;
+
+var color = d3.scale.category10();
+
+var svg = d3.select("#here").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+var force = d3.layout.force()
+    .charge(-100)
+    .linkDistance(function(d) {return d.weight*1000}) // make into function?
+    .size([width, height]);
+
+var svg = d3.select("#here").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+d3.json("js/EPI1_JSON_Graph.json", function(error, graph) {
+  force
+      .nodes(graph.nodes)//can add here: fixed (boolean) and weight
+      .links(graph.links)
+      .start();
+
+  var link = svg.selectAll(".link")
+      .data(graph.links)
+    .enter().append("line")
+      .attr("class", "link")
+      .style("stroke-width", function(d) { return (d.weight *10); });
+
+  var node = svg.selectAll(".node")
+      .data(graph.nodes)
+    .enter().append("circle")
+      .attr("class", "node")
+      .attr("r", 15) //consider making this equal to degree centrality or something
+      .style("fill", function(d) { return color(d.NW); })
+      .call(force.drag);
+
+  node.append("title")
+      .text(function(d) { return d.id; });
+
+  force.on("tick", function() {
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("cx", function(d) { return d.x; })
+        .attr("cy", function(d) { return d.y; });
+  });
+});
+
+</script>
+   </script>
+             
+             
+                </div>
+            </div>
+        
+		<!-- row 3 -->            
+            <footer class="row">
+                <div class="col-lg-12">
+                    <p>Maryland Institute and College of Art (MICA): Information Visualization</p>
+                </div>
+            </footer>
+   	</div><!-- Close container -->
+ 
+        <!-- Javascript -->
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+   
+</body>
+</html>	
