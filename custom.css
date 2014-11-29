@@ -21,7 +21,292 @@ img {
 	border-radius: 5px;
 	margin-top: 5px;
 }
-	
+ /*  Pictures in buttons */
+.z-score {
+
+	width: 4%;
+	height: 4%;
+	margin-right: 1.5em;
+	margin-top: 0em;
+}
+.matrix {
+	width: 6%;
+	height: 6%;
+	margin-right: 1.3em;
+	margin-top: 0em;
+}
+
+.network {
+	width: 8%;
+	height: 8%;
+	margin-right: 0.9em;
+	margin-top: 0em;
+}
+
+.lines {
+	width: 9%;
+	height: 9%;
+	margin-right: 0.7em;
+	margin-top: 0em;
+}
+
+.selectDataset {
+	width: 17%;
+	height: 17%;
+	margin-right: 0.8em;
+	margin-top: 0em;
+}
+
+.dataList {
+	color: #646464;
+	font-size: 20px;
+	font-family: Verdana, sans-serif;
+}
+/***** Jumbo landing page bit */
+
+#jumbo {
+    border-radius: 25px;
+}
+
+h1 {
+	font-family: Verdana;
+	color: #B8ABA1;
+	margin-left: 0em;
+	margin-top: 60px;
+	text-align: center;
+}
+
+h4 {
+	font-family: Verdana;
+	color: #646464;
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+h2 {
+	text-align: center;
+	font-family: Verdana;
+	color: #B8ABA1;
+	margin-left: -2em;
+	margin-top: 60px;
+}
+
+h3{
+	font-family: Verdana;
+	color: #646464;
+	margin-left: 0em;
+}
+
+p {
+	color: #646464;
+	font-size: 14px;
+	font-family: Verdana, sans-serif;
+}
+
+#clust-head {
+	text-align: left; 
+	margin-left: 37em;
+	font-family: Verdana, sans-serif; 
+	color: #B8ABA1;
+	padding-top: 0em;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  margin: 0.4em;
+  font: inherit;
+  color: #898989;
+  font-family: "myriad pro", sans-serif;
+  font-size: 20px;
+  }
+
+button {
+  overflow: hidden;
+}
+
+.btn-lg, .btn-group-lg>.btn {
+	font-size: 20px;
+	color:#898989;
+	font-family: "myriad pro", sans-serif;
+	width: 20em;
+}
+
+.btn-info {
+	background-color: #E6E6E6;
+	border-color: #fff;
+}
+
+.btn-default {
+	background-color: #E6E6E6;
+	border-color: #fff;
+	color: #646464;
+}
+
+.btn{
+	text-align: left;
+}
+
+.btn-info:hover,
+.btn-info:focus,
+.btn-info:active,
+.btn-info.active,
+.open .dropdown-toggle.btn-info {
+  color: #898989;
+  background-color: #D0DADD;
+  border-color: #fff;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+  color: #898989;
+  border-color: #fff;
+}
+
+#mean-z {
+  background:#fafafa;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -7em
+}
+
+#mean-zGr {
+  background:#fafafa;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -7em
+}
+
+#network {
+  background:#D0DADD;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -7em
+}
+
+#networkGr {
+  background:#fafafa;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -7em
+}
+
+#corrmat {
+  background:#D0DADD;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -7em
+}
+
+#corrmatGr {
+  background:#D0DADD;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -7em
+}
+
+#tc {
+  background:#D0DADD;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -7em
+}
+
+#networkClust {
+  background:#fafafa;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -6em
+}
+
+#corrmatClust {
+  background:#fafafa;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -6em
+}
+
+#tempOrd {
+  background:#D0DADD;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -6em
+}
+
+#tempDur {
+  background:#D0DADD;
+  height:645px;
+  width: 1350px;
+  padding:5px;
+  margin-left: -6em
+}
+
+.bottomText {
+	margin-top: 0em;
+	margin-bottom: 0em;
+	font-size: 12px;
+}
+
+/* SVG D3 custom css */
+
+.axis path,
+.axis line {
+fill: none;
+stroke: #E6E6E6;
+shape-rendering: crispEdges;
+}
+
+.axis text {
+font-family: sans-serif;
+font-size: 14px;
+fill: #969696;
+}
+
+.y-label {
+	font-family: sans-serif;
+	font-size: 20px;
+	fill: #969696;
+}
+.legend{
+stroke: "grey";
+}
+
+
+footer {
+	position: relative;
+	height: 50px;
+	clear: both;
+	font-family: Verdana, sans-serif;
+	font-size: 14px;
+	text-align: center;
+}
+
+footer p {
+	position: relative;
+	padding-top: 15px;
+	color: #B8ABA1;
+}
+
+
+/***************************************************   Old stuff I might want again....?
 #name {	
 	float: left;
 	margin-left: 1%;
@@ -55,176 +340,5 @@ img {
 	padding-top: 5px;
 	font-size: 16px;
 	font-family: Verdana, sans-serif;
-	color: #B8ABA1;
-}
-
-
-#jumbo {
-    border-radius: 25px;
-}
-
-h1 {
-	float: left;
-	font-family: Verdana;
-	color: #B8ABA1;
-	margin-left: 5em;
-	margin-top: 60px;
-}
-
-h2 {
-	text-align: center;
-	font-family: Verdana;
-	color: #B8ABA1;
-	margin-left: -2em;
-	margin-top: 60px;
-}
-
-h3{
-	font-family: Verdana;
-	color: #646464;
-	margin-left: 0em;
-}
-
-h4 {
-	float: left;
-	font-family: Verdana;
-	color: #646464;
-	margin-left: 6em;
-}
-
-p {
-	color: #646464;
-	font-size: 14px;
-	font-family: Verdana, sans-serif;
-}
-
-#clust-head {
-	text-align: left; 
-	margin-left: 0em;
-	font-family: Verdana, sans-serif; 
-	color: #358BBA;
-}
-
-button,
-input,
-optgroup,
-select,
-textarea {
-  margin: 0;
-  font: inherit;
-  color: #898989;
-  font-family: "myriad pro", sans-serif;
-  font-size: 20px;
-}
-button {
-  overflow: visible;
-}
-
-.btn-lg, .btn-group-lg>.btn {
-	font-size: 20px;
-	color:#898989;
-	font-family: "myriad pro", sans-serif;
-}
-
-.btn-info {
-	background-color: #E6E6E6;
-	border-color: #fff;
-}
-
-.btn{
-	text-align: left;
-	background-image: "/images/mean-z.PNG";
-}
-
-#mean-z {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#network {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#corrmat {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#tc {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#mean-zGr {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#networkGr {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#corrmatGr {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#networkClust {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#corrmatClust {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#tempOrd {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-#tempDur {
-  background:#D0DADD;
-  height:720px;
-  width: 1320px;
-  padding:5px;
-}
-
-
-footer {
-	position: relative;
-	height: 50px;
-	clear: both;
-	font-family: Verdana, sans-serif;
-	font-size: 14px;
-	text-align: center;
-}
-
-footer p {
-	position: relative;
-	padding-top: 15px;
 	color: #B8ABA1;
 }

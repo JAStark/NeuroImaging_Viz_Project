@@ -1,20 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-    	<meta charset="utf-8">
-    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="css/bootstrap.min.css" rel="stylesheet">
-		<link type="text/css" rel="stylesheet" href="custom.css"/>
+        <link type="text/css" rel="stylesheet" href="custom.css"/>
         <script src="js/Respond.min.js"></script>
         <script type="text/javascript" src="d3/d3.js"></script>
-		<title>Neuroimaging visualization</title>
-	</head>
-	<body>
-    	<div class="container-fluid">
+    <title>Neuroimaging visualization</title>
+  </head>
+  <body>
+      <div class="container-fluid">
         <!-- row 1 HEADER LOGO AND PAGE TITLE SUBTITLE -->
             <header class="row">
                 <div class="col-lg-12" class="intro">
-                    <a href="About2.html"><img src = "images/Kitsune_LogoAB3-03.SVG" class="img-responsive"/></a>
                     <h1>Visualizing Human Neuroimaging Data</h1>
                     <h4><strong>Exploring transient networks in the brain using novel neuroimaging techniques</strong></h4>
                 </div>               
@@ -46,204 +45,404 @@
                     <p><a class="btn btn-default" href="#" role="button">View Results &raquo;</a></p>
                 </div>
             </div>
-        </div><!-- Close Container-->
+        </div><!-- Close Container 2 -->
 
         <!-- row 3 ANALYSIS AND VISUALIZATIONS -->  
         <div class="container" style="margin-left:10em">
             <header class="row">
                 <h2 >Analysis and Visualizations</h2>                
             </header>
-        </div> <!-- close Header containing -->
+        </div> <!-- close 3 Header containing -->
 
-        <div class="container" style="margin-left:3em; margin-right:-3em">
+        <!-- row 4 INDIVIDUAL and GROUP data subheadings -->
+        <div class="container" style="margin-left:10em">
             <div class="row">
-                <div class="col-md-5">
-                    <h3 style="text-align:center; color: #B8ABA1;">Individual data</h3>
+                <div class="col-md-5"><h3 style="text-align:center; color: #B8ABA1;">Individual data</h3></div>
+                <div class="col-md-5 col-md-offset-1"><h3 style="text-align:center; color: #B8ABA1">Group data</h3></div>
+            </div> <!-- close row -->
+        </div> <!-- Close Container 4 -->
+
+        <!-- row 5 DATA BUTTONS -->
+        <div class="container" style="margin-left:10em">
+          <div class="row">
+
+            <!-- Indi Mean z-score -->
+            <button class="btn btn-info btn-lg" onclick="$('#mean-z').toggle();" style="margin-left:4em"><img src="images/mean-z.PNG" class="z-score"/><strong>Mean Network Z-Scores</strong><span class="caret" style="margin-left:3em"></span></button>
+                <div id="mean-z" style="display: none">
+                    <div id="mean-zD3" class="col-md-7"> 
+                        <div class="col-sm-3" style="margin-top: 2em; margin-left:7em; margin-bottom:2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>Select Dataset</strong></p></div>
+                        <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
+                            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/mean-z.PNG" class="selectDataset"/><strong>EPI1</strong><span class="caret" style="margin-left:0.5em"></span></button>-->
+                            <select id="EPI1">
+                              <option>EPI1</option>
+                              <option value="/js/mean-z/EPI1_101.json" class="data">Subject 101</option>
+                              <option value="/js/mean-z/EPI1_102.json" class="data">Subject 102</option>
+                              <option value="/js/mean-z/EPI1_103.json" class="data">Subject 103</option>
+                              <option value="/js/mean-z/EPI1_104.json" class="data">Subject 104</option>
+                              <option value="/js/mean-z/EPI1_105.json" class="data">Subject 105</option>
+                              <option value="/js/mean-z/EPI1_106.json" class="data">Subject 106</option>
+                              <option value="/js/mean-z/EPI1_107.json" class="data">Subject 107</option>
+                              <option value="/js/mean-z/EPI1_108.json" class="data">Subject 108</option>
+                              <option value="/js/mean-z/EPI1_109.json" class="data">Subject 109</option>
+                              <option value="/js/mean-z/EPI1_110.json" class="data">Subject 110</option>
+                              <option value="/js/mean-z/EPI1_111.json" class="data">Subject 111</option>
+                              <option value="/js/mean-z/EPI1_112.json" class="data">Subject 112</option>
+                            </select>
+                        </div><!--end dropdown EPI1-->
+
+                        <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
+                            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/sq_symbol.PNG" class="selectDataset"/><strong>EPI2</strong><span class="caret" style="margin-left:0.5em"></span></button>-->
+                            <select id="EPI2">
+                              <option>EPI2</option>
+                              <option value="/js/mean-z/EPI2_101.json" class="data">Subject 101</option>
+                              <option value="/js/mean-z/EPI2_102.json" class="data">Subject 102</option>
+                              <option value="/js/mean-z/EPI2_103.json" class="data">Subject 103</option>
+                              <option value="/js/mean-z/EPI2_104.json" class="data">Subject 104</option>
+                              <option value="/js/mean-z/EPI2_105.json" class="data">Subject 105</option>
+                              <option value="/js/mean-z/EPI2_106.json" class="data">Subject 106</option>
+                              <option value="/js/mean-z/EPI2_107.json" class="data">Subject 107</option>
+                              <option value="/js/mean-z/EPI2_108.json" class="data">Subject 108</option>
+                              <option value="/js/mean-z/EPI2_109.json" class="data">Subject 109</option>
+                              <option value="/js/mean-z/EPI2_110.json" class="data">Subject 110</option>
+                              <option value="/js/mean-z/EPI2_111.json" class="data">Subject 111</option>
+                              <option value="/js/mean-z/EPI2_112.json" class="data">Subject 112</option>
+                            </select>
+                        </div><!--end dropdown EPI2-->
+
+                           
+
+                          <div class="row" style="margin-left:18em"> <!--legend colors-->
+                           <p style="color:#354e7f; margin-bottom:0em"><strong>Default Mode Network (DMN)</strong></p>
+                           <p style="color:#82142f; margin-bottom:0em"><strong>Salience Network (SN)</strong></p>
+                           <p style="color:#139e9e"><strong>Executive Control Network (ECN)</strong></p>
+                          </div> <!-- close legend colors-->
+                    </div> <!-- end d3 div -->
                     
-                    <button class="btn btn-info btn-lg" onclick="$('#mean-z').toggle();"><strong>Mean Network Z-Scores</strong></button>
-                        <div id="mean-z" style="display: none">
-                        <!-- enter d3 bit here -->
-                            <style type="text/css">
-                          
-                              .axis path,
-                              .axis line {
-                                fill: none;
-                                stroke: #969696;
-                                shape-rendering: crispEdges;
-                              }
+                    <div class="col-md-4" style="margin-right:5em; margin-top:4em"> <!-- right text-->
+                        <p><strong>Project questions 2:</strong></p>
+                        <p>Which data-collection method is the best?</p>
+                        <p><strong>Goal:</strong></p>
+                        <p>To assess data quality in terms of correlation strength within each network.</p>
+                        <p>Higher mean values indicates that the brain regions comprising that network are communicating well with each other.</p>
+                        <p>Higher standard deviation values (longer lines) means that there is more variance within the network, and that brain regions
+                          comprising the network are not communicating well with each other.</p>
+                        <p><strong>Conclusion:</strong></p>
+                        <p>Subjects 105 and 107 had terrible means (close to zero) and high standard deviations, resulting in those data being excluded from 
+                          Group analysis for both EPI1 and EPI2.</p>
+                      </div> <!-- close right-side column for project question, goals, and conclusions -->
+                      
+                      <!--bottom section -->
+                      <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                         <div class="col-sm-2 col-sm-offset-1">
+                          <p><strong>EPI1</strong></p>
+                          <p class="bottomText">Temporal resolution: 1 second</p>
+                          <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>EPI2</strong></p>
+                          <p class="bottomText">Temporal resolution: 2 seconds</p>
+                          <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>DMN</strong></p>
+                          <p class="bottomText">Posterior Cingulate Cortex</p>
+                          <p class="bottomText">Angular Gyrus</p>
+                          <p class="bottomText">Parahippocampal Cortex</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>SN</strong></p>
+                          <p class="bottomText">Amygdala</p>
+                          <p class="bottomText">Anterior Insula</p>
+                          <p class="bottomText">Temporoparietal Junction</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>ECN</strong></p>
+                          <p class="bottomText">Anterior Cingulate Cortex</P>
+                          <p class="bottomText">dorsal Posterior Parietal Cortex</p>
+                          <p class="bottomText">dorsolateral Prefrontal Cortex</p>
+                          <p class="bottomText">Cuadate Nucleus</p>
+                         </div>
+                      </div> <!-- close legend text at bottom of means network z-scores page -->
+                </div> <!-- close div id="mean-z" -->
 
-                              .axis text {
-                                font-family: sans-serif;
-                                font-size: 14px;
-                                fill: #969696;
-                              }
-                               
-                              path {
-                                stroke-width: 2px;
-                                stroke: "darkgrey";
-                                stroke-dasharray:"3, 3";
-                              }
+            <!-- Gr mean z-score -->
+            <button class="btn btn-info btn-lg" onclick="$('#mean-zGr').toggle();" style="margin-left:9em"><img src="images/mean-z.PNG" class="z-score"/><strong>Mean Network Z-Scores</strong><span class="caret" style="margin-left:3em"></span></button>
+                <div id="mean-zGr" style="display: none"><!-- enter d3 bit here -->
+                    <div id="mean-zGrD3" class="col-md-7"> 
+                        <div class="col-sm-3" style="margin-top: 2em; margin-left:7em; margin-bottom:2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>Chart Key</strong></p></div>
+                        <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/mean-z.PNG" class="selectDataset"/><strong>EPI1</strong></span></button>
+                        </div><!--end dropdown EPI1-->
 
-                              .legend{
-                                stroke: "grey";
-                              }
-                            </style>
+                        <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/sq_symbol.PNG" class="selectDataset"/><strong>EPI2</strong></button>
+                        </div><!--end dropdown EPI2-->
 
-                            <script type="text/javascript">
+                        <!-- D3 Mean Group z-score chart goes here-->
 
-                          var EPI1 = [
-                                  {"key": "DMN", "values": 0.3612327342549958, "sd":0.15721708382087163},
-                                  {"key":"SN", "values": 0.36594731104141204, "sd":0.1438314594956751},
-                                  {"key":"ECN", "values":0.4103003289319152, "sd":0.13817466701640893},
-                                ]
-
-                          var EPI2 = [
-                                    {"key": "DMN", "values":0.43707597131902304, "sd":0.10188232006323178}, 
-                                    {"key": "SN", "values":0.4854244668719318, "sd":0.1210977798623367}, 
-                                    {"key": "ECN", "values":0.4711811105133274, "sd": 0.1537981757653103}
-                                  ]                       
-                              
-                            //var customColor = [#354E7F, #139E9E, #82142F] colors from my UI design in AI...convert to decimal color code that d3.js uses in color categories
-                            //var customColor = [ 3493503, 39321, 10027059];  //maybe look at original d3.js code again...
-
-                            //var margin = {top: 30, right:20, bottom: 30, left: 300},                            
-                            w = 550 //- margin.left - margin.right,
-                            h = 250 //- margin.top - margin.bottom;
-                            
-                             var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w], 0.75);  //from book
-                             var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
-
-                             var color = d3.scale.category10();
-                             //var color = customColor;
-                             //color.domain(data.map(function(d) {return d.key;}));
-
-                             var xAxis = d3.svg.axis().scale(xScale).orient("bottom").ticks(3);
-                             var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
-
-
-                            var svg = d3.select("#mean-z").append("svg").attr("width", w).attr("height", h);
-
-                            //var EPI1 = d3.json("js/EPI1_108.json", function(error, data) {
-
-
-                            var circles = svg.selectAll("circle").data(EPI1).enter().append("circle");
-                            
-                            circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
-                                    .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
-                                    .attr("r", "9")
-                                    .attr("fill",function(d) {return color(d.key);})
-                                    .append("title").text(function(d) {return d.values;});
-
-                            var lines = svg.selectAll("line").data(EPI1).enter().append("line");
-
-                             lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
-                                   .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-                                   .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
-                                   .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-                                   .attr("stroke-width", 2)
-                                   .attr("stroke", function(d) {return color(d.key);});
-
-                            // });    //end of var EPI1 = d3.json(loadData.json)
-
-
-
-                            //var EPI2 = d3.json("js/EPI2_108.json", function(error, data) {
-
-                            var rect = svg.selectAll("rect").data(EPI2).enter().append("rect");
-
-                            rect.attr("x", function(d,i) {return xScale(i)+40;})
-                                  .attr("y", function(d) {return yScale(d.values)-8})
-                                  .attr("width", "16")
-                                  .attr("height", "16")
-                                  .attr("fill", function(d) {return color(d.key);});
-
-                            var linesb = svg.selectAll("rects").data(EPI2).enter().append("line");
-
-                            linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
-                                 .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-                                 .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
-                                 .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-                                 .attr("stroke-width", 2)
-                                 .attr("stroke", function(d) {return color(d.key);});
-
-                              //});   /end of var EPI2 = d3.json(loadData.json)
-
-                            var xPadding = 30;
-                            var yPadding = 50; 
-                            svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
-                            svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
-
-                            </script>
-
-
-
-
-                            <div class="row" style="background-color:#fff" id="legend">
-                            </div>
-                        </div>
-
-                    <button class="btn btn-info btn-lg" onclick="$('#network').toggle();"><strong>Network Graphs</strong></button>
-                        <div id="network" style="display: none; float:left">
-                            <!-- enter d3 bit here -->
-                        </div>
-
-                    <button class="btn btn-info btn-lg" onclick="$('#corrmat').toggle();"><strong>Correlation Matrices</strong></button>
-                        <div id="corrmat" style="display: none">
-                            <!-- enter d3 bit here -->
-                        </div>
-
-                    <button class="btn btn-info btn-lg" onclick="$('#tc').toggle();"><strong>Time Courses</strong></button>
-                        <div id="tc" style="display: none">
-                            <!-- enter d3 bit here -->
-                        </div>
-
-                </div> <!-- end of Individual Data -->
-
-                <!-- Group Data: -->
-
-                <div class="col-md-5" style="margin-left: 3em"> 
-                    <h3 style="text-align:center; color: #B8ABA1;">Group data</h3> 
-
-                    <button class="btn btn-info btn-lg" onclick="$('#mean-zGr').toggle();"><strong>Mean Network Z-Scores</strong></button>
-                        <div id="mean-zGr" style="margin-left: -38em; margin-right:0em; display: none">
-                        <!-- enter d3 bit here -->
-                        </div>
-
-                    <button class="btn btn-info btn-lg" onclick="$('#networkGr').toggle();"><strong>Network Graphs</strong></button>
-                        <div id="networkGr" style="margin-left: -38em; margin-right:0em; display: none">
-                        <!-- enter d3 bit here -->
-                        </div>                  
-
-                    <button class="btn btn-info btn-lg" onclick="$('#corrmatGr').toggle();"><strong>Correlation Matrices</strong></button>
-                        <div id="corrmatGr" style="margin-left: -38em; margin-right:0em; display: none">
-                        <!-- enter d3 bit here -->
-                        </div>
-
-                    <!-- Cluster Analysis -->
-                <div class="col-md-5" style="margin-left: 3em"> 
-                    <h4 id="clust-head"><strong>Cluster Analysis:</h4>
+                        <!--legend colors-->                        
+                        <!--<div class="row" style="margin-left:18em"> 
+                         <p style="color:#354e7f; margin-bottom:0em"><strong>Default Mode Network (DMN)</strong></p>
+                         <p style="color:#82142f; margin-bottom:0em"><strong>Salience Network (SN)</strong></p>
+                         <p style="color:#139e9e"><strong>Executive Control Network (ECN)</strong></p>
+                        </div> -->
+                        <!-- close legend colors-->
+                    </div> <!-- end d3 div -->
+                    
+                    <div class="col-md-4" style="margin-right:5em; margin-top:4em"> <!-- right text-->
+                        <p><strong>Project questions 2:</strong></p>
+                        <p>Which data-collection method is the best?</p>
+                        <p><strong>Goal:</strong></p>
+                        <p>To assess data quality in terms of correlation strength within each network.</p>
+                        <p>Higher mean values indicates that the brain regions comprising that network are communicating well with each other.</p>
+                        <p>Higher standard deviation values (longer lines) means that there is more variance within the network, and that brain regions
+                          comprising the network are not communicating well with each other.</p>
+                        <p><strong>Conclusion:</strong></p>
+                        <p>While excluding Subjects 105 and 107 due to terrible means (close to zero) and high standard deviations, the resulting group means and standard deviations show that higher temporal resolution (EPI1) is beneficial.</p>
+                    </div> <!-- close right-side column for project question, goals, and conclusions -->
+                      
+                      <!--bottom section -->
+                    <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                       <div class="col-sm-2 col-sm-offset-1">
+                        <p><strong>EPI1</strong></p>
+                        <p class="bottomText">Temporal resolution: 1 second</p>
+                        <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>EPI2</strong></p>
+                        <p class="bottomText">Temporal resolution: 2 seconds</p>
+                        <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>DMN</strong></p>
+                        <p class="bottomText">Posterior Cingulate Cortex</p>
+                        <p class="bottomText">Angular Gyrus</p>
+                        <p class="bottomText">Parahippocampal Cortex</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>SN</strong></p>
+                        <p class="bottomText">Amygdala</p>
+                        <p class="bottomText">Anterior Insula</p>
+                        <p class="bottomText">Temporoparietal Junction</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>ECN</strong></p>
+                        <p class="bottomText">Anterior Cingulate Cortex</P>
+                        <p class="bottomText">dorsal Posterior Parietal Cortex</p>
+                        <p class="bottomText">dorsolateral Prefrontal Cortex</p>
+                        <p class="bottomText">Cuadate Nucleus</p>
+                       </div>
+                    </div> <!-- close legend text at bottom of means network z-scores page -->
+                </div> <!-- close div id="mean-zGR" -->
 
 
-                    <button class="btn btn-info btn-lg" onclick="$('#networkClust').toggle();"><strong>Network Graphs</strong></button>
-                        <div id="networkClust" style="margin-left: -38em; margin-right:0em; display: none">
-                        <!-- enter d3 bit here -->
-                        </div>
+            <!-- Indi network -->
+            <button class="btn btn-info btn-lg" onclick="$('#network').toggle();" style="margin-left:4em"><img src="images/network.PNG" class="network"/><strong>Network Graphs</strong><span class="caret" style="margin-left:6.2em"></span></button>
+                <div id="network" style="display: none; float:left">
+                    <!-- enter d3 bit here -->
+                </div>
 
-                    <button class="btn btn-info btn-lg" onclick="$('#corrmatClust').toggle();"><strong>Correlation Matrices</strong></button>
-                        <div id="corrmatClust" style="margin-left: -38em; margin-right:0em; display: none">
-                        <!-- enter d3 bit here -->
-                        </div>   
+            <!-- Gr Network -->
+            <button class="btn btn-info btn-lg" onclick="$('#networkGr').toggle();" style="margin-left:9em"><img src="images/network.PNG" class="network"/><strong>Network Graphs</strong><span class="caret" style="margin-left:6.2em"></span></button>
+                <div id="networkGr" style="display: none">
+                    <!-- enter d3 bit here -->
+                    <div id="networkGrD3" class="col-md-7"> 
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Group Network</strong></p></div>
+                        <div class="col-sm-3"><!--spacer div--></div>
 
-                    <button class="btn btn-info btn-lg" onclick="$('#tempOrd').toggle();"><strong>Temporal Ordering</strong></button>
-                        <div id="tempOrd" style="margin-left: -38em; margin-right:0em; display: none">
-                        <!-- enter d3 bit here -->
-                        </div>
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI2 Group Network</strong></p></div><!--end network title-->
 
-                    <button class="btn btn-info btn-lg" onclick="$('#tempDur').toggle();"><strong>Temporal Duration</strong></button>
-                        <div id="tempDur" style="margin-left: -38em; margin-right:0em; display: none">
-                        <!-- enter d3 bit here -->
-                        </div>   
-                </div>                        
+                        <!-- D3 Mean GROUP NETWORK chart goes here-->
+
+                        <!--legend colors--> <!-- close legend colors-->
+                    </div> <!-- end d3 div  #networkGrD3 -->
+
+                    <div class="col-md-4" style="margin-right:0em; margin-top:4em"> <!-- right text-->
+                        <p><strong>Project question 2:</strong></p>
+                        <p>Which data-collection method is the best?</p>
+                        <p><strong>Goal:</strong></p>
+                        <p>To assess data quality in terms of correlation strength within each network.</p>
+                        <p>One way to do that is to look at the connections between brain regions. The threshold set here is a z-score of 0.3, meaning that correlations between regions of 0.3 and above are shown in this graph. We would expect a superior data collection method will detect more connections within and between networks.</p>
+                        <p><strong>Conclusion:</strong></p>
+                        <p>While excluding Subjects 105 and 107 due to terrible means (close to zero) and high standard deviations, the resulting group network graphs show that higher temporal resolution (EPI1) is better at detecting connections between brain regions within networks and also between networks.</p>
+                    </div> <!-- close right-side column for project question, goals, and conclusions -->
+                      
+                      <!--bottom section -->
+                    <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                       <div class="col-sm-2">
+                        <p><strong>EPI1</strong></p>
+                        <p class="bottomText">Temporal resolution: 1 second</p>
+                        <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>EPI2</strong></p>
+                        <p class="bottomText">Temporal resolution: 2 seconds</p>
+                        <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p style="color: #354e7f"><strong>DMN</strong></p>
+                        <p class="bottomText">Posterior Cingulate Cortex (PCCx)</p>
+                        <p class="bottomText">Angular Gyrus (AngG)</p>
+                        <p class="bottomText">Parahippocampal Cortex (ParaHC)</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p style="color: #139e9e"><strong>SN</strong></p>
+                        <p class="bottomText">Amygdala (AMY)</p>
+                        <p class="bottomText">Anterior Insula (AI)</p>
+                        <p class="bottomText">Temporoparietal Junction (TPJ)</p>
+                       </div>
+                       <div class="col-sm-3">
+                        <p style="color:#82142f"><strong>ECN</strong></p>
+                        <p class="bottomText">Anterior Cingulate Cortex (ACC)</P>
+                        <p class="bottomText">dorsal Posterior Parietal Cortex (dPPCx)</p>
+                        <p class="bottomText">dorsolateral Prefrontal Cortex (dlPFCx)</p>
+                        <p class="bottomText">Cuadate Nucleus (Caud)</p>
+                       </div>
+                    </div> <!-- close legend text at bottom of Group networks page -->
+                </div> <!-- close div id="networkGrD3" -->  
+
+            <!-- Indi Correlation matrix -->
+            <button class="btn btn-info btn-lg" onclick="$('#corrmat').toggle();" style="margin-left:4em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.4em"></span></button>
+                <div id="corrmat" style="display: none">
+                    <!-- enter d3 bit here -->
+                </div>
+
+            <!-- Gr Correlation Matrix -->
+            <button class="btn btn-info btn-lg" onclick="$('#corrmatGr').toggle();" style="margin-left:9em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.5em"></span></button>
+                <div id="corrmatGr" style="display: none">
+                <!-- enter d3 bit here -->
+                </div>
+
+            <!-- Indi Time Courses -->
+            <button class="btn btn-info btn-lg" onclick="$('#tc').toggle();" style="margin-left:4em"><img src="images/lines.PNG" class="lines"/><strong>Time Courses</strong><span class="caret" style="margin-left:7.6em"></span></button>
+                <div id="tc" style="display: none">
+                    <!-- enter d3 bit here -->
+                </div>                    
+          </div> <!-- end row -->
+
+          <div class="row"> <!-- new row within container for cluster analysis -->
+            
+            <!-- Group only: Cluster Analysis -->
+            <h4 id="clust-head"><strong>Cluster Analysis:</strong></h4>
+
+
+            <button class="btn btn-info btn-lg" onclick="$('#networkClust').toggle();" style="margin-left:33.5em"><img src="images/network.PNG" class="network"/><strong>Network Graphs</strong><span class="caret" style="margin-left:6.2em"></span></button>
+                <div id="networkClust" style="display: none">
+                <!-- enter d3 bit here -->
+                    <div id="networkClustD3" class="col-md-7"> 
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 1</strong></p></div>
+                        <div class="col-sm-3"><!--spacer div--></div>
+
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 2</strong></p></div><!--end network title-->
+
+                        <!-- D3 NETWORK CLUSTER chart goes here-->
+
+                        <!--legend colors--> <!-- close legend colors-->
+                    </div> <!-- end d3 div  #networkGrD3 -->
+
+                    <div class="col-md-4" style="margin-right:0em; margin-top:4em"> <!-- right text-->
+                        <p><strong>Project question 1:</strong></p>
+                        <p>Can we detect transient networks in resting state data?</p>
+                        <p><strong>Goal and Results:</strong></p>
+                        <p>To identify transient networks, or "clusters".</p>
+                        <p>Clusters were identified using an unsupervised clustering algorithm (Dirichlet Process Gaussian Mixture Model, or DPGMM for short). First, it found that the EPI1 was best divided into two clusters (also called centroids), or brain states, where as EPI2 only contained one cluster. </p>
+                        <p><strong>Conclusion:</strong></p>
+                        <p>EPI1 group resting state data comprises two recurring brain states over the course of nine minutes. One state (Cluster 1) consists of a highly connected framework where connectivity is increased between nodes within and between networks. The second brain state (Cluster 2) is much less connected overall. Therefore, we are able to detect transient networks using high temporal resoution.</p>
+                    </div> <!-- close right-side column for project question, goals, and conclusions -->
+                      
+                      <!--bottom section -->
+                    <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                       <div class="col-sm-3">
+                        <p style="color: #354e7f"><strong>DMN</strong></p>
+                        <p class="bottomText">Posterior Cingulate Cortex (PCCx)</p>
+                        <p class="bottomText">Angular Gyrus (AngG)</p>
+                        <p class="bottomText">Parahippocampal Cortex (ParaHC)</p>
+                       </div>
+                       <div class="col-sm-3">
+                        <p style="color: #139e9e"><strong>SN</strong></p>
+                        <p class="bottomText">Amygdala (AMY)</p>
+                        <p class="bottomText">Anterior Insula (AI)</p>
+                        <p class="bottomText">Temporoparietal Junction (TPJ)</p>
+                       </div>
+                       <div class="col-sm-3">
+                        <p style="color:#82142f"><strong>ECN</strong></p>
+                        <p class="bottomText">Anterior Cingulate Cortex (ACC)</P>
+                        <p class="bottomText">dorsal Posterior Parietal Cortex (dPPCx)</p>
+                        <p class="bottomText">dorsolateral Prefrontal Cortex (dlPFCx)</p>
+                        <p class="bottomText">Cuadate Nucleus (Caud)</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>EPI1</strong></p>
+                        <p class="bottomText">Temporal resolution: 1 second</p>
+                        <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                       </div>                       
+                    </div> <!-- close legend text at bottom of Group networks page -->
+                </div> <!-- close div id="networkClusD3" --> 
+                
+
+            <button class="btn btn-info btn-lg" onclick="$('#corrmatClust').toggle();" style="margin-left:33.5em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.5em"></span></button>
+                <div id="corrmatClust" style="display: block">
+                <!-- enter d3 bit here -->
+                    <div id="corrmatClustD3" class="col-md-7"> 
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 1</strong></p></div>
+                        <div class="col-sm-3"><!--spacer div--></div>
+
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 2</strong></p></div><!--end network title-->
+
+                        <!-- D3 CORRMAT CLUSTER (adjacency matrix) chart goes here-->
+
+                    </div> <!-- end d3 div  #corrmatClustD3 -->
+
+                    <div class="col-md-4" style="margin-right:0em; margin-top:4em"> <!-- right text-->
+                        <p><strong>Project question 1:</strong></p>
+                        <p>Can we detect transient networks in resting state data?</p>
+                        <p><strong>Goal and Results:</strong></p>
+                        <p>To identify transient networks, or "clusters".</p>
+                        <p>Clusters were identified using an unsupervised clustering algorithm (Dirichlet Process Gaussian Mixture Model, or DPGMM for short). First, it found that the EPI1 was best divided into two clusters (also called centroids), or brain states, where as EPI2 only contained one cluster. </p>
+                        <p><strong>Conclusion:</strong></p>
+                        <p>EPI1 group resting state data comprises two recurring brain states over the course of nine minutes. One state (Cluster 1) consists of a highly connected framework where connectivity is increased between nodes within and between networks. The second brain state (Cluster 2) is much less connected overall. Therefore, we are able to detect transient networks using high temporal resoution.</p>
+                    </div> <!-- close right-side column for project question, goals, and conclusions -->
+                      
+                      <!--bottom section -->
+                    <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                       <div class="col-sm-3">
+                        <p style="color: #354e7f"><strong>DMN</strong></p>
+                        <p class="bottomText">Posterior Cingulate Cortex (PCCx)</p>
+                        <p class="bottomText">Angular Gyrus (AngG)</p>
+                        <p class="bottomText">Parahippocampal Cortex (ParaHC)</p>
+                       </div>
+                       <div class="col-sm-3">
+                        <p style="color: #139e9e"><strong>SN</strong></p>
+                        <p class="bottomText">Amygdala (AMY)</p>
+                        <p class="bottomText">Anterior Insula (AI)</p>
+                        <p class="bottomText">Temporoparietal Junction (TPJ)</p>
+                       </div>
+                       <div class="col-sm-3">
+                        <p style="color:#82142f"><strong>ECN</strong></p>
+                        <p class="bottomText">Anterior Cingulate Cortex (ACC)</P>
+                        <p class="bottomText">dorsal Posterior Parietal Cortex (dPPCx)</p>
+                        <p class="bottomText">dorsolateral Prefrontal Cortex (dlPFCx)</p>
+                        <p class="bottomText">Cuadate Nucleus (Caud)</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>EPI1</strong></p>
+                        <p class="bottomText">Temporal resolution: 1 second</p>
+                        <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                       </div>                       
+                    </div> <!-- close legend text at bottom of Group networks page -->
+                </div> <!-- close div id="corrmatClust" --> 
+
+            <button class="btn btn-info btn-lg" onclick="$('#tempOrd').toggle();" style="margin-left:33.5em"><img src="images/lines.PNG" class="lines"/><strong>Temporal Ordering</strong><span class="caret" style="margin-left:5.1em"></span></button>
+                <div id="tempOrd" style="display: none">
+                <!-- enter d3 bit here -->
+                </div>
+
+            <button class="btn btn-info btn-lg" onclick="$('#tempDur').toggle();" style="margin-left:33.5em"><img src="images/lines.PNG" class="lines"/><strong>Temporal Duration</strong><span class="caret" style="margin-left:5.2em"></span></button>
+                <div id="tempDur" style="display: none">
+                <!-- enter d3 bit here -->
+                </div>
+           </div><!-- Close row   -->
+        </div> <!-- Close row 5 DATA Container -->                        
                   
 
 
@@ -251,16 +450,616 @@
             </div>
         </div>   <!-- Close Container -->
 
-		<!-- row # FOOTER --> 
-            <hr>           
-            <footer class="row">
-                    <p><small>Maryland Institute and College of Art (MICA): Information Visualization MPS</small></p>
-            </footer>
-   	</div><!-- Close container -->
+    <!-- row # FOOTER --> 
+      <hr>           
+      <footer class="row">
+              <p><small>Maryland Institute and College of Art (MICA): Information Visualization MPS</small></p>
+      </footer>
+    </div><!-- Close container -->
  
         <!-- Javascript -->
-	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <!--<script type="text/javascript" src="Indi_meanz.js"></script> //Indi meanz D3-->
+
+    <script type="text/javascript">   
+
+//D3.js Individual Mean Z-score
+function params() {
+var margin = {top: 0, right:20, bottom: 50, left: 200};                           
+var w = 750 - margin.left - margin.right;
+var h = 300 - margin.top - margin.bottom;
+  
+var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
+var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
+
+var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
+
+
+var svg = d3.select("#mean-zD3").append("svg")
+            .attr("width", w + margin.left + margin.right)
+            .attr("height", h + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+};
+
+var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#139e9e","#82142f"]);
+
+//data select from HTML dropdown:
+
+// if you intend on using jquery, here's the easy way
+// first, note, that you have to wrap your code in jquery ready call
+// i'm doing it here, but you can wrap all your code in it
+// and i'd put it all down at the bottom of the page
+
+
+$(function(){
+                          
+    var $dropdown1 = $('#EPI1');
+    
+    $dropdown1.on('change',function(make_viz){
+     var that = $(this),
+      file = that.find('option:selected').val();
+      
+      console.log(file);
+
+    var $dropdown2 = $('#EPI2');
+    
+    $dropdown2.on('change',function(make_viz2){
+     var that = $(this),
+      file2 = that.find('option:selected').val();
+      
+      console.log(file2);
+      
+    // now bring in the data from the json and fire your stuff with d3
+    if (file) { 
+      d3.json(file,function(err,data){
+        if (err) {
+          console.log(err);
+          return;
+        }
+        
+        console.log(data);
+        //make_viz();
+
+      });
+    }  //end of if(file1)
+
+    if (file2) { 
+      d3.json(file2,function(err,data2){
+        if (err) {
+          console.log(err);
+          return;
+        }
+        
+        console.log(data2);
+        //make_viz();
+
+      });
+    } //end of if(file2)    
+
+    }); //end of $dropdown2= $("EPI2")
+
+  }); //end of $dropdown1 = $("EPI1")
+
+
+// add circles for EPI1
+function make_viz() {
+  var circles = svg.selectAll("circle").data(file).enter().append("circle");
+    
+  circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
+           .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
+           .attr("r", "9")
+           .attr("fill",function(d) {return d.colours;})
+           .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
+           .attr("transform", "translate(0," + (h - xPadding) + ")")
+           .attr("transform", "translate(" + yPadding + ",0)");
+
+
+// add error bars for circles EPI1
+  var lines = svg.selectAll("line").data(file).enter().append("line");
+
+  lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
+       .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+       .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
+       .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+       .attr("stroke-width", 2)
+       .attr("stroke", function(d) {return d.colours;});
+
+
+// add squares for EPI2
+function make_viz2() {
+        var rect = svg.selectAll("rect").data(file2).enter().append("rect");
+
+        rect.attr("x", function(d,i) {return xScale(i)+40;})
+            .attr("y", function(d) {return yScale(d.values)-8})
+            .attr("width", "16")
+            .attr("height", "16")
+            .attr("fill", function(d) {return d.colours;});
+
+
+// add error bars for squares EPI2
+        var linesb = svg.selectAll("rects").data(file2).enter().append("line");
+
+        linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+             .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+             .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
+             .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+             .attr("stroke-width", 2)
+             .attr("stroke", function(d) {return d.colours;});
+
+};   //end of function make_viz2
+
+ 
+
+  svg.append("text")
+     .attr("class", "y-label")
+     .attr("transform", "rotate(-90)")
+     .attr("y", 0-40)
+     .attr("x", 0-(h/2-6))
+     .style("text-anchor", "middle")
+     .text("Mean Correlation");
+
+  svg.append("text")
+     .attr("class", "y-label")
+     .attr("transform", "rotate(-90)")
+     .attr("y", 0-10)
+     .attr("x", 0-(h/2-6))
+     .style("text-anchor", "middle")
+     .text("z-score (+/- sd)");
+
+  var xPadding = 30;
+  var yPadding = 50; 
+  svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
+  svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+
+};//end make_viz function
+}); //end of whole $function()
+
+
+
+
+
+
+
+//D3.js Group Mean Z-score
+
+function meanzgr() {
+    var margin = {top: 0, right:20, bottom: 30, left: 200};                           
+    var w = 750 - margin.left - margin.right;
+    var h = 280 - margin.top - margin.bottom;
+        
+    var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
+    var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
+
+    var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");
+    var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
+
+
+    var svg = d3.select("#mean-zGrD3").append("svg")
+                  .attr("width", w + margin.left + margin.right)
+                  .attr("height", h + margin.top + margin.bottom)
+                  .append("g")
+                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+
+// Circles EPI1
+    d3.json("js/mean-z/EPI1_Group.json", function(data) {
+        var circles = svg.selectAll("circle").data(data).enter().append("circle");
+          
+        circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
+                 .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
+                 .attr("r", "9")
+                 .attr("fill",function(d) {return color(d.key);})
+                 .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
+                 .attr("transform", "translate(0," + (h - xPadding) + ")")
+                 .attr("transform", "translate(" + yPadding + ",0)");
+
+        var lines = svg.selectAll("line").data(data).enter().append("line");
+
+        lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
+             .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+             .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
+             .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+             .attr("stroke-width", 2)
+             .attr("stroke", function(d) {return color(d.key);});
+
+// Squares EPI2
+        d3.json("js/mean-z/EPI2_Group.json", function(data) {
+
+              var rect = svg.selectAll("rect").data(data).enter().append("rect");
+
+              rect.attr("x", function(d,i) {return xScale(i)+40;})
+                  .attr("y", function(d) {return yScale(d.values)-8})
+                  .attr("width", "16")
+                  .attr("height", "16")
+                  .attr("fill", function(d) {return color(d.key);})
+                  .append("title").text(function(d) {return d.values;});
+
+              var linesb = svg.selectAll("rects").data(data).enter().append("line");
+
+              linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+                   .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+                   .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
+                   .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+                   .attr("stroke-width", 2)
+                   .attr("stroke", function(d) {return color(d.key);});
+
+     });   //end of var EPI2 = d3.json(loadData.json)
+
+        svg.append("text")
+           .attr("class", "y-label")
+           .attr("transform", "rotate(-90)")
+           .attr("y", 0-40)
+           .attr("x", 0-(h/2-6))
+           .style("text-anchor", "middle")
+           .text("Mean Correlation");
+
+        svg.append("text")
+           .attr("class", "y-label")
+           .attr("transform", "rotate(-90)")
+           .attr("y", 0-10)
+           .attr("x", 0-(h/2-6))
+           .style("text-anchor", "middle")
+           .text("z-score (+/- sd)");
+
+        svg.append("text")
+           .attr("class", "x-label")
+           .attr("transform", "translate(50," + (h-xPadding) + ")")
+           //.style("text-anchor", "middle")
+           .text("Default Mode Network (DMN)");//, function(d) {return d.colours;});
+           //.text("Salience Network (SN)", function(d) {return d.colours;})
+           //.text("Executive Control Network (ECN)", function(d) {return d.colours;});
+
+        var xPadding = 30;
+        var yPadding = 50; 
+        svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
+        svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+
+    });
+};
+meanzgr(); // Call Group Mean z
+
+
+// Make Group Network Graphs (adapted from sara.chiartosini http://jsbin.com/omokap/4/edit?html,css,js,output)
+function networkGr() {
+    var w = 355
+    var h = 380
+
+    var svg = d3.select("#networkGrD3").append("svg")
+                  .attr("width", w )
+                  .attr("height", h )
+                  .attr('preserveAspectRatio', 'xMinYMin slice') 
+                  .append("g");
+
+    var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+    var color_weight = d3.scale.linear().domain([0, 1]).range(["#FFFFFF","#000000"])
+
+
+    var force = self.force = d3.layout.force()  //this looks unusual
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .gravity(0.05).distance(100).charge(-100)
+      .size([w,h])
+      .start();
+
+    var link = svg.selectAll(".link")
+      .data(graph.links)
+      .enter().append("line")
+      .filter(function(d) {return d.weight>0.3})
+      .attr("class", "link")
+      .attr("x1", function(d) {return (d.source.x); })
+      .attr("y1", function(d) {return (d.source.y); })
+      .attr("x2", function(d) {return (d.target.x); })
+      .attr("y2", function(d) {return (d.target.y); })
+      .style("stroke-width", function(d) {return (d.weight);})
+      .style("stroke", function(d) {return color_weight(d.weight)});
+
+    var node_drag = d3.behavior.drag()
+      .on("dragstart", dragstart)
+      .on("drag", dragmove)
+      .on("dragend", dragend);
+
+    var node = svg.selectAll(".node")
+      .data(graph.nodes)
+      .enter().append("circle")
+      .attr("x", function(d) {return d.x;})
+      .attr("y", function(d) {return d.y;})
+      .attr("class", "node")
+      .attr("r", 13)
+      .style("fill", function(d) {return color(d.NW);})
+      .call(node_drag);
+  
+    function dragstart(d, i) {
+      force.stop(); // stops the force auto positioning before you start dragging
+    }
+
+    function dragmove(d, i) {
+      d.px += d3.event.dx;
+      d.py += d3.event.dy;
+      d.x += d3.event.dx;
+      d.y += d3.event.dy; 
+      tick(); 
+    }
+
+    function dragend(d, i) {
+      d.fixed = true; // of course set the node to fixed so the force doesn't include the node in its auto positioning stuff
+      tick();
+      force.resume();
+    }
+    
+    force.on("tick", tick);
+
+    function tick() {
+          link.attr("x1", function(d) {return d.source.x; })
+          .attr("y1", function(d) {return d.source.y; })
+          .attr("x2", function(d) {return d.target.x; })
+          .attr("y2", function(d) {return d.target.y; });
+
+node.attr("cx", function(d) {return d.x; })
+.attr("cy", function(d) {return d.y; })
+.append("title").text(function(d) {return d.id;});
+    } // end tick function
+  //}; // end of graphIt function
+}; //end function networkGr()
+
+
+ d3.json("js/network/EPI1_Gr_Network.json", function(error, json) {
+  if (error) return console.warn(error);
+  graph = json;
+  networkGr();
+ });
+ 
+
+ d3.json("js/network/EPI2_Gr_Network.json", function(error, json) {
+  if (error) return console.warn(error);
+  graph = json;
+  networkGr();
+ });
+
+// Make EPI1 Cluster Network Graphs
+function networkClust() {
+    var w = 355
+    var h = 380
+
+    var svg = d3.select("#networkClustD3").append("svg")
+                  .attr("width", w )
+                  .attr("height", h )
+                  .attr('preserveAspectRatio', 'xMinYMin slice') 
+                  .append("g");
+
+    var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+    var color_weight = d3.scale.linear().domain([0, 1]).range(["#FFFFFF","#000000"])
+
+
+    var force = self.force = d3.layout.force()  //this looks unusual
+      .nodes(graph.nodes)
+      .links(graph.links)
+      .gravity(0.05).distance(100).charge(-100)
+      .size([w,h])
+      .start();
+
+    var link = svg.selectAll(".link")
+      .data(graph.links)
+      .enter().append("line")
+      .filter(function(d) {return d.weight>0.3})
+      .attr("class", "link")
+      .attr("x1", function(d) {return (d.source.x); })
+      .attr("y1", function(d) {return (d.source.y); })
+      .attr("x2", function(d) {return (d.target.x); })
+      .attr("y2", function(d) {return (d.target.y); })
+      .style("stroke-width", function(d) {return (d.weight);})
+      .style("stroke", function(d) {return color_weight(d.weight)});
+
+    var node_drag = d3.behavior.drag()
+      .on("dragstart", dragstart)
+      .on("drag", dragmove)
+      .on("dragend", dragend);
+
+    var node = svg.selectAll(".node")
+      .data(graph.nodes)
+      .enter().append("circle")
+      .attr("x", function(d) {return d.x;})
+      .attr("y", function(d) {return d.y;})
+      .attr("class", "node")
+      .attr("r", 13)
+      .style("fill", function(d) {return color(d.NW);})
+      .call(node_drag);
+  
+    function dragstart(d, i) {
+      force.stop(); // stops the force auto positioning before you start dragging
+    }
+
+    function dragmove(d, i) {
+      d.px += d3.event.dx;
+      d.py += d3.event.dy;
+      d.x += d3.event.dx;
+      d.y += d3.event.dy; 
+      tick(); 
+    }
+
+    function dragend(d, i) {
+      d.fixed = true; // of course set the node to fixed so the force doesn't include the node in its auto positioning stuff
+      tick();
+      force.resume();
+    }
+    
+    force.on("tick", tick);
+
+    function tick() {
+          link.attr("x1", function(d) {return d.source.x; })
+          .attr("y1", function(d) {return d.source.y; })
+          .attr("x2", function(d) {return d.target.x; })
+          .attr("y2", function(d) {return d.target.y; });
+
+node.attr("cx", function(d) {return d.x; })
+.attr("cy", function(d) {return d.y; })
+.append("title").text(function(d) {return d.id;});
+    } // end tick function
+}; //end function networkClust()
+
+
+ d3.json("js/network/EPI1_Clust0_Network.json", function(error, json) {
+  if (error) return console.warn(error);
+  graph = json;
+  networkClust();
+ });
+ 
+
+ d3.json("js/network/EPI1_Clust1_Network.json", function(error, json) {
+  if (error) return console.warn(error);
+  graph = json;
+  networkClust();
+ });
+
+
+
+
+// // Adjacency Matrix for Clusters (adapted from Bostock)
+
+// function clust() {
+//     var margin = {top: 30, right: 0, bottom: 30, left: 0};
+//     var width = 300;
+//     var height = 300;
+
+//     var x = d3.scale.ordinal().rangeBands([0, width]);  //seems like to make grid, dividing space equally within width
+//     var z = d3.scale.linear().domain([0, 4]); //translates to count here...lets make it weight!  .clamp(true) ??
+//     var c = d3.scale.category10().domain(d3.range(10));  //this needs to be linear??
+
+//     var svg = d3.select("#corrmatClustD3").append("svg")
+//         .attr("width", width + margin.left + margin.right)
+//         .attr("height", height + margin.top + margin.bottom)
+//         .style("margin-left", -margin.left + "px")
+//         .append("g")
+//         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//     d3.json("js/network/EPI1_Clust0_Network.json", function(clust) {
+//       var matrix = [],
+//           nodes = clust.nodes,
+//           n = nodes.length;
+
+//       // Compute index per node.
+//       nodes.forEach(function(node, i) {
+//         node.index = i;
+//         node.weight = k;
+//         matrix[i] = d3.range(n).map(function(j) { return {x: j, y: i, z: k}; });
+//       });
+
+//       // Convert links to matrix; count character occurrences.
+//       clust.links.forEach(function(link) {
+//         matrix[link.source][link.target].z += link.weight;
+//         matrix[link.target][link.source].z += link.weight;
+//         matrix[link.source][link.source].z += link.weight;
+//         matrix[link.target][link.target].z += link.weight;
+//         //nodes[link.source].count += link.weight; //do i need these? not calculating "count"
+//         //nodes[link.target].count += link.weight;
+//       });
+
+//       // Precompute the orders.
+//       var orders = {
+//         id: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].id, nodes[b].id); }) //changed "name" to "id"
+//         Weight: d3.range(n).sort(function(a, b) { return nodes[b].weight - nodes[a].weight; }), //changed "count" to "weight"
+//         NW: d3.range(n).sort(function(a, b) { return nodes[b].NW - nodes[a].NW; }) //changed "group" to "NW"
+//       };
+
+//       // The default sort order.
+//       x.domain(orders.NW);  //i want the default to be in networks, not id
+
+//       svg.append("rect")
+//           .attr("class", "background")
+//           .attr("width", width)
+//           .attr("height", height);
+
+//       var row = svg.selectAll(".row")
+//           .data(matrix)
+//           .enter().append("g")
+//           .attr("class", "row")
+//           .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })  //i think this is repeated items in axis x along rows
+//           .each(row);
+
+//       row.append("line")
+//           .attr("x2", width);
+
+//       row.append("text")
+//           .attr("x", -6)
+//           .attr("y", x.rangeBand() / 2)
+//           .attr("dy", ".32em")
+//           .attr("text-anchor", "end")
+//           .text(function(d, i) { return nodes[i].id; }); //adding text labels along x axis
+
+//       var column = svg.selectAll(".column")
+//           .data(matrix)
+//           .enter().append("g")
+//           .attr("class", "column")
+//           .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; }); 
    
+//       column.append("line")
+//           .attr("x1", -width);
+
+//       column.append("text")
+//           .attr("x", 6)
+//           .attr("y", x.rangeBand() / 2)
+//           .attr("dy", ".32em")
+//           .attr("text-anchor", "start")
+//           .text(function(d, i) { return nodes[i].id; }); //adding text labels along columns
+
+//       function row(row) {
+//         var cell = d3.select(this).selectAll(".cell")
+//             .data(row.filter(function(d) { return d.z; }))
+//             .enter().append("rect")
+//             .attr("class", "cell")
+//             .attr("x", function(d) { return x(d.x); })
+//             .attr("width", x.rangeBand())
+//             .attr("height", x.rangeBand())
+//             .style("fill-opacity", function(d) { return z(d.z); })
+//             .style("fill", function(d) { return nodes[d.x].group == nodes[d.y].group ? c(nodes[d.x].group) : null; })
+//             .on("mouseover", mouseover)
+//             .on("mouseout", mouseout);
+//       }
+
+//       function mouseover(p) {
+//         d3.selectAll(".row text").classed("active", function(d, i) { return i == p.y; });
+//         d3.selectAll(".column text").classed("active", function(d, i) { return i == p.x; });
+//       }
+
+//       function mouseout() {
+//         d3.selectAll("text").classed("active", false);
+//       }
+
+//       d3.select("#order").on("change", function() {
+//         clearTimeout(timeout);
+//         order(this.value);
+//       });
+
+//       function order(value) {
+//         x.domain(orders[value]);
+
+//         var t = svg.transition().duration(2500);
+
+//         t.selectAll(".row")
+//             .delay(function(d, i) { return x(i) * 4; })
+//             .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
+//           .selectAll(".cell")
+//             .delay(function(d) { return x(d.x) * 4; })
+//             .attr("x", function(d) { return x(d.x); });
+
+//         t.selectAll(".column")
+//             .delay(function(d, i) { return x(i) * 4; })
+//             .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+//       }
+
+//       var timeout = setTimeout(function() {
+//         order("group");
+//         d3.select("#order").property("selectedIndex", 2).node().focus();
+//       }, 5000);
+//     }); //end of "json" file function
+
+// }; //end function clust0()
+
+// clust();  //run function clust0()
+
+  </script>
 </body>
-</html>	
+</html> 
