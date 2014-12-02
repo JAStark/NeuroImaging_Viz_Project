@@ -464,7 +464,7 @@
 
     <script type="text/javascript">   
 
-//D3.js Individual Mean Z-score
+// //D3.js Individual Mean Z-score
 function params() {
 var margin = {top: 0, right:20, bottom: 50, left: 200};                           
 var w = 750 - margin.left - margin.right;
@@ -623,7 +623,7 @@ function make_viz2() {
 
 
 
-//D3.js Group Mean Z-score
+// //D3.js Group Mean Z-score
 
 function meanzgr() {
     var margin = {top: 0, right:20, bottom: 30, left: 200};                           
@@ -723,7 +723,7 @@ function meanzgr() {
 meanzgr(); // Call Group Mean z
 
 
-// Make Group Network Graphs (adapted from sara.chiartosini http://jsbin.com/omokap/4/edit?html,css,js,output)
+// // Make Group Network Graphs (adapted from sara.chiartosini http://jsbin.com/omokap/4/edit?html,css,js,output)
 function networkGr() {
     var w = 355
     var h = 380
@@ -819,7 +819,7 @@ node.attr("cx", function(d) {return d.x; })
   networkGr();
  });
 
-// Make EPI1 Cluster Network Graphs
+// // Make EPI1 Cluster Network Graphs
 function networkClust() {
     var w = 355
     var h = 380
@@ -831,7 +831,7 @@ function networkClust() {
                   .append("g");
 
     var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
-    var color_weight = d3.scale.linear().domain([0, 1]).range(["#FFFFFF","#000000"])
+    var color_weight = d3.scale.linear().domain([-0.5, 0.8]).range(["#FFFFFF","#000000"])
 
 
     var force = self.force = d3.layout.force()  //this looks unusual
@@ -850,8 +850,8 @@ function networkClust() {
       .attr("y1", function(d) {return (d.source.y); })
       .attr("x2", function(d) {return (d.target.x); })
       .attr("y2", function(d) {return (d.target.y); })
-      .style("stroke-width", function(d) {return (d.weight);})
-      .style("stroke", function(d) {return color_weight(d.weight)});
+      .style("stroke-width", function(d) {return (d.weight*d.weight);})
+      .style("stroke", function(d) {return color_weight(d.weight*d.weight)});
 
     var node_drag = d3.behavior.drag()
       .on("dragstart", dragstart)
@@ -917,148 +917,178 @@ node.attr("cx", function(d) {return d.x; })
 
 
 
-// // Adjacency Matrix for Clusters (adapted from Bostock)
+// Adjacency Matrix for Clusters (adapted from Bostock)
 
-// function clust() {
-//     var margin = {top: 30, right: 0, bottom: 30, left: 0};
-//     var width = 300;
-//     var height = 300;
+function make_adjMat() {
+    var margin = {top: 100, right: 100, bottom: 30, left: 200},
+        width = 255,
+        height = 255;
 
-//     var x = d3.scale.ordinal().rangeBands([0, width]);  //seems like to make grid, dividing space equally within width
-//     var z = d3.scale.linear().domain([0, 4]); //translates to count here...lets make it weight!  .clamp(true) ??
-//     var c = d3.scale.category10().domain(d3.range(10));  //this needs to be linear??
+    var x = d3.scale.ordinal().rangeBands([0, width]),
+        z = d3.scale.linear().domain([1, -1]).clamp(true),
+        c = d3.scale.category10().domain(d3.range(10));
+        //c = d3.scale.linear().domain([0,1]).range(["#FFFFFF","#000000"]);
 
-//     var svg = d3.select("#corrmatClustD3").append("svg")
-//         .attr("width", width + margin.left + margin.right)
-//         .attr("height", height + margin.top + margin.bottom)
-//         .style("margin-left", -margin.left + "px")
-//         .append("g")
-//         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+    var svg = d3.select("#corrmatClustD3").append("svg")
+        .attr("width", width + margin.left + margin.right)
+        .attr("height", height + margin.top + margin.bottom)
+        .style("margin-left", -margin.left + "px")
+      .append("g")
+        .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-//     d3.json("js/network/EPI1_Clust0_Network.json", function(clust) {
-//       var matrix = [],
-//           nodes = clust.nodes,
-//           n = nodes.length;
+   // d3.json("js/corrmat/EPI1_Clust0_corrmat.json", function(json) {
 
-//       // Compute index per node.
-//       nodes.forEach(function(node, i) {
-//         node.index = i;
-//         node.weight = k;
-//         matrix[i] = d3.range(n).map(function(j) { return {x: j, y: i, z: k}; });
-//       });
+      var matrix = [],
+          nodes = data.nodes,
+          n = nodes.length;
+       //   lilnkstotal = 0;
 
-//       // Convert links to matrix; count character occurrences.
-//       clust.links.forEach(function(link) {
-//         matrix[link.source][link.target].z += link.weight;
-//         matrix[link.target][link.source].z += link.weight;
-//         matrix[link.source][link.source].z += link.weight;
-//         matrix[link.target][link.target].z += link.weight;
-//         //nodes[link.source].count += link.weight; //do i need these? not calculating "count"
-//         //nodes[link.target].count += link.weight;
-//       });
+      // Compute index per node.
+      nodes.forEach(function(node, i) {
+        node.index = i; 
+        //node.weight = 0; //pretty sure this does nothing in this script
+        matrix[i] = d3.range(n).map(function(j) { return {x: j, y: i, z: 0}; });
+      });
 
-//       // Precompute the orders.
-//       var orders = {
-//         id: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].id, nodes[b].id); }) //changed "name" to "id"
-//         Weight: d3.range(n).sort(function(a, b) { return nodes[b].weight - nodes[a].weight; }), //changed "count" to "weight"
-//         NW: d3.range(n).sort(function(a, b) { return nodes[b].NW - nodes[a].NW; }) //changed "group" to "NW"
-//       };
+      // Convert links to matrix; count character occurrences.
+      data.links.forEach(function(link) {
+        //if ((link.source < n) && (link.target < n)) {
+        matrix[link.source][link.target].z += link.weight;
+        matrix[link.target][link.source].z += link.weight;
+        matrix[link.source][link.source].z += link.weight;
+        matrix[link.target][link.target].z += link.weight;
+       // linkstotal += 1;
+      //}
+       //nodes[link.source].weight = link.weight;
+       //nodes[link.target].weight = link.weight;
+      });
 
-//       // The default sort order.
-//       x.domain(orders.NW);  //i want the default to be in networks, not id
+      // Precompute the orders.
+      var orders = {
+        id: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].id, nodes[b].id); }),
+        //count: d3.range(n).sort(function(a, b) { return nodes[b].count - nodes[a].count; }),
+        //NW: d3.range(n).sort(function(a, b) { return nodes[b].NW - nodes[a].NW; })
+        NW: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].NW, nodes[b].NW); }),
+        weight: d3.range(n).sort(function(a, b) {return nodes[b].weight - nodes[a].weight;}),
+        order: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].order, nodes[b].order); })
+      };
 
-//       svg.append("rect")
-//           .attr("class", "background")
-//           .attr("width", width)
-//           .attr("height", height);
+      // The default sort order.
+      x.domain(orders.order); //how to make it sort order NW first, and then further sort by alphabet ("id") (ignoring "l" and "r")
 
-//       var row = svg.selectAll(".row")
-//           .data(matrix)
-//           .enter().append("g")
-//           .attr("class", "row")
-//           .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })  //i think this is repeated items in axis x along rows
-//           .each(row);
+      svg.append("rect")
+          .attr("class", "background")
+          .attr("width", width)
+          .attr("height", height);
 
-//       row.append("line")
-//           .attr("x2", width);
+      var row = svg.selectAll(".row")
+          .data(matrix)
+        .enter().append("g")
+          .attr("class", "row")
+          .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
+          .each(row);
 
-//       row.append("text")
-//           .attr("x", -6)
-//           .attr("y", x.rangeBand() / 2)
-//           .attr("dy", ".32em")
-//           .attr("text-anchor", "end")
-//           .text(function(d, i) { return nodes[i].id; }); //adding text labels along x axis
+      row.append("line")
+          .attr("x2", width);
 
-//       var column = svg.selectAll(".column")
-//           .data(matrix)
-//           .enter().append("g")
-//           .attr("class", "column")
-//           .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; }); 
-   
-//       column.append("line")
-//           .attr("x1", -width);
+    var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+    var color_weight = d3.scale.linear().domain([0, 1]).range(["green", "orange","red"]);
+    //var q = d3.scale.quantile().domain([-1,1]).range([0, 25, 50, 75, 100]);
 
-//       column.append("text")
-//           .attr("x", 6)
-//           .attr("y", x.rangeBand() / 2)
-//           .attr("dy", ".32em")
-//           .attr("text-anchor", "start")
-//           .text(function(d, i) { return nodes[i].id; }); //adding text labels along columns
+      row.append("text")
+          .attr("x", -6)
+          .attr("y", x.rangeBand() / 2)
+          .attr("dy", ".32em")
+          .attr("text-anchor", "end")
+          .text(function(d, i) { return nodes[i].id; });
+          //.style("fill", function(d, i) {return color(nodes[i].NW);});
 
-//       function row(row) {
-//         var cell = d3.select(this).selectAll(".cell")
-//             .data(row.filter(function(d) { return d.z; }))
-//             .enter().append("rect")
-//             .attr("class", "cell")
-//             .attr("x", function(d) { return x(d.x); })
-//             .attr("width", x.rangeBand())
-//             .attr("height", x.rangeBand())
-//             .style("fill-opacity", function(d) { return z(d.z); })
-//             .style("fill", function(d) { return nodes[d.x].group == nodes[d.y].group ? c(nodes[d.x].group) : null; })
-//             .on("mouseover", mouseover)
-//             .on("mouseout", mouseout);
-//       }
+      var column = svg.selectAll(".column")
+          .data(matrix)
+        .enter().append("g")
+          .attr("class", "column")
+          .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
 
-//       function mouseover(p) {
-//         d3.selectAll(".row text").classed("active", function(d, i) { return i == p.y; });
-//         d3.selectAll(".column text").classed("active", function(d, i) { return i == p.x; });
-//       }
+      column.append("line")
+          .attr("x1", -width);
 
-//       function mouseout() {
-//         d3.selectAll("text").classed("active", false);
-//       }
+      column.append("text")
+          .attr("x", 6)
+          .attr("y", x.rangeBand() / 2)
+          .attr("dy", ".32em")
+          .attr("text-anchor", "start")
+          .text(function(d, i) { return nodes[i].id; });
+          //.style("fill", function(d, i) {return color(nodes[i].NW);});
 
-//       d3.select("#order").on("change", function() {
-//         clearTimeout(timeout);
-//         order(this.value);
-//       });
+      function row(row) {
+        var cell = d3.select(this).selectAll(".cell")
+            .data(row.filter(function(d) { return d.z; }))
+            .enter().append("rect")
+            .attr("class", "cell")
+            .attr("x", function(d) { return x(d.x); })
+            .attr("width", x.rangeBand())
+            .attr("height", x.rangeBand())
+            .style("fill-opacity", function(d) { return z(d.z); }) //right now THIS is mapping to weight value
+            //.style("fill", function(d) { return nodes[d.x].weight == nodes[d.y].weight ? c(nodes[d.x].weight) : null; })  //was by "group" (categorical) Changed "c" to linear
+            .style("fill", "red")
+            .on("mouseover", mouseover)
+            .on("mouseout", mouseout);
+      }
 
-//       function order(value) {
-//         x.domain(orders[value]);
+      function mouseover(p) {
+        d3.selectAll(".row text").classed("active", function(d, i) { return i == p.y; });
+        d3.selectAll(".column text").classed("active", function(d, i) { return i == p.x; });
+      }
 
-//         var t = svg.transition().duration(2500);
+      function mouseout() {
+        d3.selectAll("text").classed("active", false);
+      }
 
-//         t.selectAll(".row")
-//             .delay(function(d, i) { return x(i) * 4; })
-//             .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
-//           .selectAll(".cell")
-//             .delay(function(d) { return x(d.x) * 4; })
-//             .attr("x", function(d) { return x(d.x); });
+      d3.select("#order").on("change", function() {
+        clearTimeout(timeout);
+        order(this.value);
+      });
 
-//         t.selectAll(".column")
-//             .delay(function(d, i) { return x(i) * 4; })
-//             .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
-//       }
+      function order(value) {
+        x.domain(orders[value]);
 
-//       var timeout = setTimeout(function() {
-//         order("group");
-//         d3.select("#order").property("selectedIndex", 2).node().focus();
-//       }, 5000);
-//     }); //end of "json" file function
+        var t = svg.transition().duration(2500);
 
-// }; //end function clust0()
+        t.selectAll(".row")
+            .delay(function(d, i) { return x(i) * 4; })
+            .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
+          .selectAll(".cell")
+            .delay(function(d) { return x(d.x) * 4; })
+            .attr("x", function(d) { return x(d.x); });
 
-// clust();  //run function clust0()
+        t.selectAll(".column")
+            .delay(function(d, i) { return x(i) * 4; })
+            .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+      }
+
+      var timeout = setTimeout(function() {
+        order("order");
+        d3.select("#order").property("selectedIndex", 2).node().focus();
+      }, 5000);
+
+  //  });  //end of json load function
+};  // end make_adjMat() function
+
+//make_adjMat();
+
+ d3.json("js/corrmat/EPI1_Clust0_corrmat.json", function(error, json) {
+  if (error) return console.warn(error);
+  data = json;
+  make_adjMat();
+ });
+ 
+
+ d3.json("js/corrmat/EPI1_Clust1_corrmat.json", function(error, json) {
+  if (error) return console.warn(error);
+  data = json;
+  make_adjMat();
+ });
+
 
   </script>
 </body>

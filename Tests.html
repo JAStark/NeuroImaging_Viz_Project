@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="custom.css"/>
+    <title>Neuroimaging visualization</title>
+  </head>
+  <body>
+      <div class="container-fluid">
+        <!-- row 1 HEADER LOGO AND PAGE TITLE SUBTITLE -->
+            <header class="row">
+                <div class="col-lg-12" class="intro">
+                    <h1>Visualizing Human Neuroimaging Data</h1>
+                    <h4><strong>Exploring transient networks in the brain using novel neuroimaging techniques</strong></h4>
+                </div>               
+            </header>
+        </div> <!-- Close container -->
+            
+        <!-- row 2 LANDING PAGE: PROJECT, DATA, ANALYSIS AND VISUALIZATIONS BRIEF INTRO INFO -->      
+        <div class="container" style="margin-left:10em">
+      <!-- Row of columns -->
+            <div class="row" style="background-color:#D0DADD;" id="jumbo">
+                <div class="col-sm-3" style="margin-left: 4em">
+                    <h3>Project Goals</h3>
+                    <p>1: Can we detect transient networks in resting state data?</p>
+                    <p>"Resting state" referfs ro MRI scans where the participant is asked to lie still and awake, and think of nothing in particular.</p>
+                    <p>2: Which data-collection method is best? See "Data" for more information on the data collection methods</p>
+                    <p><a class="btn btn-default" href="#" role="button">View Results &raquo;</a></p>
+                </div>
+                <div class="col-sm-3" style="margin-left: 6em">
+                    <h3>Data</h3>
+                    <p>Multiband EPI is a new method used to collect whole brain volumes in a significantly shorter time frame, and/or finer spatial detail.</p>
+                    <p>Here, we collected one high-temporal resolution (1 second, voxel size 2.2<sup>3</sup>mm squared) and one high-spatial resolution (2 seconds,voxel size 1.5<sup>3</sup>mm squared) dataset from each participant.</p>
+                    <br>
+                    <p><a class="btn btn-default" href="#" role="button">View Details &raquo;</a></p>
+                </div>
+                <div class="col-sm-3" style="margin-left: 6em">
+                    <h3>Analysis and Visualizations</h3>
+                    <p>Several types of analysis was performed on this data, including network analysis focussing on the default mode, executive control, and salience networks; cluster analysis, and temporal ordering</p>
+                    <p>Visualization approaches include network graphs, matrices/heat maps, and time courses (line graphs).</p>
+                    <p><a class="btn btn-default" href="#" role="button">View Results &raquo;</a></p>
+                </div>
+            </div>
+        </div><!-- Close Container 2 -->
+
+        <!-- row 3 ANALYSIS AND VISUALIZATIONS -->  
+        <div class="container" style="margin-left:10em">
+            <header class="row">
+                <h2 >Analysis and Visualizations</h2>                
+            </header>
+        </div> <!-- close 3 Header containing -->
+
+        <!-- row 4 INDIVIDUAL and GROUP data subheadings -->
+        <div class="container" style="margin-left:10em">
+            <div class="row">
+                <div class="col-md-5"><h3 style="text-align:center; color: #B8ABA1;">Individual data</h3></div>
+                <div class="col-md-5 col-md-offset-1"><h3 style="text-align:center; color: #B8ABA1">Group data</h3></div>
+            </div> <!-- close row -->
+        </div> <!-- Close Container 4 -->
+
+        <!-- row 5 DATA BUTTONS -->
+        <div class="container" style="margin-left:10em">
+          <div class="row">
+
+            <!-- Indi Mean z-score -->
+            <button class="btn btn-info btn-lg" onclick="$('#mean-z').toggle();" style="margin-left:4em"><img src="images/mean-z.PNG" class="z-score"/><strong>Mean Network Z-Scores</strong><span class="caret" style="margin-left:3em"></span></button>
+                <div id="mean-z" style="display: none">
+                    <div id="mean-zD3" class="col-md-7"> 
+                        <div class="col-sm-3" style="margin-top: 2em; margin-left:7em; margin-bottom:2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>Select Dataset</strong></p></div>
+                        <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
+                            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/mean-z.PNG" class="selectDataset"/><strong>EPI1</strong><span class="caret" style="margin-left:0.5em"></span></button>-->
+                            <select id="EPI1">
+                              <option>EPI1</option>                                     
+                              <option value="js/mean-z/EPI1_103.json" class="data">Subject 103</option>
+                              <option value="js/mean-z/EPI1_108.json"class="data">Subject 108</option>
+                            </select>
+                        </div><!--end dropdown EPI1-->
+
+                        <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
+                            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/sq_symbol.PNG" class="selectDataset"/><strong>EPI2</strong><span class="caret" style="margin-left:0.5em"></span></button>-->
+                            <select id="EPI2">
+                              <option>EPI2</option>                              
+                              <option value="js/mean-z/EPI2_103.json" >Subject 103</option>
+                              <option value="js/mean-z/EPI2_108.json">Subject 108</option>
+                            </select>
+                        </div><!--end dropdown EPI2-->
+
+                        
+
+                    </div> <!-- end d3 div -->
+                    
+                    <div class="col-md-4" style="margin-right:5em; margin-top:4em"> <!-- right text-->
+                        <p><strong>Project questions 2:</strong></p>
+                        <p>Which data-collection method is the best?</p>
+                        <p><strong>Goal:</strong></p>
+                        <p>To assess data quality in terms of correlation strength within each network.</p>
+                        <p>Higher mean values indicates that the brain regions comprising that network are communicating well with each other.</p>
+                        <p>Higher standard deviation values (longer lines) means that there is more variance within the network, and that brain regions
+                          comprising the network are not communicating well with each other.</p>
+                        <p><strong>Conclusion:</strong></p>
+                        <p>Subjects 105 and 107 had terrible means (close to zero) and high standard deviations, resulting in those data being excluded from 
+                          Group analysis for both EPI1 and EPI2.</p>
+                      </div> <!-- close right-side column for project question, goals, and conclusions -->
+                      
+                      <!--bottom section -->
+                      <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                         <div class="col-sm-2 col-sm-offset-1">
+                          <p><strong>EPI1</strong></p>
+                          <p class="bottomText">Temporal resolution: 1 second</p>
+                          <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>EPI2</strong></p>
+                          <p class="bottomText">Temporal resolution: 2 seconds</p>
+                          <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>DMN</strong></p>
+                          <p class="bottomText">Posterior Cingulate Cortex</p>
+                          <p class="bottomText">Angular Gyrus</p>
+                          <p class="bottomText">Parahippocampal Cortex</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>SN</strong></p>
+                          <p class="bottomText">Amygdala</p>
+                          <p class="bottomText">Anterior Insula</p>
+                          <p class="bottomText">Temporoparietal Junction</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p><strong>ECN</strong></p>
+                          <p class="bottomText">Anterior Cingulate Cortex</P>
+                          <p class="bottomText">dorsal Posterior Parietal Cortex</p>
+                          <p class="bottomText">dorsolateral Prefrontal Cortex</p>
+                          <p class="bottomText">Cuadate Nucleus</p>
+                         </div>
+                      </div> <!-- close legend text at bottom of means network z-scores page -->
+                </div> <!-- close div id="mean-z" -->
+
+
+            <button class="btn btn-info btn-lg" onclick="$('#corrmatClust').toggle();" style="margin-left:33.5em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.5em"></span></button>
+                <div id="corrmatClust" style="display: block">
+                <!-- enter d3 bit here -->
+                    <div id="corrmatClustD3" class="col-md-7"> 
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 1</strong></p></div>
+                        <div class="col-sm-3"><!--spacer div--></div>
+
+                        <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 2</strong></p></div><!--end network title-->
+
+                        <!-- D3 CORRMAT CLUSTER (adjacency matrix) chart goes here-->
+
+                    </div> <!-- end d3 div  #corrmatClustD3 -->
+
+                    <div class="col-md-4" style="margin-right:0em; margin-top:4em"> <!-- right text-->
+                        <p><strong>Project question 1:</strong></p>
+                        <p>Can we detect transient networks in resting state data?</p>
+                        <p><strong>Goal and Results:</strong></p>
+                        <p>To identify transient networks, or "clusters".</p>
+                        <p>Clusters were identified using an unsupervised clustering algorithm (Dirichlet Process Gaussian Mixture Model, or DPGMM for short). First, it found that the EPI1 was best divided into two clusters (also called centroids), or brain states, where as EPI2 only contained one cluster. </p>
+                        <p><strong>Conclusion:</strong></p>
+                        <p>EPI1 group resting state data comprises two recurring brain states over the course of nine minutes. One state (Cluster 1) consists of a highly connected framework where connectivity is increased between nodes within and between networks. The second brain state (Cluster 2) is much less connected overall. Therefore, we are able to detect transient networks using high temporal resoution.</p>
+                    </div> <!-- close right-side column for project question, goals, and conclusions -->
+                      
+                      <!--bottom section -->
+                    <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                       <div class="col-sm-3">
+                        <p style="color: #354e7f"><strong>DMN</strong></p>
+                        <p class="bottomText">Posterior Cingulate Cortex (PCCx)</p>
+                        <p class="bottomText">Angular Gyrus (AngG)</p>
+                        <p class="bottomText">Parahippocampal Cortex (ParaHC)</p>
+                       </div>
+                       <div class="col-sm-3">
+                        <p style="color:#82142f"><strong>ECN</strong></p>
+                        <p class="bottomText">Anterior Cingulate Cortex (ACC)</P>
+                        <p class="bottomText">dorsal Posterior Parietal Cortex (dPPCx)</p>
+                        <p class="bottomText">dorsolateral Prefrontal Cortex (dlPFCx)</p>
+                        <p class="bottomText">Cuadate Nucleus (Caud)</p>
+                       </div>
+                       <div class="col-sm-3">
+                        <p style="color: #139e9e"><strong>SN</strong></p>
+                        <p class="bottomText">Amygdala (AMY)</p>
+                        <p class="bottomText">Anterior Insula (AI)</p>
+                        <p class="bottomText">Temporoparietal Junction (TPJ)</p>
+                       </div>                       
+                       <div class="col-sm-2">
+                        <p><strong>EPI1</strong></p>
+                        <p class="bottomText">Temporal resolution: 1 second</p>
+                        <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                       </div>                       
+                    </div> <!-- close legend text at bottom of Group networks page -->
+                </div> <!-- close div id="corrmatClust" --> 
+
+           </div><!-- Close row   -->
+        </div> <!-- Close row 5 DATA Container -->                        
+                  
+
+
+                </div>
+            </div>
+        </div>   <!-- Close Container -->
+
+    <!-- row # FOOTER --> 
+      <hr>           
+      <footer class="row">
+              <p><small>Maryland Institute and College of Art (MICA): Information Visualization MPS</small></p>
+      </footer>
+    </div><!-- Close container -->
+ 
+        <!-- Javascript -->
+  <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="d3/d3.js"></script>
+    <script type="text/javascript"> 
+
+
+function make_adjMat() {
+var margin = {top: 100, right: 100, bottom: 30, left: 200},
+    width = 250,
+    height = 250;
+
+var x = d3.scale.ordinal().rangeBands([0, width]),
+    z = d3.scale.linear().domain([0, 1]).clamp(true),
+    c = d3.scale.category10().domain(d3.range(0,10));
+    //c = d3.scale.linear().domain([0,1]).range(["#FFFFFF","#000000"]);
+
+var svg = d3.select("#corrmatClustD3").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .style("margin-left", -margin.left + "px")
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+//d3.json("js/corrmat/EPI1_Clust1_corrmat.json", function(miserables) {
+
+  var matrix = [],
+      nodes = miserables.nodes,
+      n = nodes.length;
+   //   lilnkstotal = 0;
+
+  // Compute index per node.
+  nodes.forEach(function(node, i) {
+    node.index = i; 
+    //node.weight = 0; //pretty sure this does nothing in this script
+    matrix[i] = d3.range(n).map(function(j) { return {x: j, y: i, z: 0}; });
+  });
+
+  // Convert links to matrix; count character occurrences.
+  miserables.links.forEach(function(link) {
+    //if ((link.source < n) && (link.target < n)) {
+    matrix[link.source][link.target].z += link.weight;
+    matrix[link.target][link.source].z += link.weight;
+    matrix[link.source][link.source].z += link.weight;
+    matrix[link.target][link.target].z += link.weight;
+   // linkstotal += 1;
+  //}
+   //nodes[link.source].weight = link.weight;
+   //nodes[link.target].weight = link.weight;
+  });
+
+  // Precompute the orders.
+  var orders = {
+    id: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].id, nodes[b].id); }),
+    //count: d3.range(n).sort(function(a, b) { return nodes[b].count - nodes[a].count; }),
+    //NW: d3.range(n).sort(function(a, b) { return nodes[b].NW - nodes[a].NW; })
+    NW: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].NW, nodes[b].NW); }),
+    weight: d3.range(n).sort(function(a, b) {return nodes[b].weight - nodes[a].weight;})
+  };
+
+  // The default sort order.
+  x.domain(orders.NW); //how to make it sort order NW first, and then further sort by alphabet ("id") (ignoring "l" and "r")
+
+  svg.append("rect")
+      .attr("class", "background")
+      .attr("width", width)
+      .attr("height", height);
+
+  var row = svg.selectAll(".row")
+      .data(matrix)
+    .enter().append("g")
+      .attr("class", "row")
+      .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
+      .each(row);
+
+  row.append("line")
+      .attr("x2", width);
+
+var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+var color_weight = d3.scale.linear().domain([0, 1]).range(["#FFFFFF","#000000"])
+
+  row.append("text")
+      .attr("x", -6)
+      .attr("y", x.rangeBand() / 2)
+      .attr("dy", ".32em")
+      .attr("text-anchor", "end")
+      .text(function(d, i) { return nodes[i].id; })
+      .style("fill", function(d, i) {return color(nodes[i].NW);});
+
+  var column = svg.selectAll(".column")
+      .data(matrix)
+    .enter().append("g")
+      .attr("class", "column")
+      .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+
+  column.append("line")
+      .attr("x1", -width);
+
+  column.append("text")
+      .attr("x", 6)
+      .attr("y", x.rangeBand() / 2)
+      .attr("dy", ".32em")
+      .attr("text-anchor", "start")
+      .text(function(d, i) { return nodes[i].id; })
+      .style("fill", function(d, i) {return color(nodes[i].NW);});
+
+  function row(row) {
+    var cell = d3.select(this).selectAll(".cell")
+        .data(row.filter(function(d) { return d.z; }))
+        .enter().append("rect")
+        .attr("class", "cell")
+        .attr("x", function(d) { return x(d.x); })
+        .attr("width", x.rangeBand())
+        .attr("height", x.rangeBand())
+        .style("fill-opacity", function(d) { return z(d.z); }) //right now THIS is mapping to weight value
+        .style("fill", function(d) { return nodes[d.x].weight == nodes[d.y].weight ? c(nodes[d.x].weight) : null; })  //was by "group" (categorical) Changed "c" to linear
+        .on("mouseover", mouseover)
+        .on("mouseout", mouseout);
+  }
+
+  function mouseover(p) {
+    d3.selectAll(".row text").classed("active", function(d, i) { return i == p.y; });
+    d3.selectAll(".column text").classed("active", function(d, i) { return i == p.x; });
+  }
+
+  function mouseout() {
+    d3.selectAll("text").classed("active", false);
+  }
+
+  d3.select("#order").on("change", function() {
+    clearTimeout(timeout);
+    order(this.value);
+  });
+
+  function order(value) {
+    x.domain(orders[value]);
+
+    var t = svg.transition().duration(2500);
+
+    t.selectAll(".row")
+        .delay(function(d, i) { return x(i) * 4; })
+        .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
+      .selectAll(".cell")
+        .delay(function(d) { return x(d.x) * 4; })
+        .attr("x", function(d) { return x(d.x); });
+
+    t.selectAll(".column")
+        .delay(function(d, i) { return x(i) * 4; })
+        .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+  }
+
+  var timeout = setTimeout(function() {
+    order("NW");
+    d3.select("#order").property("selectedIndex", 2).node().focus();
+  }, 5000);
+//}); //end of load json function
+}; // end of make_adjMat function
+
+ d3.json("js/corrmat/EPI1_Clust0_Network.json", function(json) {
+  //if (error) return console.warn(error);
+  //graph = json;
+  make_adjMat();
+ });
+
+
+
+
+
+
+// from https://gist.github.com/emeeks/9441864
+  
+//   function adjacency() {
+
+//     // queue()
+//     // .defer(d3.json, "js/corrmat/EPI1_Clust1_nodes.json")
+//     // .defer(d3.json, "js/corrmat/EPI1_Clust1_links.json")
+//     // .await(function(error, file1, file2) { createAdjacencyMatrix(file1, file2); });
+    
+// var svg = d3.select("#corrmatClustD3").append("svg");
+
+//       queue()
+//       .defer(d3.json("js/corrmat/EPI1_Clust1_nodes.json", function(error, json) {
+//         if (error) return console.warn(error);
+//        });)
+//       .defer(d3.json("js/corrmat/EPI1_Clust1_links.json", function(error, json) {
+//         if (error) return console.warn(error);
+//        });)
+//       .await(function(error, file1, file2) { createAdjacencyMatrix(file1, file2);});
+
+
+//       // d3.json("js/corrmat/EPI1_Clust1_nodes.json", function(error, json) {
+//       //   if (error) return console.warn(error);
+//       //   nodes = json;
+//       //  });
+       
+
+//       //  d3.json("js/corrmat/EPI1_Clust1_links.json", function(error, json) {
+//       //   if (error) return console.warn(error);
+//       //   edges = json;
+//       //  });
+
+
+  //   function createAdjacencyMatrix(nodes,edges) {
+  //     var edgeHash = {};
+  //     for (x in edges) {
+  //       var id = edges[x].source + "-" + edges[x].target;
+  //       edgeHash[id] = edges[x];
+  //     }
+  //     matrix = [];
+  //     //create all possible edges
+  //     for (a in nodes) {
+  //       for (b in nodes) {
+  //         var grid = {id: nodes[a].id + "-" + nodes[b].id, x: b, y: a, weight: 0};
+  //         if (edgeHash[grid.id]) {
+  //           grid.weight = edgeHash[grid.id].weight;
+  //         }
+  //         matrix.push(grid);
+  //       }
+  //     }
+
+  //     svg.append("g")
+  //     .attr("transform", "translate(50,50)")
+  //     .attr("id", "adjacencyG")
+  //     .selectAll("rect")
+  //     .data(matrix)
+  //     .enter()
+  //     .append("rect")
+  //     .attr("width", 25)
+  //     .attr("height", 25)
+  //     .attr("x", function (d) {return d.x * 25})
+  //     .attr("y", function (d) {return d.y * 25})
+  //     .style("stroke", "black")
+  //     .style("stroke-width", "1px")
+  //     .style("fill", "red")
+  //     .style("fill-opacity", function (d) {return d.weight * .2})
+  //     .on("mouseover", gridOver);
+      
+  //     var scaleSize = nodes.length * 25;
+  //     var nameScale = d3.scale.ordinal().domain(nodes.map(function (el) {return el.id})).rangePoints([0,scaleSize],1);
+      
+  //     xAxis = d3.svg.axis().scale(nameScale).orient("top").tickSize(4);    
+  //     yAxis = d3.svg.axis().scale(nameScale).orient("left").tickSize(4);    
+  //     d3.select("#adjacencyG").append("g").call(xAxis).selectAll("text").style("text-anchor", "end").attr("transform", "translate(-10,-10) rotate(90)");
+  //     d3.select("#adjacencyG").append("g").call(yAxis);
+      
+  //     function gridOver(d,i) {
+  //       d3.selectAll("rect").style("stroke-width", function (p) {return p.x == d.x || p.y == d.y ? "3px" : "1px"})
+  //     };
+
+  //   };
+    
+  // }
+
+
+
+
+
+
+
+
+// var margin = {top: 0, right:20, bottom: 50, left: 200};                           
+// var w = 750 - margin.left - margin.right;
+// var h = 300 - margin.top - margin.bottom;
+  
+// var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
+// var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
+
+// var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+// var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
+
+
+// var svg = d3.select("#mean-zD3").append("svg")
+//             .attr("width", w + margin.left + margin.right)
+//             .attr("height", h + margin.top + margin.bottom)
+//             .append("g")
+//             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+
+// //data select from HTML dropdown:
+
+// // if you intend on using jquery, here's the easy way
+// // first, note, that you have to wrap your code in jquery ready call
+// // i'm doing it here, but you can wrap all your code in it
+// // and i'd put it all down at the bottom of the page
+
+
+// $(function(){
+                          
+//     var $dropdown1 = $('#EPI1');
+    
+//     $dropdown1.on('change',function(){
+//      var that = $(this),
+//       file = that.find('option:selected').val();
+      
+//       console.log(file);
+
+//     var $dropdown2 = $('#EPI2');
+    
+//     $dropdown2.on('change',function(){
+//      var that = $(this),
+//       file2 = that.find('option:selected').val();
+      
+//       console.log(file2);
+      
+//     // now bring in the data from the json and fire your stuff with d3
+//     if (file) { 
+//       d3.json(file,function(err,data){
+//         if (err) {
+//           console.log(err);
+//           return;
+//         }
+        
+//         console.log(data);
+//         make_viz(data);
+
+//       });
+//     }  //end of if(file1)
+
+//     if (file2) { 
+//       d3.json(file2,function(err,data2){
+//         if (err) {
+//           console.log(err);
+//           return;
+//         }
+        
+//         console.log(data2);
+//         make_viz(data2);
+
+//       });
+//     } //end of if(file2)    
+
+//     }); //end of $dropdown2= $("EPI2")
+
+//   }); //end of $dropdown1 = $("EPI1")
+
+
+// // add circles for EPI1
+// function make_Viz(data1) {
+//   var circles = svg.selectAll("circle").data(data1).enter().append("circle");
+    
+//   circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
+//            .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
+//            .attr("r", "9")
+//            .attr("fill",function(d) {return d.colours;})
+//            .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
+//            .attr("transform", "translate(0," + (h - xPadding) + ")")
+//            .attr("transform", "translate(" + yPadding + ",0)");
+
+
+// // add error bars for circles EPI1
+//   var lines = svg.selectAll("line").data(data1).enter().append("line");
+
+//   lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
+//        .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//        .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
+//        .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//        .attr("stroke-width", 2)
+//        .attr("stroke", function(d) {return d.colours;});
+
+
+// // add squares for EPI2
+// function make_viz2(data2) {
+//         var rect = svg.selectAll("rect").data(data2).enter().append("rect");
+
+//         rect.attr("x", function(d,i) {return xScale(i)+40;})
+//             .attr("y", function(d) {return yScale(d.values)-8})
+//             .attr("width", "16")
+//             .attr("height", "16")
+//             .attr("fill", function(d) {return d.colours;});
+
+
+// // add error bars for squares EPI2
+//         var linesb = svg.selectAll("rects").data(data2).enter().append("line");
+
+//         linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+//              .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//              .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
+//              .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//              .attr("stroke-width", 2)
+//              .attr("stroke", function(d) {return d.colours;});
+
+// };   //end of function make_viz2
+
+ 
+
+//   svg.append("text")
+//      .attr("class", "y-label")
+//      .attr("transform", "rotate(-90)")
+//      .attr("y", 0-40)
+//      .attr("x", 0-(h/2-6))
+//      .style("text-anchor", "middle")
+//      .text("Mean Correlation");
+
+//   svg.append("text")
+//      .attr("class", "y-label")
+//      .attr("transform", "rotate(-90)")
+//      .attr("y", 0-10)
+//      .attr("x", 0-(h/2-6))
+//      .style("text-anchor", "middle")
+//      .text("z-score (+/- sd)");
+
+//   var xPadding = 30;
+//   var yPadding = 50; 
+//   svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
+//   svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+
+// };//end make_viz function
+// }); //end of whole function()
+
+
+
+//                         //   var margin = {top: 0, right:20, bottom: 50, left: 200};                           
+//                         //   var w = 750 - margin.left - margin.right;
+//                         //   var h = 300 - margin.top - margin.bottom;
+                              
+//                         //   var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
+//                         //   var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 250]); //from book considering my data
+
+//                         //   var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");
+//                         //   var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
+
+
+//                         //   var svg = d3.select("#mean-zD3").append("svg")
+//                         //                 .attr("width", w + margin.left + margin.right)
+//                         //                 .attr("height", h + margin.top + margin.bottom)
+//                         //                 .append("g")
+//                         //                 .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+//                         //   //data select from HTML dropdown:
+                          
+//                         //   // if you intend on using jquery, here's the easy way
+//                         //   // first, note, that you have to wrap your code in jquery ready call
+//                         //   // i'm doing it here, but you can wrap all your code in it
+//                         //   // and i'd put it all down at the bottom of the page
+                          
+                          
+//                         //   $(function(){
+                          
+//                         //     var $dropdown1 = $('#EPI1');
+                            
+//                         //     $dropdown1.on('change',function(){
+//                         //      var that = $(this),
+//                         //       file = that.find('option:selected').val();
+                              
+//                         //       console.log(file);
+                              
+//                         //     // now bring in the data from the json and fire your stuff with d3
+//                         //     if (file) { 
+//                         //       d3.json(file,function(err,data){
+//                         //         if (err) {
+//                         //           console.log(err);
+//                         //           return;
+//                         //         }
+                                
+//                         //         console.log(data);
+
+
+                              
+//                         //   //add circles for EPI1
+//                         //         var circles = svg.selectAll("circle").data(data).enter().append("circle");
+                                  
+//                         //         circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
+//                         //                  .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
+//                         //                  .attr("r", "9")
+//                         //                  .attr("fill",function(d) {return d.colours;})
+//                         //                  .append("title").text(function(d) {return d.values;});  //tooltip with actual mean value ***incorrect at present***
+                                    
+//                         //         //add error bars for EPI1
+//                         //         var lines = svg.selectAll("line").data(data).enter().append("line");
+
+//                         //         lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
+//                         //              .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//                         //              .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
+//                         //              .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//                         //              .attr("stroke-width", 2)
+//                         //              .attr("stroke", function(d) {return d.colours;});
+
+
+//                         //  // var colorb = d3.scale.ordinal().domain(key).range(["#354e7f", "#139e9e", "#82142f"]);
+                          
+
+//                         //                 var rect = svg.selectAll("rect").data(data).enter().append("rect");
+
+//                         //                 rect.attr("x", function(d,i) {return xScale(i)+40;})
+//                         //                     .attr("y", function(d) {return yScale(d.values)-8})
+//                         //                     .attr("width", "16")
+//                         //                     .attr("height", "16")
+//                         //                     .attr("fill", function(d) {return d.colours;})
+//                         //                     .append("title").text(function(d) {return d.values;});
+
+//                         //                 var linesb = svg.selectAll("rects").data(data).enter().append("line");
+
+//                         //                 linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+//                         //                      .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//                         //                      .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
+//                         //                      .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//                         //                      .attr("stroke-width", 2)
+//                         //                      .attr("stroke", function(d) {return d.colours;});
+                                        
+         
+//                         //   svg.append("text")
+//                         //      .attr("class", "y-label")
+//                         //      .attr("transform", "rotate(-90)")
+//                         //      .attr("y", 0-40)
+//                         //      .attr("x", 0-(h/2-6))
+//                         //      .style("text-anchor", "middle")
+//                         //      .text("Mean Correlation");
+
+//                         //   svg.append("text")
+//                         //      .attr("class", "y-label")
+//                         //      .attr("transform", "rotate(-90)")
+//                         //      .attr("y", 0-10)
+//                         //      .attr("x", 0-(h/2-6))
+//                         //      .style("text-anchor", "middle")
+//                         //      .text("z-score (+/- sd)");
+
+
+//                         //   var xPadding = -20;
+//                         //   var yPadding = 50; 
+//                         //   svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
+//                         //   svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+                            
+                                
+//                         //       });
+//                         //     }
+//                         //   });                         
+//                         // });
+
+                        </script>
+   
+</body>
+</html> 

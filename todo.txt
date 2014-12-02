@@ -1,0 +1,40 @@
+MEAN Z-SCORE
+
+fix drop down selector for INDIVIDUAL set
+format JSON data for rest of subjects
+get data for subjects 105 and 107
+fix axes/scales so data is “correct”
+exchange tooltip for mouseover function. check is correct (not”double” data)
+
+
+
+TIME COURSES
+
+design 
+implement
+
+
+
+NETWORKS
+ 
+Node perma-lables
+make network links curved?
+add mouseover tooltip
+add slider filter for weight/links in network graphs
+possible re-design of node arrangement…
+find way to maximize visualization of weight difference…
+
+
+
+CORRELATION (ADJACENCY) MATRICES
+
+fix color-by-weight issue
+fix mouseover
+see if can highlight NW clusters
+
+
+
+TEMPORAL ORDERING/DURATION
+
+design charts
+implement charts
