@@ -28,7 +28,7 @@ find way to maximize visualization of weight difference…
 
 CORRELATION (ADJACENCY) MATRICES
 
-fix color-by-weight issue
+fix color-by-weight issue https://gist.github.com/emeeks/9441864
 fix mouseover
 see if can highlight NW clusters
 
@@ -38,3 +38,12 @@ TEMPORAL ORDERING/DURATION
 
 design charts
 implement charts
+http://jsfiddle.net/GGDce/2/
+
+
+
+UI/UX
+
+Link “View Details” to Data info (new page?)
+Create “banner” divs for top of result divs
+change “red” color to more of a rich dark pink

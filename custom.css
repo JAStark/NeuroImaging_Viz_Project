@@ -289,6 +289,9 @@ fill: #969696;
 stroke: "grey";
 }
 
+text.active {
+  fill: red;
+}
 
 footer {
 	position: relative;

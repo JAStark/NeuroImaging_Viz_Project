@@ -29,7 +29,7 @@
                     <p>1: Can we detect transient networks in resting state data?</p>
                     <p>"Resting state" referfs ro MRI scans where the participant is asked to lie still and awake, and think of nothing in particular.</p>
                     <p>2: Which data-collection method is best? See "Data" for more information on the data collection methods</p>
-                    <p><a class="btn btn-default" href="#" role="button">View Results &raquo;</a></p>
+                    <p><a class="btn btn-default" href="#data_link" role="button">View Results &raquo;</a></p>
                 </div>
                 <div class="col-sm-3" style="margin-left: 6em">
                     <h3>Data</h3>
@@ -42,7 +42,7 @@
                     <h3>Analysis and Visualizations</h3>
                     <p>Several types of analysis was performed on this data, including network analysis focussing on the default mode, executive control, and salience networks; cluster analysis, and temporal ordering</p>
                     <p>Visualization approaches include network graphs, matrices/heat maps, and time courses (line graphs).</p>
-                    <p><a class="btn btn-default" href="#" role="button">View Results &raquo;</a></p>
+                    <p><a class="btn btn-default" href="#data_link" role="button">View Results &raquo;</a></p>
                 </div>
             </div>
         </div><!-- Close Container 2 -->
@@ -50,7 +50,7 @@
         <!-- row 3 ANALYSIS AND VISUALIZATIONS -->  
         <div class="container" style="margin-left:10em">
             <header class="row">
-                <h2 >Analysis and Visualizations</h2>                
+                <h2 id="data_link">Analysis and Visualizations</h2>                
             </header>
         </div> <!-- close 3 Header containing -->
 
@@ -110,12 +110,6 @@
                         </div><!--end dropdown EPI2-->
 
                            
-
-                          <div class="row" style="margin-left:18em"> <!--legend colors-->
-                           <p style="color:#354e7f; margin-bottom:0em"><strong>Default Mode Network (DMN)</strong></p>
-                           <p style="color:#82142f; margin-bottom:0em"><strong>Salience Network (SN)</strong></p>
-                           <p style="color:#139e9e"><strong>Executive Control Network (ECN)</strong></p>
-                          </div> <!-- close legend colors-->
                     </div> <!-- end d3 div -->
                     
                     <div class="col-md-4" style="margin-right:5em; margin-top:4em"> <!-- right text-->
@@ -133,6 +127,26 @@
                       
                       <!--bottom section -->
                       <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
+                         
+                         <div class="col-sm-2">
+                          <p style="color:#354e7f"><strong>DMN</strong></p>
+                          <p class="bottomText">Posterior Cingulate Cortex</p>
+                          <p class="bottomText">Angular Gyrus</p>
+                          <p class="bottomText">Parahippocampal Cortex</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p style="color:#82142f;"><strong>SN</strong></p>
+                          <p class="bottomText">Amygdala</p>
+                          <p class="bottomText">Anterior Insula</p>
+                          <p class="bottomText">Temporoparietal Junction</p>
+                         </div>
+                         <div class="col-sm-2">
+                          <p style="color:#139e9e"><strong>ECN</strong></p>
+                          <p class="bottomText">Anterior Cingulate Cortex</P>
+                          <p class="bottomText">dorsal Posterior Parietal Cortex</p>
+                          <p class="bottomText">dorsolateral Prefrontal Cortex</p>
+                          <p class="bottomText">Cuadate Nucleus</p>
+                         </div>
                          <div class="col-sm-2 col-sm-offset-1">
                           <p><strong>EPI1</strong></p>
                           <p class="bottomText">Temporal resolution: 1 second</p>
@@ -142,25 +156,6 @@
                           <p><strong>EPI2</strong></p>
                           <p class="bottomText">Temporal resolution: 2 seconds</p>
                           <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
-                         </div>
-                         <div class="col-sm-2">
-                          <p><strong>DMN</strong></p>
-                          <p class="bottomText">Posterior Cingulate Cortex</p>
-                          <p class="bottomText">Angular Gyrus</p>
-                          <p class="bottomText">Parahippocampal Cortex</p>
-                         </div>
-                         <div class="col-sm-2">
-                          <p><strong>SN</strong></p>
-                          <p class="bottomText">Amygdala</p>
-                          <p class="bottomText">Anterior Insula</p>
-                          <p class="bottomText">Temporoparietal Junction</p>
-                         </div>
-                         <div class="col-sm-2">
-                          <p><strong>ECN</strong></p>
-                          <p class="bottomText">Anterior Cingulate Cortex</P>
-                          <p class="bottomText">dorsal Posterior Parietal Cortex</p>
-                          <p class="bottomText">dorsolateral Prefrontal Cortex</p>
-                          <p class="bottomText">Cuadate Nucleus</p>
                          </div>
                       </div> <!-- close legend text at bottom of means network z-scores page -->
                 </div> <!-- close div id="mean-z" -->
@@ -381,7 +376,7 @@
                 
 
             <button class="btn btn-info btn-lg" onclick="$('#corrmatClust').toggle();" style="margin-left:33.5em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.5em"></span></button>
-                <div id="corrmatClust" style="display: block">
+                <div id="corrmatClust" style="display: none">
                 <!-- enter d3 bit here -->
                     <div id="corrmatClustD3" class="col-md-7"> 
                         <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 1</strong></p></div>
@@ -465,26 +460,8 @@
     <script type="text/javascript">   
 
 // //D3.js Individual Mean Z-score
-function params() {
-var margin = {top: 0, right:20, bottom: 50, left: 200};                           
-var w = 750 - margin.left - margin.right;
-var h = 300 - margin.top - margin.bottom;
-  
-var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
-var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
-
-var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
-var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
 
 
-var svg = d3.select("#mean-zD3").append("svg")
-            .attr("width", w + margin.left + margin.right)
-            .attr("height", h + margin.top + margin.bottom)
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-};
-
-var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#139e9e","#82142f"]);
 
 //data select from HTML dropdown:
 
@@ -494,425 +471,431 @@ var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#1
 // and i'd put it all down at the bottom of the page
 
 
-$(function(){
-                          
-    var $dropdown1 = $('#EPI1');
-    
-    $dropdown1.on('change',function(make_viz){
-     var that = $(this),
-      file = that.find('option:selected').val();
-      
-      console.log(file);
+// $(function(){
+           
+// var margin = {top: 0, right:20, bottom: 50, left: 200};                           
+// var w = 750 - margin.left - margin.right;
+// var h = 300 - margin.top - margin.bottom;
+  
+// var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
+// var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
 
-    var $dropdown2 = $('#EPI2');
-    
-    $dropdown2.on('change',function(make_viz2){
-     var that = $(this),
-      file2 = that.find('option:selected').val();
+// var xAxis = d3.svg.axis().scale(xScale).orient("bottom");
+// var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
+
+
+// var svg = d3.select("#mean-zD3").append("svg")
+//             .attr("width", w + margin.left + margin.right)
+//             .attr("height", h + margin.top + margin.bottom)
+//             .append("g")
+//             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+// var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#139e9e","#82142f"]);
+
+
+               
+// var $inputs = $('#EPI1,#EPI2');
+
+// $inputs.on('change',function(){
+//    var that = $(this),
+//       file = that.find('option:selected').val(),
+//       id = that.attr('id');
       
-      console.log(file2);
-      
-    // now bring in the data from the json and fire your stuff with d3
-    if (file) { 
-      d3.json(file,function(err,data){
-        if (err) {
-          console.log(err);
-          return;
-        }
+//       if (file) { 
+//       d3.json(file,function(err,data){
+//         if (err) {
+//           console.log(err);
+//           return;
+//         }
         
-        console.log(data);
-        //make_viz();
-
-      });
-    }  //end of if(file1)
-
-    if (file2) { 
-      d3.json(file2,function(err,data2){
-        if (err) {
-          console.log(err);
-          return;
-        }
-        
-        console.log(data2);
-        //make_viz();
-
-      });
-    } //end of if(file2)    
-
-    }); //end of $dropdown2= $("EPI2")
-
-  }); //end of $dropdown1 = $("EPI1")
+//        switch (id) {
+//          case '#EPI1':
+//           make_viz();
+//           break;
+//          case '#EPI2':
+//           make_viz2();
+//           break;
+//        } 
 
 
-// add circles for EPI1
-function make_viz() {
-  var circles = svg.selectAll("circle").data(file).enter().append("circle");
+//       });
+//     }
+      
+      
+// }); // end change function
+
+
+// // add circles for EPI1
+// function make_viz() {
+//   var circles = svg.selectAll("circle").data(file).enter().append("circle");
     
-  circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
-           .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
-           .attr("r", "9")
-           .attr("fill",function(d) {return d.colours;})
-           .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
-           .attr("transform", "translate(0," + (h - xPadding) + ")")
-           .attr("transform", "translate(" + yPadding + ",0)");
+//   circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
+//            .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
+//            .attr("r", "9")
+//            .attr("fill",function(d) {return d.colours;})
+//            .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
+//            .attr("transform", "translate(0," + (h - xPadding) + ")")
+//            .attr("transform", "translate(" + yPadding + ",0)");
 
 
-// add error bars for circles EPI1
-  var lines = svg.selectAll("line").data(file).enter().append("line");
+// // add error bars for circles EPI1
+//   var lines = svg.selectAll("line").data(file).enter().append("line");
 
-  lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
-       .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-       .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
-       .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-       .attr("stroke-width", 2)
-       .attr("stroke", function(d) {return d.colours;});
+//   lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
+//        .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//        .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
+//        .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//        .attr("stroke-width", 2)
+//        .attr("stroke", function(d) {return d.colours;});
 
-
-// add squares for EPI2
-function make_viz2() {
-        var rect = svg.selectAll("rect").data(file2).enter().append("rect");
-
-        rect.attr("x", function(d,i) {return xScale(i)+40;})
-            .attr("y", function(d) {return yScale(d.values)-8})
-            .attr("width", "16")
-            .attr("height", "16")
-            .attr("fill", function(d) {return d.colours;});
+// }; //end make_viz function
 
 
-// add error bars for squares EPI2
-        var linesb = svg.selectAll("rects").data(file2).enter().append("line");
+// // add squares for EPI2
+// function make_viz2() {
+//         var rect = svg.selectAll("rect").data(file2).enter().append("rect");
 
-        linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
-             .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-             .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
-             .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-             .attr("stroke-width", 2)
-             .attr("stroke", function(d) {return d.colours;});
+//         rect.attr("x", function(d,i) {return xScale(i)+40;})
+//             .attr("y", function(d) {return yScale(d.values)-8})
+//             .attr("width", "16")
+//             .attr("height", "16")
+//             .attr("fill", function(d) {return d.colours;});
 
-};   //end of function make_viz2
+
+// // add error bars for squares EPI2
+//         var linesb = svg.selectAll("rects").data(file2).enter().append("line");
+
+//         linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+//              .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//              .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
+//              .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//              .attr("stroke-width", 2)
+//              .attr("stroke", function(d) {return d.colours;});
+
+// };   //end of function make_viz2
 
  
 
-  svg.append("text")
-     .attr("class", "y-label")
-     .attr("transform", "rotate(-90)")
-     .attr("y", 0-40)
-     .attr("x", 0-(h/2-6))
-     .style("text-anchor", "middle")
-     .text("Mean Correlation");
+//   svg.append("text")
+//      .attr("class", "y-label")
+//      .attr("transform", "rotate(-90)")
+//      .attr("y", 0-40)
+//      .attr("x", 0-(h/2-6))
+//      .style("text-anchor", "middle")
+//      .text("Mean Correlation");
 
-  svg.append("text")
-     .attr("class", "y-label")
-     .attr("transform", "rotate(-90)")
-     .attr("y", 0-10)
-     .attr("x", 0-(h/2-6))
-     .style("text-anchor", "middle")
-     .text("z-score (+/- sd)");
+//   svg.append("text")
+//      .attr("class", "y-label")
+//      .attr("transform", "rotate(-90)")
+//      .attr("y", 0-10)
+//      .attr("x", 0-(h/2-6))
+//      .style("text-anchor", "middle")
+//      .text("z-score (+/- sd)");
 
-  var xPadding = 30;
-  var yPadding = 50; 
-  svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
-  svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+//   var xPadding = 30;
+//   var yPadding = 50; 
+//   svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
+//   svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
 
-};//end make_viz function
-}); //end of whole $function()
-
+// };//end whole $function()
 
 
 
 
 
+// // //D3.js Group Mean Z-score
 
-// //D3.js Group Mean Z-score
-
-function meanzgr() {
-    var margin = {top: 0, right:20, bottom: 30, left: 200};                           
-    var w = 750 - margin.left - margin.right;
-    var h = 280 - margin.top - margin.bottom;
+// function meanzgr() {
+//     var margin = {top: 0, right:20, bottom: 30, left: 200};                           
+//     var w = 750 - margin.left - margin.right;
+//     var h = 280 - margin.top - margin.bottom;
         
-    var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
-    var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
+//     var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
+//     var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
 
-    var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");
-    var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
+//     var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");
+//     var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
 
 
-    var svg = d3.select("#mean-zGrD3").append("svg")
-                  .attr("width", w + margin.left + margin.right)
-                  .attr("height", h + margin.top + margin.bottom)
-                  .append("g")
-                  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+//     var svg = d3.select("#mean-zGrD3").append("svg")
+//                   .attr("width", w + margin.left + margin.right)
+//                   .attr("height", h + margin.top + margin.bottom)
+//                   .append("g")
+//                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+//   var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
 
-// Circles EPI1
-    d3.json("js/mean-z/EPI1_Group.json", function(data) {
-        var circles = svg.selectAll("circle").data(data).enter().append("circle");
+// // Circles EPI1
+//     d3.json("js/mean-z/EPI1_Group.json", function(data) {
+//         var circles = svg.selectAll("circle").data(data).enter().append("circle");
           
-        circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
-                 .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
-                 .attr("r", "9")
-                 .attr("fill",function(d) {return color(d.key);})
-                 .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
-                 .attr("transform", "translate(0," + (h - xPadding) + ")")
-                 .attr("transform", "translate(" + yPadding + ",0)");
+//         circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
+//                  .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
+//                  .attr("r", "9")
+//                  .attr("fill",function(d) {return color(d.key);})
+//                  .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
+//                  .attr("transform", "translate(0," + (h - xPadding) + ")")
+//                  .attr("transform", "translate(" + yPadding + ",0)");
 
-        var lines = svg.selectAll("line").data(data).enter().append("line");
+//         var lines = svg.selectAll("line").data(data).enter().append("line");
 
-        lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
-             .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-             .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
-             .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-             .attr("stroke-width", 2)
-             .attr("stroke", function(d) {return color(d.key);});
+//         lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
+//              .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//              .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
+//              .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//              .attr("stroke-width", 2)
+//              .attr("stroke", function(d) {return color(d.key);});
 
-// Squares EPI2
-        d3.json("js/mean-z/EPI2_Group.json", function(data) {
+// // Squares EPI2
+//         d3.json("js/mean-z/EPI2_Group.json", function(data) {
 
-              var rect = svg.selectAll("rect").data(data).enter().append("rect");
+//               var rect = svg.selectAll("rect").data(data).enter().append("rect");
 
-              rect.attr("x", function(d,i) {return xScale(i)+40;})
-                  .attr("y", function(d) {return yScale(d.values)-8})
-                  .attr("width", "16")
-                  .attr("height", "16")
-                  .attr("fill", function(d) {return color(d.key);})
-                  .append("title").text(function(d) {return d.values;});
+//               rect.attr("x", function(d,i) {return xScale(i)+40;})
+//                   .attr("y", function(d) {return yScale(d.values)-8})
+//                   .attr("width", "16")
+//                   .attr("height", "16")
+//                   .attr("fill", function(d) {return color(d.key);})
+//                   .append("title").text(function(d) {return d.values;});
 
-              var linesb = svg.selectAll("rects").data(data).enter().append("line");
+//               var linesb = svg.selectAll("rects").data(data).enter().append("line");
 
-              linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
-                   .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-                   .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
-                   .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-                   .attr("stroke-width", 2)
-                   .attr("stroke", function(d) {return color(d.key);});
+//               linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+//                    .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+//                    .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
+//                    .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+//                    .attr("stroke-width", 2)
+//                    .attr("stroke", function(d) {return color(d.key);});
 
-     });   //end of var EPI2 = d3.json(loadData.json)
+//      });   //end of var EPI2 = d3.json(loadData.json)
 
-        svg.append("text")
-           .attr("class", "y-label")
-           .attr("transform", "rotate(-90)")
-           .attr("y", 0-40)
-           .attr("x", 0-(h/2-6))
-           .style("text-anchor", "middle")
-           .text("Mean Correlation");
+//         svg.append("text")
+//            .attr("class", "y-label")
+//            .attr("transform", "rotate(-90)")
+//            .attr("y", 0-40)
+//            .attr("x", 0-(h/2-6))
+//            .style("text-anchor", "middle")
+//            .text("Mean Correlation");
 
-        svg.append("text")
-           .attr("class", "y-label")
-           .attr("transform", "rotate(-90)")
-           .attr("y", 0-10)
-           .attr("x", 0-(h/2-6))
-           .style("text-anchor", "middle")
-           .text("z-score (+/- sd)");
+//         svg.append("text")
+//            .attr("class", "y-label")
+//            .attr("transform", "rotate(-90)")
+//            .attr("y", 0-10)
+//            .attr("x", 0-(h/2-6))
+//            .style("text-anchor", "middle")
+//            .text("z-score (+/- sd)");
 
-        svg.append("text")
-           .attr("class", "x-label")
-           .attr("transform", "translate(50," + (h-xPadding) + ")")
-           //.style("text-anchor", "middle")
-           .text("Default Mode Network (DMN)");//, function(d) {return d.colours;});
-           //.text("Salience Network (SN)", function(d) {return d.colours;})
-           //.text("Executive Control Network (ECN)", function(d) {return d.colours;});
+//         svg.append("text")
+//            .attr("class", "x-label")
+//            .attr("transform", "translate(50," + (h-xPadding) + ")")
+//            //.style("text-anchor", "middle")
+//            .text("Default Mode Network (DMN)");//, function(d) {return d.colours;});
+//            //.text("Salience Network (SN)", function(d) {return d.colours;})
+//            //.text("Executive Control Network (ECN)", function(d) {return d.colours;});
 
-        var xPadding = 30;
-        var yPadding = 50; 
-        svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
-        svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+//         var xPadding = 30;
+//         var yPadding = 50; 
+//         svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
+//         svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
 
-    });
-};
-meanzgr(); // Call Group Mean z
-
-
-// // Make Group Network Graphs (adapted from sara.chiartosini http://jsbin.com/omokap/4/edit?html,css,js,output)
-function networkGr() {
-    var w = 355
-    var h = 380
-
-    var svg = d3.select("#networkGrD3").append("svg")
-                  .attr("width", w )
-                  .attr("height", h )
-                  .attr('preserveAspectRatio', 'xMinYMin slice') 
-                  .append("g");
-
-    var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
-    var color_weight = d3.scale.linear().domain([0, 1]).range(["#FFFFFF","#000000"])
+//     });
+// };
+// meanzgr(); // Call Group Mean z
 
 
-    var force = self.force = d3.layout.force()  //this looks unusual
-      .nodes(graph.nodes)
-      .links(graph.links)
-      .gravity(0.05).distance(100).charge(-100)
-      .size([w,h])
-      .start();
+// // // Make Group Network Graphs (adapted from sara.chiartosini http://jsbin.com/omokap/4/edit?html,css,js,output)
+// function networkGr() {
+//     var w = 355
+//     var h = 380
 
-    var link = svg.selectAll(".link")
-      .data(graph.links)
-      .enter().append("line")
-      .filter(function(d) {return d.weight>0.3})
-      .attr("class", "link")
-      .attr("x1", function(d) {return (d.source.x); })
-      .attr("y1", function(d) {return (d.source.y); })
-      .attr("x2", function(d) {return (d.target.x); })
-      .attr("y2", function(d) {return (d.target.y); })
-      .style("stroke-width", function(d) {return (d.weight);})
-      .style("stroke", function(d) {return color_weight(d.weight)});
+//     var svg = d3.select("#networkGrD3").append("svg")
+//                   .attr("width", w )
+//                   .attr("height", h )
+//                   .attr('preserveAspectRatio', 'xMinYMin slice') 
+//                   .append("g");
 
-    var node_drag = d3.behavior.drag()
-      .on("dragstart", dragstart)
-      .on("drag", dragmove)
-      .on("dragend", dragend);
+//     var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+//     var color_weight = d3.scale.linear().domain([0.3, 1]).range(["#f7f7f7", "#969696", "#252525"]);
 
-    var node = svg.selectAll(".node")
-      .data(graph.nodes)
-      .enter().append("circle")
-      .attr("x", function(d) {return d.x;})
-      .attr("y", function(d) {return d.y;})
-      .attr("class", "node")
-      .attr("r", 13)
-      .style("fill", function(d) {return color(d.NW);})
-      .call(node_drag);
+
+//     var force = self.force = d3.layout.force()  //this looks unusual
+//       .nodes(graph.nodes)
+//       .links(graph.links)
+//       .gravity(0.05).distance(100).charge(-100)
+//       .size([w,h])
+//       .start();
+
+//     var link = svg.selectAll(".link")
+//       .data(graph.links)
+//       .enter().append("line")
+//       .filter(function(d) {return d.weight>0.3})
+//       .attr("class", "link")
+//       .attr("x1", function(d) {return (d.source.x); })
+//       .attr("y1", function(d) {return (d.source.y); })
+//       .attr("x2", function(d) {return (d.target.x); })
+//       .attr("y2", function(d) {return (d.target.y); })
+//       .style("stroke-width", function(d) {return (d.weight*5);})
+//       .style("stroke", function(d) {return color_weight(d.weight)});
+
+//     var node_drag = d3.behavior.drag()
+//       .on("dragstart", dragstart)
+//       .on("drag", dragmove)
+//       .on("dragend", dragend);
+
+//     var node = svg.selectAll(".node")
+//       .data(graph.nodes)
+//       .enter().append("circle")
+//       .attr("x", function(d) {return d.x;})
+//       .attr("y", function(d) {return d.y;})
+//       .attr("class", "node")
+//       .attr("r", 13)
+//       .style("fill", function(d) {return color(d.NW);})
+//       .call(node_drag);
   
-    function dragstart(d, i) {
-      force.stop(); // stops the force auto positioning before you start dragging
-    }
+//     function dragstart(d, i) {
+//       force.stop(); // stops the force auto positioning before you start dragging
+//     }
 
-    function dragmove(d, i) {
-      d.px += d3.event.dx;
-      d.py += d3.event.dy;
-      d.x += d3.event.dx;
-      d.y += d3.event.dy; 
-      tick(); 
-    }
+//     function dragmove(d, i) {
+//       d.px += d3.event.dx;
+//       d.py += d3.event.dy;
+//       d.x += d3.event.dx;
+//       d.y += d3.event.dy; 
+//       tick(); 
+//     }
 
-    function dragend(d, i) {
-      d.fixed = true; // of course set the node to fixed so the force doesn't include the node in its auto positioning stuff
-      tick();
-      force.resume();
-    }
+//     function dragend(d, i) {
+//       d.fixed = true; // of course set the node to fixed so the force doesn't include the node in its auto positioning stuff
+//       tick();
+//       force.resume();
+//     }
     
-    force.on("tick", tick);
+//     force.on("tick", tick);
 
-    function tick() {
-          link.attr("x1", function(d) {return d.source.x; })
-          .attr("y1", function(d) {return d.source.y; })
-          .attr("x2", function(d) {return d.target.x; })
-          .attr("y2", function(d) {return d.target.y; });
+//     function tick() {
+//           link.attr("x1", function(d) {return d.source.x; })
+//           .attr("y1", function(d) {return d.source.y; })
+//           .attr("x2", function(d) {return d.target.x; })
+//           .attr("y2", function(d) {return d.target.y; });
 
-node.attr("cx", function(d) {return d.x; })
-.attr("cy", function(d) {return d.y; })
-.append("title").text(function(d) {return d.id;});
-    } // end tick function
-  //}; // end of graphIt function
-}; //end function networkGr()
+// node.attr("cx", function(d) {return d.x; })
+// .attr("cy", function(d) {return d.y; })
+// .append("title").text(function(d) {return d.id;});
+//     } // end tick function
+//   //}; // end of graphIt function
+// }; //end function networkGr()
 
 
- d3.json("js/network/EPI1_Gr_Network.json", function(error, json) {
-  if (error) return console.warn(error);
-  graph = json;
-  networkGr();
- });
+//  d3.json("js/network/EPI1_Gr_Network.json", function(error, json) {
+//   if (error) return console.warn(error);
+//   graph = json;
+//   networkGr();
+//  });
  
 
- d3.json("js/network/EPI2_Gr_Network.json", function(error, json) {
-  if (error) return console.warn(error);
-  graph = json;
-  networkGr();
- });
+//  d3.json("js/network/EPI2_Gr_Network.json", function(error, json) {
+//   if (error) return console.warn(error);
+//   graph = json;
+//   networkGr();
+//  });
 
-// // Make EPI1 Cluster Network Graphs
-function networkClust() {
-    var w = 355
-    var h = 380
+// // // Make EPI1 Cluster Network Graphs
+// function networkClust() {
+//     var w = 355
+//     var h = 380
 
-    var svg = d3.select("#networkClustD3").append("svg")
-                  .attr("width", w )
-                  .attr("height", h )
-                  .attr('preserveAspectRatio', 'xMinYMin slice') 
-                  .append("g");
+//     var svg = d3.select("#networkClustD3").append("svg")
+//                   .attr("width", w )
+//                   .attr("height", h )
+//                   .attr('preserveAspectRatio', 'xMinYMin slice') 
+//                   .append("g");
 
-    var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
-    var color_weight = d3.scale.linear().domain([-0.5, 0.8]).range(["#FFFFFF","#000000"])
+//     var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
+//     //var color_weight = d3.scale.linear().domain([-0.5, 0.8]).range(["#FFFFFF","#000000"])
+//     var color_weight = d3.scale.linear().domain([0.3, 1]).range(["#f7f7f7", "#969696", "#252525"])
+//     //var color_weight = d3.scale.linear().domain([0.3, 1]).range(["#f7f7f7", "#252525"])
 
 
-    var force = self.force = d3.layout.force()  //this looks unusual
-      .nodes(graph.nodes)
-      .links(graph.links)
-      .gravity(0.05).distance(100).charge(-100)
-      .size([w,h])
-      .start();
+//     var force = self.force = d3.layout.force()  //this looks unusual
+//       .nodes(graph.nodes)
+//       .links(graph.links)
+//       .gravity(0.05).distance(100).charge(-100)
+//       .size([w,h])
+//       .start();
 
-    var link = svg.selectAll(".link")
-      .data(graph.links)
-      .enter().append("line")
-      .filter(function(d) {return d.weight>0.3})
-      .attr("class", "link")
-      .attr("x1", function(d) {return (d.source.x); })
-      .attr("y1", function(d) {return (d.source.y); })
-      .attr("x2", function(d) {return (d.target.x); })
-      .attr("y2", function(d) {return (d.target.y); })
-      .style("stroke-width", function(d) {return (d.weight*d.weight);})
-      .style("stroke", function(d) {return color_weight(d.weight*d.weight)});
+//     var link = svg.selectAll(".link")
+//       .data(graph.links)
+//       .enter().append("line")
+//       .filter(function(d) {return d.weight>0.3})
+//       .attr("class", "link")
+//       .attr("x1", function(d) {return (d.source.x); })
+//       .attr("y1", function(d) {return (d.source.y); })
+//       .attr("x2", function(d) {return (d.target.x); })
+//       .attr("y2", function(d) {return (d.target.y); })
+//       .style("stroke-width", function(d) {return (d.weight*5);})
+//       .style("stroke", function(d) {return color_weight(d.weight)});
 
-    var node_drag = d3.behavior.drag()
-      .on("dragstart", dragstart)
-      .on("drag", dragmove)
-      .on("dragend", dragend);
+//     var node_drag = d3.behavior.drag()
+//       .on("dragstart", dragstart)
+//       .on("drag", dragmove)
+//       .on("dragend", dragend);
 
-    var node = svg.selectAll(".node")
-      .data(graph.nodes)
-      .enter().append("circle")
-      .attr("x", function(d) {return d.x;})
-      .attr("y", function(d) {return d.y;})
-      .attr("class", "node")
-      .attr("r", 13)
-      .style("fill", function(d) {return color(d.NW);})
-      .call(node_drag);
+//     var node = svg.selectAll(".node")
+//       .data(graph.nodes)
+//       .enter().append("circle")
+//       .attr("x", function(d) {return d.x;})
+//       .attr("y", function(d) {return d.y;})
+//       .attr("class", "node")
+//       .attr("r", 13)
+//       .style("fill", function(d) {return color(d.NW);})
+//       .call(node_drag);
   
-    function dragstart(d, i) {
-      force.stop(); // stops the force auto positioning before you start dragging
-    }
+//     function dragstart(d, i) {
+//       force.stop(); // stops the force auto positioning before you start dragging
+//     }
 
-    function dragmove(d, i) {
-      d.px += d3.event.dx;
-      d.py += d3.event.dy;
-      d.x += d3.event.dx;
-      d.y += d3.event.dy; 
-      tick(); 
-    }
+//     function dragmove(d, i) {
+//       d.px += d3.event.dx;
+//       d.py += d3.event.dy;
+//       d.x += d3.event.dx;
+//       d.y += d3.event.dy; 
+//       tick(); 
+//     }
 
-    function dragend(d, i) {
-      d.fixed = true; // of course set the node to fixed so the force doesn't include the node in its auto positioning stuff
-      tick();
-      force.resume();
-    }
+//     function dragend(d, i) {
+//       d.fixed = true; // of course set the node to fixed so the force doesn't include the node in its auto positioning stuff
+//       tick();
+//       force.resume();
+//     }
     
-    force.on("tick", tick);
+//     force.on("tick", tick);
 
-    function tick() {
-          link.attr("x1", function(d) {return d.source.x; })
-          .attr("y1", function(d) {return d.source.y; })
-          .attr("x2", function(d) {return d.target.x; })
-          .attr("y2", function(d) {return d.target.y; });
+//     function tick() {
+//           link.attr("x1", function(d) {return d.source.x; })
+//           .attr("y1", function(d) {return d.source.y; })
+//           .attr("x2", function(d) {return d.target.x; })
+//           .attr("y2", function(d) {return d.target.y; });
 
-node.attr("cx", function(d) {return d.x; })
-.attr("cy", function(d) {return d.y; })
-.append("title").text(function(d) {return d.id;});
-    } // end tick function
-}; //end function networkClust()
+// node.attr("cx", function(d) {return d.x; })
+// .attr("cy", function(d) {return d.y; })
+// .append("title").text(function(d) {return d.id;});
+//     } // end tick function
+// }; //end function networkClust()
 
 
- d3.json("js/network/EPI1_Clust0_Network.json", function(error, json) {
-  if (error) return console.warn(error);
-  graph = json;
-  networkClust();
- });
+//  d3.json("js/network/EPI1_Clust0_Network.json", function(error, json) {
+//   if (error) return console.warn(error);
+//   graph = json;
+//   networkClust();
+//  });
  
 
- d3.json("js/network/EPI1_Clust1_Network.json", function(error, json) {
-  if (error) return console.warn(error);
-  graph = json;
-  networkClust();
- });
+//  d3.json("js/network/EPI1_Clust1_Network.json", function(error, json) {
+//   if (error) return console.warn(error);
+//   graph = json;
+//   networkClust();
+//  });
 
 
 
@@ -920,19 +903,19 @@ node.attr("cx", function(d) {return d.x; })
 // Adjacency Matrix for Clusters (adapted from Bostock)
 
 function make_adjMat() {
-    var margin = {top: 100, right: 100, bottom: 30, left: 200},
+    var margin = {top: 100, right: 60, bottom: 30, left: 60},
         width = 255,
         height = 255;
 
     var x = d3.scale.ordinal().rangeBands([0, width]),
         z = d3.scale.linear().domain([1, -1]).clamp(true),
-        c = d3.scale.category10().domain(d3.range(10));
+        c = d3.scale.category10().domain(d3.range(1));
         //c = d3.scale.linear().domain([0,1]).range(["#FFFFFF","#000000"]);
 
     var svg = d3.select("#corrmatClustD3").append("svg")
         .attr("width", width + margin.left + margin.right)
         .attr("height", height + margin.top + margin.bottom)
-        .style("margin-left", -margin.left + "px")
+        //.style("margin-left", -margin.left + "px")
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -941,7 +924,6 @@ function make_adjMat() {
       var matrix = [],
           nodes = data.nodes,
           n = nodes.length;
-       //   lilnkstotal = 0;
 
       // Compute index per node.
       nodes.forEach(function(node, i) {
@@ -952,29 +934,27 @@ function make_adjMat() {
 
       // Convert links to matrix; count character occurrences.
       data.links.forEach(function(link) {
-        //if ((link.source < n) && (link.target < n)) {
         matrix[link.source][link.target].z += link.weight;
         matrix[link.target][link.source].z += link.weight;
         matrix[link.source][link.source].z += link.weight;
         matrix[link.target][link.target].z += link.weight;
-       // linkstotal += 1;
-      //}
-       //nodes[link.source].weight = link.weight;
-       //nodes[link.target].weight = link.weight;
+      // nodes[link.source].weight = link.weight;
+      // nodes[link.target].weight = link.weight;
       });
 
       // Precompute the orders.
       var orders = {
         id: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].id, nodes[b].id); }),
-        //count: d3.range(n).sort(function(a, b) { return nodes[b].count - nodes[a].count; }),
-        //NW: d3.range(n).sort(function(a, b) { return nodes[b].NW - nodes[a].NW; })
+         //NW: d3.range(n).sort(function(a, b) { return nodes[b].NW - nodes[a].NW; })
         NW: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].NW, nodes[b].NW); }),
         weight: d3.range(n).sort(function(a, b) {return nodes[b].weight - nodes[a].weight;}),
-        order: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].order, nodes[b].order); })
+        idNW_order: d3.range(n).sort(function(a, b) { return d3.ascending(nodes[a].order, nodes[b].order); })
+        //weight: d3.range(n).sort(function(a, b) {return link[b].weight - link[a].weight;}),
+
       };
 
       // The default sort order.
-      x.domain(orders.order); //how to make it sort order NW first, and then further sort by alphabet ("id") (ignoring "l" and "r")
+      x.domain(orders.idNW_order); //how to make it sort order NW first, and then further sort by alphabet ("id") (ignoring "l" and "r")
 
       svg.append("rect")
           .attr("class", "background")
@@ -992,7 +972,7 @@ function make_adjMat() {
           .attr("x2", width);
 
     var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#82142f","#139e9e"]);
-    var color_weight = d3.scale.linear().domain([0, 1]).range(["green", "orange","red"]);
+    var color_weight = d3.scale.linear().domain([-1, 1]).range(["#1a9641", "#a6d96a",  "#ffffbf", "fdae61", "#d7191c"]);
     //var q = d3.scale.quantile().domain([-1,1]).range([0, 25, 50, 75, 100]);
 
       row.append("text")
@@ -1028,9 +1008,9 @@ function make_adjMat() {
             .attr("x", function(d) { return x(d.x); })
             .attr("width", x.rangeBand())
             .attr("height", x.rangeBand())
-            .style("fill-opacity", function(d) { return z(d.z); }) //right now THIS is mapping to weight value
-            //.style("fill", function(d) { return nodes[d.x].weight == nodes[d.y].weight ? c(nodes[d.x].weight) : null; })  //was by "group" (categorical) Changed "c" to linear
-            .style("fill", "red")
+            //.style("fill", function(d) { return z(d.weight); }) //right now THIS is mapping to weight value
+            .style("fill", function(d) { return nodes[d.x].weight == nodes[d.y].weight ? z(nodes[d.x].weight) : null; })  //was by "group" (categorical) Changed "c" to linear
+            //.style("fill", function(d) {return z(nodes[d.x].weight); })
             .on("mouseover", mouseover)
             .on("mouseout", mouseout);
       }
@@ -1044,34 +1024,33 @@ function make_adjMat() {
         d3.selectAll("text").classed("active", false);
       }
 
-      d3.select("#order").on("change", function() {
-        clearTimeout(timeout);
-        order(this.value);
-      });
+      // d3.select("#order").on("change", function() {
+      //   clearTimeout(timeout);
+      //   order(this.value);
+      // });
 
-      function order(value) {
-        x.domain(orders[value]);
+      // function order(value) {
+      //   x.domain(orders[value]);
 
-        var t = svg.transition().duration(2500);
+      //   var t = svg.transition().duration(2500);
 
-        t.selectAll(".row")
-            .delay(function(d, i) { return x(i) * 4; })
-            .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
-          .selectAll(".cell")
-            .delay(function(d) { return x(d.x) * 4; })
-            .attr("x", function(d) { return x(d.x); });
+      //   t.selectAll(".row")
+      //       .delay(function(d, i) { return x(i) * 4; })
+      //       .attr("transform", function(d, i) { return "translate(0," + x(i) + ")"; })
+      //     .selectAll(".cell")
+      //       .delay(function(d) { return x(d.x) * 4; })
+      //       .attr("x", function(d) { return x(d.x); });
 
-        t.selectAll(".column")
-            .delay(function(d, i) { return x(i) * 4; })
-            .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
-      }
+      //   t.selectAll(".column")
+      //       .delay(function(d, i) { return x(i) * 4; })
+      //       .attr("transform", function(d, i) { return "translate(" + x(i) + ")rotate(-90)"; });
+      // }
 
-      var timeout = setTimeout(function() {
-        order("order");
-        d3.select("#order").property("selectedIndex", 2).node().focus();
-      }, 5000);
+      // var timeout = setTimeout(function() {
+      //   order("order");
+      //   d3.select("#order").property("selectedIndex", 2).node().focus();
+      // }, 5000);
 
-  //  });  //end of json load function
 };  // end make_adjMat() function
 
 //make_adjMat();
