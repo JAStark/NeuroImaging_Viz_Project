@@ -92,6 +92,14 @@ h2 {
 	margin-top: 60px;
 }
 
+#test {
+	text-align: center;
+	font-family: Verdana;
+	color: #B8ABA1;
+	margin-left: 0em;
+	margin-top: 60px;
+}
+
 h3{
 	font-family: Verdana;
 	color: #646464;
@@ -292,6 +300,16 @@ stroke: "grey";
 text.active {
   fill: red;
 }
+
+.grid .tick {
+	stroke: #ccc;
+	opactiy: 0.7;
+}
+
+.grid path {
+	stroke-width:0;
+}
+
 
 footer {
 	position: relative;
