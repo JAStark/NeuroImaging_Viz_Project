@@ -74,6 +74,12 @@
             <!-- Indi Mean z-score -->
             <button class="btn btn-info btn-lg" onclick="$('#mean-z').toggle();" style="margin-left:4em"><img src="images/mean-z.PNG" class="z-score"/><strong>Mean Network Z-Scores</strong><span class="caret" style="margin-left:3em"></span></button>
                 <div id="mean-z" style="display: block">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Mean Network Z-Scores</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                     <div id="mean-zD3" class="col-md-7"> 
                         <div class="col-sm-3" style="margin-top: 2em; margin-left:7em; margin-bottom:2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>Select Dataset</strong></p></div>
                         <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
@@ -169,6 +175,12 @@
             <!-- Gr mean z-score -->
             <button class="btn btn-info btn-lg" onclick="$('#mean-zGr').toggle();" style="margin-left:9em"><img src="images/mean-z.PNG" class="z-score"/><strong>Mean Network Z-Scores</strong><span class="caret" style="margin-left:3em"></span></button>
                 <div id="mean-zGr" style="display: none"><!-- enter d3 bit here -->
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Group data: <span style="color: #898989">Mean Network Z-Scores</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                     <div id="mean-zGrD3" class="col-md-7"> 
                         <div class="col-sm-3" style="margin-top: 2em; margin-left:7em; margin-bottom:2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>Chart Key</strong></p></div>
                         <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
@@ -223,7 +235,6 @@
                         <p class="bottomText">Anterior Insula</p>
                         <p class="bottomText">Temporoparietal Junction</p>
                        </div>
-                       
                        <div class="col-sm-2 ">
                         <p><strong>EPI1</strong></p>
                         <p class="bottomText">Temporal resolution: 1 second</p>
@@ -241,21 +252,33 @@
             <!-- Indi network -->
             <button class="btn btn-info btn-lg" onclick="$('#network').toggle();" style="margin-left:4em"><img src="images/network.PNG" class="network"/><strong>Network Graphs</strong><span class="caret" style="margin-left:6.2em"></span></button>
                 <div id="network" style="display: none; float:left">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Network Graphs</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                     <!-- enter d3 bit here -->
                 </div>
 
             <!-- Gr Network -->
             <button class="btn btn-info btn-lg" onclick="$('#networkGr').toggle();" style="margin-left:9em"><img src="images/network.PNG" class="network"/><strong>Network Graphs</strong><span class="caret" style="margin-left:6.2em"></span></button>
                 <div id="networkGr" style="display: none">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Group data: <span style="color: #898989">Network Graphs</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                     <!-- enter d3 bit here -->
                     <div id="networkGrD3" class="col-md-7"> 
-                        <div class="col-sm-4" style="margin-top: 2em">
+                        <div class="col-sm-4" style="margin-top: 1em">
                           <p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Group Network</strong></p>
                           <p><label for "weight" style="display: inline-block; width: 240px; text-align:left">Connectivity strength:<span id="weight-value"></span></label><input type="range" min="0" max="1" step="0.01" value="0.3" id="weight"></p>
                         </div>
                         <div class="col-sm-3"><!--spacer div--></div>
 
-                        <div class="col-sm-4" style="margin-top: 2em; margin-bottom:1em">
+                        <div class="col-sm-4" style="margin-top:1em; margin-bottom:0em">
                           <p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI2 Group Network</strong></p>
                           <p><label for "weight" style="display: inline-block; width: 240px; text-align:left">Connectivity strength:<span id="weight-value"></span></label><input type="range" min="0" max="1" step="0.01" value="0.3" id="weight"></p>
                         </div><!--end network title-->
@@ -278,16 +301,6 @@
                       <!--bottom section -->
                     <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 120px; width:1350px; padding: 5px; background: #D0DADD">
                        <div class="col-sm-2">
-                        <p><strong>EPI1</strong></p>
-                        <p class="bottomText">Temporal resolution: 1 second</p>
-                        <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
-                       </div>
-                       <div class="col-sm-2">
-                        <p><strong>EPI2</strong></p>
-                        <p class="bottomText">Temporal resolution: 2 seconds</p>
-                        <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
-                       </div>
-                       <div class="col-sm-2">
                         <p style="color: #354e7f"><strong>DMN</strong></p>
                         <p class="bottomText">Posterior Cingulate Cortex (PCCx)</p>
                         <p class="bottomText">Angular Gyrus (AngG)</p>
@@ -306,24 +319,50 @@
                         <p class="bottomText">dorsolateral Prefrontal Cortex (dlPFCx)</p>
                         <p class="bottomText">Caudate Nucleus (Caud)</p>
                        </div>
+                      <div class="col-sm-2">
+                        <p><strong>EPI1</strong></p>
+                        <p class="bottomText">Temporal resolution: 1 second</p>
+                        <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                       </div>
+                       <div class="col-sm-2">
+                        <p><strong>EPI2</strong></p>
+                        <p class="bottomText">Temporal resolution: 2 seconds</p>
+                        <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
+                      </div>
                     </div> <!-- close legend text at bottom of Group networks page -->
                 </div> <!-- close div id="networkGrD3" -->  
 
             <!-- Indi Correlation matrix -->
             <button class="btn btn-info btn-lg" onclick="$('#corrmat').toggle();" style="margin-left:4em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.4em"></span></button>
                 <div id="corrmat" style="display: none">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Correlation Matrices</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                     <!-- enter d3 bit here -->
                 </div>
 
             <!-- Gr Correlation Matrix -->
             <button class="btn btn-info btn-lg" onclick="$('#corrmatGr').toggle();" style="margin-left:9em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.5em"></span></button>
                 <div id="corrmatGr" style="display: none">
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Group data: <span style="color: #898989">Correlation Matrices</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                 <!-- enter d3 bit here -->
                 </div>
 
             <!-- Indi Time Courses -->
             <button class="btn btn-info btn-lg" onclick="$('#tc').toggle();" style="margin-left:4em"><img src="images/lines.PNG" class="lines"/><strong>Time Courses</strong><span class="caret" style="margin-left:7.6em"></span></button>
                 <div id="tc" style="display: none">
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Time Courses</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                     <!-- enter d3 bit here -->
                 </div>                    
           </div> <!-- end row -->
@@ -336,6 +375,12 @@
 
             <button class="btn btn-info btn-lg" onclick="$('#networkClust').toggle();" style="margin-left:33.5em"><img src="images/network.PNG" class="network"/><strong>Network Graphs</strong><span class="caret" style="margin-left:6.2em"></span></button>
                 <div id="networkClust" style="display: none">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Network Graphs</span></h4>
+                    </div> <!-- close top banner text -->                  
+                  
                 <!-- enter d3 bit here -->
                     <div id="networkClustD3" class="col-md-7"> 
                         <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 1</strong></p></div>
@@ -391,6 +436,12 @@
 
             <button class="btn btn-info btn-lg" onclick="$('#corrmatClust').toggle();" style="margin-left:33.5em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.5em"></span></button>
                 <div id="corrmatClust" style="display: block">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Correlation Matrices</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                 <!-- enter d3 bit here -->
                     <div id="corrmatClustD3" class="col-md-7"> 
                         <div class="col-sm-4" style="margin-top: 2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1 Cluster 1</strong></p></div>
@@ -443,11 +494,23 @@
 
             <button class="btn btn-info btn-lg" onclick="$('#tempOrd').toggle();" style="margin-left:33.5em"><img src="images/lines.PNG" class="lines"/><strong>Temporal Ordering</strong><span class="caret" style="margin-left:5.1em"></span></button>
                 <div id="tempOrd" style="display: none">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Temporal Ordering</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                 <!-- enter d3 bit here -->
                 </div>
 
             <button class="btn btn-info btn-lg" onclick="$('#tempDur').toggle();" style="margin-left:33.5em"><img src="images/lines.PNG" class="lines"/><strong>Temporal Duration</strong><span class="caret" style="margin-left:5.2em"></span></button>
                 <div id="tempDur" style="display: none">
+
+                      <!--top banner section -->
+                    <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Temporal Duration</span></h4>
+                    </div> <!-- close top banner text -->                  
+
                 <!-- enter d3 bit here -->
                 </div>
            </div><!-- Close row   -->
@@ -469,6 +532,8 @@
         <!-- Javascript -->
   <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="d3/d3.tip.js"></script> <!-- from http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js -->
+
     <!--<script type="text/javascript" src="Indi_meanz.js"></script> //Indi meanz D3-->
 
     <script type="text/javascript">   
@@ -487,22 +552,32 @@
 
 $(function(){
            
-var margin = {top: 50, right:20, bottom: 50, left: 200};                           
-var w = 750 - margin.left - margin.right;
-var h = 300 - margin.top - margin.bottom;
+var margin = {top: 10, right:20, bottom: 50, left: 75};                           
+var w = 800 - margin.left - margin.right;
+var h = 350 - margin.top - margin.bottom;
   
 var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
-var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
+var yScale = d3.scale.linear().domain([0.8, 0]).rangeRound([0, 300]); //from book considering my data
 
-//var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");;
+//var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");
 var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
 
+  //create tooltip (from http://bl.ocks.org/Caged/6476579)
+var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) { return "<strong>Mean Z-score: </strong> <span style='color:red'>" + d3.round(d.values, 2) + "</span>";
+            })
+ 
 
 var svg = d3.select("#mean-zD3").append("svg")
             .attr("width", w + margin.left + margin.right)
             .attr("height", h + margin.top + margin.bottom)
             .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+
+  svg.call(tip); 
 
 //function for y grid axis lines
 function make_y_axis() { return d3.svg.axis().scale(yScale).orient("left").ticks(10)}
@@ -537,58 +612,81 @@ var colours = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","
       });
     } //end if (file) statement
   } // end function on_change()
-$inputs.on('change',on_change); // end $imputs.on('change', function  
 
+$inputs.on('change',on_change); // end $inputs.on('change', function  
+
+ d3.json("js/mean-z/EPI1_101.json", function(error, json) {
+  if (error) return console.warn(error);
+  data = json;
+  make_viz(data);
+ });
+ 
+window.setTimeout(function() {
+ d3.json("js/mean-z/EPI2_101.json", function(error, json) {
+  if (error) return console.warn(error);
+  data2 = json;
+  make_viz2(data2);
+ });
+ } ,200)
 
 
 // add circles for EPI1
 function make_viz(data) {
-  var circles = svg.selectAll("circle").data(data).enter().append("circle");
-    
-  circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
+  var circle = svg.selectAll("circles").data(data).enter().append("circle");
+     
+  circle.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
            .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
-           .attr("r", "9")
+           .attr("r", "18")
            .attr("fill",function(d) {return colours(d.key);})
-           .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
            .attr("transform", "translate(0," + (h - xPadding) + ")")
-           .attr("transform", "translate(" + yPadding + ",0)");
+           .attr("transform", "translate(" + dPadding + ",20)")
+           .on('mouseover', tip.show)
+           .on('mouseout', tip.hide);
 
 
-    // add error bars for circles EPI1
-      var lines = svg.selectAll("line").data(data).enter().append("line");
+// add error bars for circles EPI1
+  var line = svg.selectAll("circles").data(data).enter().append("line");
 
-      lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
-           .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-           .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
-           .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-           .attr("stroke-width", 2)
-           .attr("stroke", function(d) {return colours(d.key);});
-} //end make_viz function
+  line.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
+       .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+       .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
+       .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+       .attr("stroke-width", 2)
+       .attr("stroke", function(d) {return colours(d.key);})
+       .attr("transform", "translate(0," + (h - xPadding) + ")")
+       .attr("transform", "translate(" + dPadding + ",20)");
 
+}; //end make_viz function
 
-            // add squares for EPI2
-            function make_viz2(data) {
-                    var rect = svg.selectAll("rect").data(data).enter().append("rect");
+// add squares for EPI2
+function make_viz2(data2) {
+        var rect = svg.selectAll("rects").data(data2).enter().append("rect");
 
-                    rect.attr("x", function(d,i) {return xScale(i)+40;})
-                        .attr("y", function(d) {return yScale(d.values)-8})
-                        .attr("width", "16")
-                        .attr("height", "16")
-                        .attr("fill", function(d) {return colours(d.key);});
-
-
-                  // add error bars for squares EPI2
-                          var line = svg.selectAll("rects").data(data).enter().append("line");
-
-                          line.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
-                               .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-                               .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
-                               .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
-                               .attr("stroke-width", 2)
-                               .attr("stroke", function(d) {return colours(d.key);});
+        rect.attr("x", function(d,i) {return xScale(i)+40;})
+            .attr("y", function(d) {return yScale(d.values)-16})
+            .attr("width", "32")
+            .attr("height", "32")
+            .attr("fill", function(d) {return colours(d.key);})
+           .attr("transform", "translate(0," + (h - xPadding) + ")")
+           .attr("transform", "translate(" + dPadding + ",20)")
+           .on('mouseover', tip.show)
+           .on('mouseout', tip.hide);
 
 
-            }   //end of function make_viz2
+      // add error bars for squares EPI2
+        var line = svg.selectAll("rects").data(data2).enter().append("line");
+
+        line.attr("x1", function(d,i) {return xScale(i)+56;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+             .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
+             .attr("x2", function(d,i) {return xScale(i)+56;}) //x-position of mean same as x1 because vertical line
+             .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
+             .attr("stroke-width", 2)
+             .attr("stroke", function(d) {return colours(d.key);})
+             .attr("transform", "translate(0," + (h - xPadding) + ")")
+             .attr("transform", "translate(" + dPadding + ",20)");
+
+
+};   //end of function make_viz2
 
   
 
@@ -596,7 +694,7 @@ function make_viz(data) {
      .attr("class", "y-label")
      .attr("transform", "rotate(-90)")
      .attr("y", 0-40)
-     .attr("x", 0-(h/2-6))
+     .attr("x", 0-(h/2+15))
      .style("text-anchor", "middle")
      .text("Mean Correlation");
 
@@ -604,10 +702,11 @@ function make_viz(data) {
      .attr("class", "y-label")
      .attr("transform", "rotate(-90)")
      .attr("y", 0-10)
-     .attr("x", 0-(h/2-6))
+     .attr("x", 0-(h/2+15))
      .style("text-anchor", "middle")
      .text("z-score (+/- sd)");
 
+  var dPadding = 20
   var xPadding = 30;
   var yPadding = 50; 
 
@@ -616,7 +715,7 @@ function make_viz(data) {
       .attr("class", "grid")
       .attr("transform", "translate(" + yPadding + ",20)").call(yAxis)
       .call(make_y_axis()
-        .tickSize(-w, 0, 0)
+        .tickSize(-500, 0, 0)
         .tickFormat(" "));
 
 
@@ -624,6 +723,10 @@ function make_viz(data) {
   svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
   //on_change();
 
+// function type(d) {
+//   d.values = +d.values;
+//   return d;
+// }
 
 })//end whole $function()
 
@@ -634,15 +737,23 @@ function make_viz(data) {
 // // //D3.js Group Mean Z-score
 
 function meanzgr() {
-    var margin = {top: 0, right:20, bottom: 30, left: 200};                           
-    var w = 750 - margin.left - margin.right;
-    var h = 280 - margin.top - margin.bottom;
+    var margin = {top: 10, right:20, bottom: 50, left: 75};                           
+    var w = 800 - margin.left - margin.right;
+    var h = 350 - margin.top - margin.bottom;
         
     var xScale  = d3.scale.ordinal().domain(d3.range(3)).rangeRoundBands([0, w-120], 0.75);  //from book
-    var yScale = d3.scale.linear().domain([1, 0]).rangeRound([0, 200]); //from book considering my data
+    var yScale = d3.scale.linear().domain([0.8, 0]).rangeRound([0, 300]); //from book considering my data
 
-    var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");
+    //var xAxis = d3.svg.axis().scale(xScale).orient("bottom").tickSize(0).tickFormat("");
     var yAxis = d3.svg.axis().scale(yScale).orient("left").ticks(10);
+
+
+  //create tooltip (from http://bl.ocks.org/Caged/6476579)
+var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) { return "<strong>Mean Z-score: </strong> <span style='color:red'>" + d3.round(d.values, 2) + "</span>";
+            })
 
 
     var svg = d3.select("#mean-zGrD3").append("svg")
@@ -651,56 +762,69 @@ function meanzgr() {
                   .append("g")
                   .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+  svg.call(tip); 
+
+  //function for y grid axis lines
+  function make_y_axis() { return d3.svg.axis().scale(yScale).orient("left").ticks(10)}
+
   var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#b81359","#139e9e"]);
 
 // Circles EPI1
-    d3.json("js/mean-z/EPI1_Group.json", function(data) {
+function makeviz(data) {
         var circles = svg.selectAll("circle").data(data).enter().append("circle");
           
         circles.attr("cx", function(d,i) {return xScale(i);})  //from book how to reference ordinal scale
                  .attr("cy", function(d) {return yScale(d.values)}) //.attr("cy", function(d) {return (d.values);})
-                 .attr("r", "9")
+                 .attr("r", "18")
                  .attr("fill",function(d) {return color(d.key);})
-                 .append("title").text(function(d) {return d.values;})  //tooltip with actual mean value
                  .attr("transform", "translate(0," + (h - xPadding) + ")")
-                 .attr("transform", "translate(" + yPadding + ",20)");
+                 .attr("transform", "translate(" + dPadding + ",20)")
+                 .on('mouseover', tip.show)
+                 .on('mouseout', tip.hide);
 
-        var lines = svg.selectAll("line").data(data).enter().append("line");
+        var lines = svg.selectAll("circles").data(data).enter().append("line");
 
         lines.attr("x1", function(d,i) {return xScale(i);})  //x-position of mean
              .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
              .attr("x2", function(d,i) {return xScale(i);}) //x-position of mean same as x1 because vertical line
              .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
              .attr("stroke-width", 2)
-             .attr("stroke", function(d) {return color(d.key);});
+             .attr("stroke", function(d) {return color(d.key);})
+             .attr("transform", "translate(0," + (h - xPadding) + ")")
+             .attr("transform", "translate(" + dPadding + ",20)");
+  };
 
 // Squares EPI2
-        d3.json("js/mean-z/EPI2_Group.json", function(data) {
-              var rect = svg.selectAll("rect").data(data).enter().append("rect");
+function makeviz2(data2) {
+              var rect = svg.selectAll("rect").data(data2).enter().append("rect");
 
               rect.attr("x", function(d,i) {return xScale(i)+40;})
-                  .attr("y", function(d) {return yScale(d.values)-8})
-                  .attr("width", "16")
-                  .attr("height", "16")
+                  .attr("y", function(d) {return yScale(d.values)-16})
+                  .attr("width", "32")
+                  .attr("height", "32")
                   .attr("fill", function(d) {return color(d.key);})
-                  .append("title").text(function(d) {return d.values;});
+                  .attr("transform", "translate(0," + (h - xPadding) + ")")
+                  .attr("transform", "translate(" + dPadding + ",20)")
+                  .on('mouseover', tip.show)
+                  .on('mouseout', tip.hide);
 
-              var linesb = svg.selectAll("rects").data(data).enter().append("line");
+              var linesb = svg.selectAll("rects").data(data2).enter().append("line");
 
-              linesb.attr("x1", function(d,i) {return xScale(i)+48;})  //x-position of mean +40px to shift it rightward like the rects (squares)
+              linesb.attr("x1", function(d,i) {return xScale(i)+56;})  //x-position of mean +40px to shift it rightward like the rects (squares)
                    .attr("y1", function(d) {return yScale(d.values+(d.sd/2));})  //y-position of mean
-                   .attr("x2", function(d,i) {return xScale(i)+48;}) //x-position of mean same as x1 because vertical line
+                   .attr("x2", function(d,i) {return xScale(i)+56;}) //x-position of mean same as x1 because vertical line
                    .attr("y2", function(d) {return yScale(d.values-(d.sd/2));})   //y position 
                    .attr("stroke-width", 2)
-                   .attr("stroke", function(d) {return color(d.key);});
-
-     });   //end of var EPI2 = d3.json(loadData.json)
+                   .attr("stroke", function(d) {return color(d.key);})
+                   .attr("transform", "translate(0," + (h - xPadding) + ")")
+                   .attr("transform", "translate(" + dPadding + ",20)");
+     };   //end of var EPI2 = d3.json(loadData.json)
 
         svg.append("text")
            .attr("class", "y-label")
            .attr("transform", "rotate(-90)")
            .attr("y", 0-40)
-           .attr("x", 0-(h/2-6))
+           .attr("x", 0-(h/2+15))
            .style("text-anchor", "middle")
            .text("Mean Correlation");
 
@@ -708,26 +832,53 @@ function meanzgr() {
            .attr("class", "y-label")
            .attr("transform", "rotate(-90)")
            .attr("y", 0-10)
-           .attr("x", 0-(h/2-6))
+           .attr("x", 0-(h/2+15))
            .style("text-anchor", "middle")
            .text("z-score (+/- sd)");
 
-        svg.append("text")
-           .attr("class", "x-label")
-           .attr("transform", "translate(50," + (h-xPadding) + ")")
-           //.style("text-anchor", "middle")
-           .text("Default Mode Network (DMN)");//, function(d) {return d.colours;});
-           //.text("Salience Network (SN)", function(d) {return d.colours;})
-           //.text("Executive Control Network (ECN)", function(d) {return d.colours;});
+        // svg.append("text")
+        //    .attr("class", "x-label")
+        //    .attr("transform", "translate(50," + (h-xPadding) + ")")
+        //    //.style("text-anchor", "middle")
+        //    .text("Default Mode Network (DMN)");//, function(d) {return d.colours;});
+        //    //.text("Salience Network (SN)", function(d) {return d.colours;})
+        //    //.text("Executive Control Network (ECN)", function(d) {return d.colours;});
 
+        var dPadding = 20
         var xPadding = 30;
         var yPadding = 50; 
-        svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
-        svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+        
 
-    });
+
+  //Draw y gridlines
+  svg.append("g")
+      .attr("class", "grid")
+      .attr("transform", "translate(" + yPadding + ",20)").call(yAxis)
+      .call(make_y_axis()
+        .tickSize(-500, 0, 0)
+        .tickFormat(" "));
+        
+//svg.append("g").attr("class", "axis").attr("transform", "translate(50," + (h - xPadding) + ")").call(xAxis);
+  svg.append("g").attr("class", "axis").attr("transform", "translate(" + yPadding + ",20)").call(yAxis);
+
+
+ d3.json("js/mean-z/EPI1_Group.json", function(error, json) {
+  if (error) return console.warn(error);
+  data = json;
+  makeviz(data);
+ });
+ 
+window.setTimeout(function() {
+ d3.json("js/mean-z/EPI2_Group.json", function(error, json) {
+  if (error) return console.warn(error);
+  data2 = json;
+  makeviz2(data2);
+ });
+ } ,500)
+
 };
 meanzgr(); // Call Group Mean z
+ 
 
 
 // // Make Group Network Graphs (adapted from sara.chiartosini http://jsbin.com/omokap/4/edit?html,css,js,output)
@@ -735,11 +886,21 @@ function networkGr() {
     var w = 355
     var h = 380
 
+  //create tooltip (from http://bl.ocks.org/Caged/6476579)
+var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) { return "<strong>" + d.NW + ":" + d.id + "</strong>";
+            })
+
+
     var svg = d3.select("#networkGrD3").append("svg")
                   .attr("width", w )
                   .attr("height", h )
                   .attr('preserveAspectRatio', 'xMinYMin slice') 
                   .append("g");
+
+  svg.call(tip); 
 
     var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#b81359","#139e9e"]);
     var color_weight = d3.scale.linear().domain([0.3, 1]).range(["#f7f7f7", "#969696", "#252525"]);
@@ -807,7 +968,9 @@ function networkGr() {
 
 node.attr("cx", function(d) {return d.x; })
 .attr("cy", function(d) {return d.y; })
-.append("title").text(function(d) {return d.id;});
+.on('mouseover', tip.show)
+.on('mouseout', tip.hide);
+//.append("title").text(function(d) {return d.id;});
     } // end tick function
 
 
@@ -856,11 +1019,21 @@ function networkClust() {
     var w = 355
     var h = 380
 
+  //create tooltip (from http://bl.ocks.org/Caged/6476579)
+var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) { return "<strong>" + d.NW + ":" + d.id + "</strong>";
+            })
+
     var svg = d3.select("#networkClustD3").append("svg")
                   .attr("width", w )
                   .attr("height", h )
                   .attr('preserveAspectRatio', 'xMinYMin slice') 
                   .append("g");
+
+  svg.call(tip);
+
 
     var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#b81359","#139e9e"]);
     //var color_weight = d3.scale.linear().domain([-0.5, 0.8]).range(["#FFFFFF","#000000"])
@@ -930,7 +1103,9 @@ function networkClust() {
 
 node.attr("cx", function(d) {return d.x; })
 .attr("cy", function(d) {return d.y; })
-.append("title").text(function(d) {return d.id;});
+.on('mouseover', tip.show)
+.on('mouseout', tip.hide);
+//.append("title").text(function(d) {return d.id;});
     } // end tick function
 }; //end function networkClust()
 
@@ -966,6 +1141,12 @@ function make_adjMat() {
         //color_weight = d3.scale.quantile().domain([0.01, 0.03, 0.06, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]).range(["#006837", "#1a9850", "#66bd63", "#a6d96a", "#d9ef8b", "#ffffbf", "#fee08b", "#fdae61", "#f46d43", "#d73027", "#a50026"]);
         color_weight = d3.scale.quantile().domain([0.01, 0.03, 0.06, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]).range(["#276419", "#4d9221", "#7fbc41", "#b8e186", "#e6f5d0", "#f7f7f7", "#fde0ef", "#f1b6da", "#de77ae", "#c51b7d", "#8e0152"]);  //color blind safe. Both from Color Brewer
 
+  //create tooltip (from http://bl.ocks.org/Caged/6476579)
+var tip = d3.tip()
+            .attr('class', 'd3-tip')
+            .offset([-10, 0])
+            .html(function(d) { return "<strong>"+ x(d.id) + "x" + y(d.id) + "=" + "</strong> <span style='color:red'>" + d3.round(d.z, 2) + "</span>";
+            })
 
     var svg = d3.select("#corrmatClustD3").append("svg")
         .attr("width", width + margin.left + margin.right)
@@ -974,6 +1155,7 @@ function make_adjMat() {
       .append("g")
         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+  svg.call(tip);
 
       var matrix = [],
           nodes = data.nodes,
@@ -1062,8 +1244,10 @@ function make_adjMat() {
             .attr("height", x.rangeBand())
             .style("fill", function(d) {return color_weight(d.z); }) //right now THIS is mapping to weight value
             //.style("fill", function(d) { return nodes[d.x].weight == nodes[d.y].weight ? c(nodes[d.x].weight) : null; })  //was by "group" (categorical) Changed "c" to linear
-            .on("mouseover", mouseover)
-            .on("mouseout", mouseout);
+            //.on("mouseover", mouseover)
+            //.on("mouseout", mouseout);
+            .on('mouseover', tip.show)
+            .on('mouseout', tip.hide);
       }
 
       function mouseover(p) {

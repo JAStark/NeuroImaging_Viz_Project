@@ -181,7 +181,7 @@ button {
 
 #mean-z {
   background:#fafafa;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -7em
@@ -189,7 +189,7 @@ button {
 
 #mean-zGr {
   background:#fafafa;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -7em
@@ -197,7 +197,7 @@ button {
 
 #network {
   background:#D0DADD;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -7em
@@ -205,7 +205,7 @@ button {
 
 #networkGr {
   background:#fafafa;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -7em
@@ -213,7 +213,7 @@ button {
 
 #corrmat {
   background:#D0DADD;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -7em
@@ -221,7 +221,7 @@ button {
 
 #corrmatGr {
   background:#D0DADD;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -7em
@@ -229,7 +229,7 @@ button {
 
 #tc {
   background:#D0DADD;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -7em
@@ -237,7 +237,7 @@ button {
 
 #networkClust {
   background:#fafafa;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -6em
@@ -245,7 +245,7 @@ button {
 
 #corrmatClust {
   background:#fafafa;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -6em
@@ -253,7 +253,7 @@ button {
 
 #tempOrd {
   background:#D0DADD;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -6em
@@ -261,7 +261,7 @@ button {
 
 #tempDur {
   background:#D0DADD;
-  height:645px;
+  height:695px;
   width: 1350px;
   padding:5px;
   margin-left: -6em
@@ -310,7 +310,35 @@ text.active {
 	stroke-width:0;
 }
 
+.d3-tip {
+  line-height: 1;
+  font-weight: bold;
+  font-family: Verdana, sans-serif;
+  padding: 12px;
+  background: rgba(208, 218, 221, 0.8);
+  color: #898989;
+  border-radius: 2px;
+}
 
+/* Creates a small triangle extender for the tooltip, from http://bl.ocks.org/Caged/6476579 */
+.d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}
 footer {
 	position: relative;
 	height: 50px;
