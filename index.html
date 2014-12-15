@@ -73,7 +73,7 @@
 
             <!-- Indi Mean z-score -->
             <button class="btn btn-info btn-lg" onclick="$('#mean-z').toggle();" style="margin-left:4em"><img src="images/mean-z.PNG" class="z-score"/><strong>Mean Network Z-Scores</strong><span class="caret" style="margin-left:3em"></span></button>
-                <div id="mean-z" style="display: block">
+                <div id="mean-z" style="display: none">
 
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
@@ -184,11 +184,11 @@
                     <div id="mean-zGrD3" class="col-md-7"> 
                         <div class="col-sm-3" style="margin-top: 2em; margin-left:7em; margin-bottom:2em"><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>Chart Key</strong></p></div>
                         <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/mean-z.PNG" class="selectDataset"/><strong>EPI1</strong></span></button>
+                            <!--<button class="btn btn-default" id="dataList">--><img style="margin-top:0.7em;" src="images/mean-z.PNG" id="selectDataset"/><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI1</strong></span></p><!--</button>-->
                         </div><!--end dropdown EPI1-->
 
                         <div class="col-sm-2" style="margin-top: 2em" class="dropdown">
-                            <button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown"><img src="images/sq_symbol.PNG" class="selectDataset"/><strong>EPI2</strong></button>
+                            <!--<button class="btn btn-default dropdown-toggle" type="button" id="dataList" data-toggle="dropdown">--><img style="margin-top:0.7em;" src="images/sq_symbol.PNG" id="selectDataset"/><p style="font-size:16px; color: #898989; margin-top:0.7em; margin-left:0.5em"><strong>EPI2</strong></p><!--</button>-->
                         </div><!--end dropdown EPI2-->
 
                         <!-- D3 Mean Group z-score chart goes here-->
@@ -255,7 +255,7 @@
 
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
-                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Network Graphs</span></h4>
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Network Graphs To Do</span></h4>
                     </div> <!-- close top banner text -->                  
 
                     <!-- enter d3 bit here -->
@@ -292,15 +292,15 @@
                         <p><strong>Project question 3:</strong></p>
                         <p>Which data-collection method is the best?</p>
                         <p><strong>Goal:</strong></p>
-                        <p>To assess data quality in terms of correlation strength within each network.</p>
-                        <p>One way to do that is to look at the connections between brain regions. The threshold set here is a z-score of 0.3, meaning that correlations between regions of 0.3 and above are shown in this graph. We would expect a superior data collection method will detect more connections within and between networks.</p>
+                        <p>To assess data quality in terms of correlation strength within and between networks.</p>
+                        <p>One way to do that is to look at the connections between brain regions. By exploring different thresholds of "connectivity" (corrlation z-score), we can compare EPI1 and EPI2 methods. We would expect a superior data collection method will <strong>detect more connections</strong> within and between networks at any given threshold, while also detecting <strong>stronger </strong> connections overall.</p>
                         <p><strong>Conclusion:</strong></p>
-                        <p>While excluding Subjects 105 and 107 due to terrible means (close to zero) and high standard deviations, the resulting group network graphs show that higher temporal resolution (EPI1) is better at detecting connections between brain regions within networks and also between networks.</p>
+                        <p>While excluding Subjects 105 and 107 due to terrible means (close to zero) and high standard deviations, the resulting group network graphs show that <strong>higher temporal resolution (EPI1) is better </strong>at detecting connections between brain regions within networks and also between networks.</p>
                     </div> <!-- close right-side column for project question, goals, and conclusions -->
                       
                       <!--bottom section -->
                     <div class="row" style="margin-top:37em; margin-left: -0.5em; height: 150px; width:1350px; padding: 5px; background: #D0DADD">
-                       <div class="col-sm-3">
+                       <div class="col-sm-2">
                         <p style="color: #354e7f"><strong>Default Mode Network (DMN)</strong></p>
                         <p class="bottomText">Posterior Cingulate Cortex (PCCx)</p>
                         <p class="bottomText">Angular Gyrus (AngG)</p>
@@ -319,10 +319,12 @@
                         <p class="bottomText">dorsolateral Prefrontal Cortex (dlPFCx)</p>
                         <p class="bottomText">Caudate Nucleus (Caud)</p>
                        </div>
-                      <div class="col-sm-3">
+                      <div class="col-sm-2">
                         <p><strong>EPI1</strong></p>
                         <p class="bottomText">Temporal resolution: 1 second</p>
                         <p class="bottomText">Spatial resolution: 2.2<sup>3</sup>mm</p>
+                      </div>
+                     <div class="col-sm-2">
                         <p><strong>EPI2</strong></p>
                         <p class="bottomText">Temporal resolution: 2 seconds</p>
                         <p class="bottomText">Spatial resolution: 1.5<sup>3</sup>mm</p>
@@ -336,7 +338,7 @@
 
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
-                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Correlation Matrices</span></h4>
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Correlation Matrices To Do</span></h4>
                     </div> <!-- close top banner text -->                  
 
                     <!-- enter d3 bit here -->
@@ -347,7 +349,7 @@
                 <div id="corrmatGr" style="display: none">
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
-                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Group data: <span style="color: #898989">Correlation Matrices</span></h4>
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Group data: <span style="color: #898989">Correlation Matrices To Do</span></h4>
                     </div> <!-- close top banner text -->                  
 
                 <!-- enter d3 bit here -->
@@ -358,7 +360,7 @@
                 <div id="tc" style="display: none">
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
-                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Time Courses</span></h4>
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Individual data: <span style="color: #898989">Time Courses To Do</span></h4>
                     </div> <!-- close top banner text -->                  
 
                     <!-- enter d3 bit here -->
@@ -391,14 +393,15 @@
                         <!--legend colors--> <!-- close legend colors-->
                     </div> <!-- end d3 div  #networkGrD3 -->
 
-                    <div class="col-md-4" style="margin-right:0em; margin-top:4em"> <!-- right text-->
-                        <p><strong>Project question 1:</strong></p>
+                    <div class="col-md-4" style="margin-right:0em; margin-top:0.5em"> <!-- right text-->
+                        <p><strong>Project question 2 and 3:</strong></p>
                         <p>Can we detect transient networks in resting state data?</p>
+                        <p>Which data collection method is the best?</p>
                         <p><strong>Goal and Results:</strong></p>
-                        <p>To identify transient networks, or "clusters".</p>
-                        <p>Clusters were identified using an unsupervised clustering algorithm (Dirichlet Process Gaussian Mixture Model, or DPGMM for short). First, it found that the EPI1 was best divided into two clusters (also called centroids), or brain states, where as EPI2 only contained one cluster. </p>
+                        <p>To identify transient networks, "clusters", "centroids", or "brain states" in grouped EPI1 and EPI2 data.</p>
+                        <p>Clusters, or brain states, were identified using an unsupervised clustering algorithm <a href="http://scikit-learn.org/stable/modules/mixture.html">(Dirichlet Process Gaussian Mixture Model [DPGMM])</a>. It found that EPI1 was best divided into two clusters, or brain states, where as EPI2 only contained one cluster. Therefore, only EPI1 Cluster 1 and Cluster 2 are shown here (threshold >0.3 z-score).</p>
                         <p><strong>Conclusion:</strong></p>
-                        <p>EPI1 group resting state data comprises two recurring brain states over the course of nine minutes. One state (Cluster 1) consists of a highly connected framework where connectivity is increased between nodes within and between networks. The second brain state (Cluster 2) is much less connected overall. Therefore, we are able to detect transient networks using high temporal resoution.</p>
+                        <p>EPI1 resting state data comprises two recurring brain states over the course of nine minutes. One brain state (Cluster 1) consists of a highly connected framework where connectivity is higher between brain regions within and <em>between</em> networks. The second brain state (Cluster 2) is much less connected overall. Therefore, we are able to detect transient networks using high temporal resoution (EPI1).</p>
                     </div> <!-- close right-side column for project question, goals, and conclusions -->
                       
                       <!--bottom section -->
@@ -432,7 +435,7 @@
                 
 
             <button class="btn btn-info btn-lg" onclick="$('#corrmatClust').toggle();" style="margin-left:33.5em"><img src="images/matrix.PNG" class="matrix"/><strong>Correlation Matrices</strong><span class="caret" style="margin-left:4.5em"></span></button>
-                <div id="corrmatClust" style="display: block">
+                <div id="corrmatClust" style="display: none">
 
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
@@ -450,14 +453,15 @@
 
                     </div> <!-- end d3 div  #corrmatClustD3 -->
 
-                    <div class="col-md-4" style="margin-right:0em; margin-top:4em"> <!-- right text-->
-                        <p><strong>Project question 1:</strong></p>
+                    <div class="col-md-4" style="margin-right:0em; margin-top:2em"> <!-- right text-->
+                        <p><strong>Project question 2 and 3:</strong></p>
                         <p>Can we detect transient networks in resting state data?</p>
+                        <p>Which data collection method is the best?</p>
                         <p><strong>Goal and Results:</strong></p>
-                        <p>To identify transient networks, or "clusters".</p>
-                        <p>Clusters were identified using an unsupervised clustering algorithm <a href="http://scikit-learn.org/stable/modules/mixture.html">(Dirichlet Process Gaussian Mixture Model, or DPGMM for short)</a>. First, it found that the EPI1 was best divided into two clusters (also called centroids), or brain states, where as EPI2 only contained one cluster. </p>
+                        <p>To identify transient networks, "clusters", "centroids", or "brain states" in grouped EPI1 and EPI2 data.</p>
+                        <p>Clusters, or brain states, were identified using an unsupervised clustering algorithm <a href="http://scikit-learn.org/stable/modules/mixture.html">(Dirichlet Process Gaussian Mixture Model [DPGMM])</a>. It found that EPI1 was best divided into two clusters, or brain states, where as EPI2 only contained one cluster. Therefore, only EPI1 Cluster 1 and Cluster 2 are shown here.</p>
                         <p><strong>Conclusion:</strong></p>
-                        <p>EPI1 group resting state data comprises two recurring brain states over the course of nine minutes. One state (Cluster 1) consists of a highly connected framework where connectivity is increased between nodes within and between networks. The second brain state (Cluster 2) is much less connected overall. Therefore, we are able to detect transient networks using high temporal resoution.</p>
+                        <p>EPI1 resting state data comprises two recurring brain states over the course of nine minutes. One brain state (Cluster 1) consists of a highly connected framework where connectivity is higher (more <span style="color:#c51b7d"> pink</span>) between brain regions within and <em>between</em> networks. The second brain state (Cluster 2) is much less connected overall (more <span style="color:#4d9221"> green</span>). Therefore, we are able to detect transient networks using high temporal resoution (EPI1).</p>
                     </div> <!-- close right-side column for project question, goals, and conclusions -->
                       
                       <!--bottom section -->
@@ -494,7 +498,7 @@
 
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
-                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Temporal Ordering</span></h4>
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Temporal Ordering To Do</span></h4>
                     </div> <!-- close top banner text -->                  
 
                 <!-- enter d3 bit here -->
@@ -505,7 +509,7 @@
 
                       <!--top banner section -->
                     <div class="row" style="margin-left: -0.5em; height: 50px; width:1350px; background: #E6E6E6">
-                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Temporal Duration</span></h4>
+                      <h4 style="color: #B8ABA1; font-family: Verdana; text-align: left; margin-top: 16px; margin-bottom: 16px; margin-left: 180px">Cluster Analysis: <span style="color: #898989">Temporal Duration To Do </span></h4>
                     </div> <!-- close top banner text -->                  
 
                 <!-- enter d3 bit here -->
@@ -939,8 +943,8 @@ var tip = d3.tip()
       .attr("y1", function(d) {return (d.source.y); })
       .attr("x2", function(d) {return (d.target.x); })
       .attr("y2", function(d) {return (d.target.y); })
-      .style("stroke-width", function(d) {return (d.weight*5);})
-      .style("stroke", function(d) {return color_weight(d.weight)});
+      .style("stroke-width", function(d) {return (d.weight*10);})
+      .style("stroke", "#ccc"); //function(d) {return color_weight(d.weight)});
 
     var node_drag = d3.behavior.drag()
       .on("dragstart", dragstart)
@@ -1046,8 +1050,6 @@ window.setTimeout(function() {
  } ,500)
 
 
-
-
 function register_slider(i) {
   var slider_name = "#weight"+i.toString();
   var text_name = "#weight"+i.toString()+"-value";
@@ -1063,8 +1065,6 @@ function register_slider(i) {
 
   d3.select(slider_name).on("input", function() { update(+this.value); });
 }
-//register_slider(1);
-//register_slider(2);
 
 
 
@@ -1090,9 +1090,8 @@ var tip = d3.tip()
 
 
     var color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#139e9e","#b81359"]);
-    //var color_weight = d3.scale.linear().domain([-0.5, 0.8]).range(["#FFFFFF","#000000"])
     var color_weight = d3.scale.linear().domain([0.3, 1]).range(["#f7f7f7", "#969696", "#252525"])
-    //var color_weight = d3.scale.linear().domain([0.3, 1]).range(["#f7f7f7", "#252525"])
+    //var color_weight = d3.scale.quantile().domain([ 0.3, 0.4, 0.5, 0.6]).range(["#969696", "#737373", "#525252", "#252525", "#000000"]);  //color blind safe. Both from Color Brewer
 
 
     var force = self.force = d3.layout.force()  //this looks unusual
@@ -1100,19 +1099,19 @@ var tip = d3.tip()
       .links(graph.links)
       .gravity(0.05).distance(100).charge(-100)
       .size([w,h])
-      .start();
+      .start();   
 
     var link = svg.selectAll(".link")
       .data(graph.links)
       .enter().append("line")
-      //.filter(function(d) {return d.weight>0.3})
+      .filter(function(d) {return d.weight>0.3})
       .attr("class", "link")
       .attr("x1", function(d) {return (d.source.x); })
       .attr("y1", function(d) {return (d.source.y); })
       .attr("x2", function(d) {return (d.target.x); })
       .attr("y2", function(d) {return (d.target.y); })
-      .style("stroke-width", function(d) {return (d.weight*5);})
-      .style("stroke", function(d) {return color_weight(d.weight)});
+      .style("stroke-width", function(d) {return (d.weight*10);})
+      .style("stroke", "#ccc");//function(d) {return color_weight(d.weight)});
 
     var node_drag = d3.behavior.drag()
       .on("dragstart", dragstart)
@@ -1300,15 +1299,13 @@ var tip = d3.tip()
             //.style("fill", function(d) { return nodes[d.x].weight == nodes[d.y].weight ? c(nodes[d.x].weight) : null; })  //was by "group" (categorical) Changed "c" to linear
             .on("mouseover", mouseover)
             .on("mouseout", mouseout);
-            //.on('mouseover', tip.show)
-            //.on('mouseout', tip.hide);
       }
 
       function mouseover(p) {
         var gr = d3.selectAll(".row text");
    //     alert(gr[0].length);
         tip.show(p);
-        svg.selectAll(".row text").classed("active", function(d, i) { return i == p.x; });
+        svg.selectAll(".row text").classed("active", function(d, i) { return i == p.y; });
         svg.selectAll(".column text").classed("active", function(d, i) { return i == p.x;
         });
       }

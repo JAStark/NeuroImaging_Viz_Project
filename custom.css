@@ -57,6 +57,13 @@ img {
 	margin-top: 0em;
 }
 
+#selectDataset {
+	width: 15%;
+	height: 15%;
+	margin-right: 0.8em;
+	margin-top: 0em;
+}
+
 .dataList {
 	color: #646464;
 	font-size: 20px;
