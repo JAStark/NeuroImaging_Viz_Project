@@ -1,4 +1,5 @@
-{"nodes": [
+{
+  "nodes": [
     {"NW": "DMN", "id": "lParaHC", "x": 100, "y": 314, "fixed": "true"},
     {"NW": "DMN", "id": "rParaHC", "x": 169, "y":341 , "fixed": "true"},
     {"NW": "ECN", "id": "r.dlPFCx", "x": 298, "y":58 , "fixed": "true"},
