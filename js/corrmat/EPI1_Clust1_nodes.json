@@ -1,0 +1,21 @@
+[
+    {"NW": "DMN", "id": "lParaHC"},
+    {"NW": "DMN", "id": "rParaHC"},
+    {"NW": "ECN", "id": "r.dlPFCx"},
+    {"NW": "ECN", "id": "l.dlPFCx"},
+    {"NW": "SN", "id": "rTPJ"},
+    {"NW": "DMN", "id": "rPCCx"},
+    {"NW": "ECN", "id": "lCaud"},
+    {"NW": "SN", "id": "rAI"},
+    {"NW": "SN", "id": "lTPJ"},
+    {"NW": "DMN", "id": "lAngG"},
+    {"NW": "SN", "id": "rAMY"},
+    {"NW": "ECN", "id": "ACCx"},
+    {"NW": "SN", "id": "lAI"},
+    {"NW": "ECN", "id": "rCaud"},
+    {"NW": "DMN", "id": "rAngG"},
+    {"NW": "ECN", "id": "l.dPPCx"},
+    {"NW": "ECN", "id": "r.dPPCx"},
+    {"NW": "SN", "id": "lAMY"},
+    {"NW": "DMN", "id": "lPCCx"}
+  ]

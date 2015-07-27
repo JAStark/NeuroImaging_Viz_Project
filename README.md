@@ -11,5 +11,9 @@ helpful to people working with neuroimaging(MRI) data.
 
 View on gh-pages at
 
+<<<<<<< HEAD
+=======
+https://drgloo.github.io/NeuroImaging_Viz_Project/
+>>>>>>> gh-pages
 https://JAStark.github.io/NeuroImaging_Viz_Project/
 
