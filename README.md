@@ -9,7 +9,5 @@ Maryland Institute and College of Art. I am exited to create something that is t
 helpful to people working with neuroimaging(MRI) data.
 
 
-View on gh-pages at
-
-https://JAStark.github.io/NeuroImaging_Viz_Project/
+[View on gh-pages](https://JAStark.github.io/NeuroImaging_Viz_Project/)
 
