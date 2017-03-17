@@ -7,7 +7,7 @@ function make_adjMat() {
 
     var x = d3.scale.ordinal().rangeBands([0, width]),
         color = d3.scale.ordinal().domain(["DMN", "ECN", "SN"]).range(["#354e7f","#139e9e","#b81359"]),
-        color_weight = d3.scale.quantile().domain([0.01, 0.03, 0.06, 0.9, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]).range(["#276419", "#4d9221", "#7fbc41", "#b8e186", "#e6f5d0", "#f7f7f7", "#fde0ef", "#f1b6da", "#de77ae", "#c51b7d", "#8e0152"]);  //color blind safe. Both from Color Brewer
+        color_weight = d3.scale.quantile().domain([0.01, 0.03, 0.06, 0.09, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6]).range(["#276419", "#4d9221", "#7fbc41", "#b8e186", "#e6f5d0", "#f7f7f7", "#fde0ef", "#f1b6da", "#de77ae", "#c51b7d", "#8e0152"]);  //color blind safe. Both from Color Brewer
 
   //create tooltip (from http://bl.ocks.org/Caged/6476579)
 var tip = d3.tip()
